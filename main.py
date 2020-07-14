@@ -6,7 +6,6 @@ def main():
     distance     = lap_length * laps
     max_speed    = 20    # kph
     acceleration = 0
-    d_factor     = 3/25   # from 0.01 = d(5)(1/60)
 
     current_soc     = 100 # %, soc = state of charge
     desired_end_soc =  10 # %, what we want the soc to be at the end
@@ -30,7 +29,7 @@ def main():
         energy = (1/3600) * distance * ((mass * gravity * rolling_resistance) +
                  (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + 
                  (mass * acceleration))
-        # distance * (d_factor * velocity**2 + acceleration)
+
         print(f"energy: {energy}, velocity: {velocity}")
         if capacity - energy >= desired_end_capacity:
             print(f"\nfastest speed: {velocity}, laps: {laps}")
