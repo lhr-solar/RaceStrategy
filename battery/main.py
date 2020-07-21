@@ -40,17 +40,12 @@ def main():
         print(f"energy: {energy:2.3f} KW, velocity: {velocity:2.3f} km/h, energy gained: {gained_energy:2.3f} KW")
         if (not high_velocity and (capacity - energy + gained_energy) >= desired_end_capacity):
             high_velocity = velocity
-        if(energy <= gained_energy):
+            
+        if(energy <= gained_energy): # find best coasting speed
             print("\nCoasting Speed: " + str(velocity))
             break
+
     print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
     print(f"Total Distance: {distance} km")
-
-    # for velocity in range(max_speed, 0, -1): # coasting velocity calc
-    #     time = distance / velocity
-    #     gained_energy = recharge_rate * time # KWh 
-    #     energy = (1/3600) * distance * ((mass * gravity * rolling_resistance) +
-    #              (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + # 0.0386 for km/h
-    #              (mass * acceleration))
         
 main()
