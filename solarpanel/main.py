@@ -1,5 +1,14 @@
 # solar panel power calculations
 
+from bs4 import BeautifulSoup
+import requests
+
+#gets cloud (TODO: weather) data
+request = requests.get("https://weather.com/weather/today/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+soup = BeautifulSoup(request.content, 'html.parser')
+cloud_conditions = soup.find('div', class_='_-_-components-src-organism-CurrentConditions-CurrentConditions--phraseValue--mZC_p').get_text()
+print(f"Cloud conditions: {cloud_conditions}")
+
 def PR_calculation():
     '''
     PR:
@@ -42,15 +51,18 @@ def main():
     https://solarmonsters.com/help-advice/solar-panels-advice/how-many-kwh-does-a-solar-panel-produce/#tab-con-9
     '''
 
-    sp_power_rating = 20    # (watts)
-    sp_surface_area = 100   # (m^2)
+    sp_surface_area = 4       # (m^2)
+    sp_power_percent = 0.20   # %
 
     A = sp_surface_area
-    r = sp_power_rating / sp_surface_area
+    r = sp_power_percent
     H = 0.217
     # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
     # used to calculate how close to actual input the solar panels are (higher is better) 
-    PR = PR_calculation()
+    #PR = PR_calculation()
+    PR = 1.00 # (when all circumstances are perfect)
+
+    print()
 
     Energy = A * r * H * PR
     Energy = round(Energy, 5)
