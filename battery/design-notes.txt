@@ -18,3 +18,6 @@ should output:
     - time
     - end battery charge
 
+# battery_resistance = 0.1 # Ohms, add once current is found
+
+# Assuming battery outputs 5KWh desired_end_soc implies = 0.5 KWH leftover
