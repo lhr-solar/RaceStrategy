@@ -1,6 +1,6 @@
 # main script for running race strat software
-lap_length = 5.513 # in kilometers
-laps       = 1
+lap_length = 5 # in kilometers
+laps       = 20 
 distance   = lap_length * laps
 gravity    = 9.81  #m/s^2
 
@@ -19,12 +19,12 @@ class Car:          #starts at 50% only uses 2%
         self.cross_area         = cross_area         # m^2, from thiago
         self.recharge_rate      = recharge_rate
 
-        self.current_capacity   = (start_soc * capacity) / 100
+        self.current_capacity   = (start_soc * capacity) / 100 #KWh
         self.end_capacity       = (end_soc   * capacity) / 100 # KWh
     
 
     # gives the best speed we can run
-    def best_speed(self):
+    def best_speed(self, distance):
         acceleration   = 0
         gradient_angle = 0     #
         air_density    = 1.225 # kg/m^3
@@ -40,7 +40,7 @@ class Car:          #starts at 50% only uses 2%
                 return velocity
     
 
-    def coast_speed(self):
+    def coast_speed(self, distance):
         acceleration   = 0
         gradient_angle = 0     #
         air_density    = 1.225 # kg/m^3
@@ -53,31 +53,67 @@ class Car:          #starts at 50% only uses 2%
                     (self.mass * acceleration))
 
             if (energy > gained_energy): # find best coasting speed
-                return velocity - 1
+                return velocity - 5
 
     # return time to recharge battery while coasting(default charges to 80%)
     def calc_recharge_time(self, upper_battery_capacity = 4):
         acceleration = 0
         air_density  = 1.225 # kg/m^3
 
-        coasting_velocity = self.coast_speed() # KWh, point when to swap back to battery power
+        coasting_velocity = self.coast_speed(lap_length) # KWh, point when to swap back to battery power
         time  = ((upper_battery_capacity - self.current_capacity) / 
                 (self.recharge_rate - ((1/3600) * coasting_velocity * ((self.mass * gravity * self.rolling_resistance) +
                 (0.0386 * air_density * self.drag_coefficient * self.cross_area * coasting_velocity ** 2) +
                 (self.mass * acceleration)))))
         return time
 
+    def update_capacity(self, curr_velocity, distance):
+        air_density    = 1.225 # kg/m^3
+        time = distance / curr_velocity
+        acceleration   = 0
+
+
+        gained_energy = self.recharge_rate * time # KWh 
+        
+        energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
+                    (0.0386 * air_density * self.drag_coefficient * self.cross_area * curr_velocity ** 2) + # 0.0386 for km/h
+                    (self.mass * acceleration))
+        self.current_capacity += gained_energy - energy
+        
 
 
 def main():
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
     
     solar = Car()
-    high_velocity = solar.best_speed()
-    coast_velocity = solar.coast_speed()
-    print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
-    print(f"Coasting Speed: {coast_velocity} km/h")
-    print(f"Total Distance: {distance} km")
-    print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
+    curr_time = 0
+    dist_left = distance
+    for lap in range(laps):
+        print(f"In lap {lap}")
+        # below desired end capacity, probably want to recharge
+        if solar.current_capacity < solar.end_capacity:
+            velocity = solar.coast_speed(lap_length)
+            print(f"Travelling at coasting speed of {velocity}")
+
+        else:
+            velocity = solar.max_speed
+            # velocity = solar.best_speed(lap_length)
+            print(f"Travelling at driving speed of {velocity}")
+        
+        solar.update_capacity(velocity, lap_length)
+        dist_left -= lap_length
+        lap_time = lap_length / velocity
+        curr_time += lap_time
+        print(f"Current capacity: {(solar.current_capacity * 100) / solar.capacity}")
+        print(f"Distance remaining: {dist_left}")
+        print(f"Lap time: {lap_time}\n")
+        
+    print(f"\n\nEnd capacity: {solar.current_capacity}")
+    print(f"Total time: {curr_time}")
+    # print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
+    # print(f"Coasting Speed: {coast_velocity} km/h")
+    # print(f"Total Distance: {distance} km")
+    # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
+
 
 main()
