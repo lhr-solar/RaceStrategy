@@ -1,8 +1,12 @@
 # main script for running race strat software
+
+from solarpanel.main import main as solar_power
+
 lap_length = 5 # in kilometers
 laps       = 20 
 distance   = lap_length * laps
 gravity    = 9.81  #m/s^2
+
 
 class Car:          #starts at 50% only uses 2%
     def __init__(self, max_speed = 90, start_soc = 50, end_soc = 48, 
@@ -17,7 +21,7 @@ class Car:          #starts at 50% only uses 2%
         self.rolling_resistance = rolling_resistance # average for car tires on asphalt
         self.drag_coefficient   = drag_coefficient   # from thiago
         self.cross_area         = cross_area         # m^2, from thiago
-        self.recharge_rate      = recharge_rate
+        self.recharge_rate      = solar_power()
 
         self.current_capacity   = (start_soc * capacity) / 100 #KWh
         self.end_capacity       = (end_soc   * capacity) / 100 # KWh
@@ -84,7 +88,7 @@ class Car:          #starts at 50% only uses 2%
 
 def main():
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
-    
+
     solar = Car()
     curr_time = 0
     dist_left = distance
@@ -114,6 +118,7 @@ def main():
     # print(f"Coasting Speed: {coast_velocity} km/h")
     # print(f"Total Distance: {distance} km")
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
+
 
 
 main()

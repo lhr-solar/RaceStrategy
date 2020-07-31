@@ -21,6 +21,8 @@ def cloud_coverage():
         cloud_percent = 0.625
     elif cloud_condition == "Cloudy":
         cloud_percent = 0.875
+    else:
+        cloud_percent = 0.5 #if rainy, hard to calculate clouds
     
     print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
     cloud_percent = cloud_percent * 0.8
@@ -92,4 +94,8 @@ def main():
     total_energy = energy * 6
     print(f"6 hours of sunlight yields {round(total_energy, 4)} kW, or {round(total_energy * 1000, 1)} W")
 
-main()
+    return round(energy,4)
+
+
+if __name__ == "__main__":
+    main()
