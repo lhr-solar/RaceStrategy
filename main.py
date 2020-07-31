@@ -11,7 +11,7 @@ gravity    = 9.81  #m/s^2
 class Car:          #starts at 50% only uses 2%
     def __init__(self, max_speed = 90, start_soc = 50, end_soc = 48, 
                  capacity = 5, mass = 227, rolling_resistance = 0.020, 
-                 drag_coefficient = 0.256, cross_area = 1.2, recharge_rate = 0.8):
+                 drag_coefficient = 0.256, cross_area = 1.2):
 
         self.max_speed          = max_speed          # kph
         self.start_soc          = start_soc          # %, soc = state of charge
@@ -22,6 +22,7 @@ class Car:          #starts at 50% only uses 2%
         self.drag_coefficient   = drag_coefficient   # from thiago
         self.cross_area         = cross_area         # m^2, from thiago
         self.recharge_rate      = solar_power()
+        print(f"recharge rate = {self.recharge_rate}")
 
         self.current_capacity   = (start_soc * capacity) / 100 #KWh
         self.end_capacity       = (end_soc   * capacity) / 100 # KWh
