@@ -22,7 +22,8 @@ def cloud_coverage():
     elif cloud_condition == "Cloudy":
         cloud_percent = 0.875
     else:
-        cloud_percent = 0.5 #if rainy, hard to calculate clouds
+        print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
+        cloud_percent = 0.375 #if rainy, hard to calculate clouds
     
     print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
     cloud_percent = cloud_percent * 0.8
@@ -75,26 +76,27 @@ def main():
     '''
 
     sp_surface_area = 4       # (m^2)
-    sp_power_percent = 0.20   # %
+    # % = energy/area 
+    # energy ~ 1kW, 1/4 = 0.25 = 25% 
+    sp_power_percent = 0.25
 
     A = sp_surface_area
     r = sp_power_percent
-    H = 0.217 #constant
+    H = 5.2 #constant
 
     # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
     # used to calculate how close to actual input the solar panels are (higher is better) 
     PR = PR_calculation()
-    #PR = 1.00 # (when all circumstances are perfect)
+    #PR = 1.00 # turn this on for perfect conditions
     print(f"Performance Ratio: {round(PR*100, 2)} %\n")
-
 
     energy = A * r * H * PR
 
-    print(f"{round(energy, 4)} kWh produced")
-    total_energy = energy * 6
-    print(f"6 hours of sunlight yields {round(total_energy, 4)} kW, or {round(total_energy * 1000, 1)} W")
+    print(f"Roughly {round(energy, 4)} kWh/day")
+    hourly_energy = round(energy / 5.2, 4)
+    print(f"In 5.2 hours of peak sunlight, roughly {hourly_energy} kWh")
 
-    return round(energy,4)
+    return hourly_energy
 
 
 if __name__ == "__main__":
