@@ -11,6 +11,5 @@ def GetInputs():
         inputs[in_name] = float(var[-1])
     file.close()
     return inputs
-#print(GetInputs())
 
 
