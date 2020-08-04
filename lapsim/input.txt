@@ -2,7 +2,7 @@ max_speed: 90
 start_soc: 80          
 end_soc: 50            
 capacity: 5        
-mass= 10              
+mass: 10              
 rolling_resistance: 2.5 
 drag_coefficient: 0.75   
 cross_area: 250    
