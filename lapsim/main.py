@@ -1,3 +1,9 @@
+"""
+main.py
+====================================
+The core module of the Lap Simulator
+"""
+
 # main script for running race strat software
 
 from solarpanel.main import main as solar_power
@@ -11,6 +17,7 @@ gravity    = 9.81  #m/s^2
 
 
 class Car:          #starts at 50% only uses 2%
+    """A class representing the solar car"""
     def __init__(self, max_speed = 90, start_soc = 50, end_soc = 48, 
                  capacity = 5, mass = 227, rolling_resistance = 0.020, 
                  drag_coefficient = 0.256, cross_area = 1.2):
@@ -32,6 +39,13 @@ class Car:          #starts at 50% only uses 2%
 
     # gives the best speed we can run
     def best_speed(self, distance):
+        """
+        Return the best speed the car can currently drive at over the given distance.
+        Parameters
+        ----------
+        distance
+            A value indicating the distance to calculate the speed with.
+        """
         acceleration   = 0
         gradient_angle = 0     #
         air_density    = 1.225 # kg/m^3

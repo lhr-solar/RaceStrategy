@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-# lapsim documentation build configuration file, created by
-# sphinx-quickstart on Fri Jul 31 15:36:26 2020.
+# Lap Simulator documentation build configuration file, created by
+# sphinx-quickstart on Tue Aug  4 12:29:19 2020.
 #
 # This file is execfile()d with the current directory set to its
 # containing dir.
@@ -17,9 +17,9 @@
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-# import os
-# import sys
-# sys.path.insert(0, os.path.abspath('.'))
+import os
+import sys
+sys.path.insert(0, os.path.abspath('..'))
 
 
 # -- General configuration ------------------------------------------------
@@ -32,11 +32,10 @@
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = ['sphinx.ext.autodoc',
-    'sphinx.ext.doctest',
     'sphinx.ext.todo',
-    'sphinx.ext.mathjax',
-    'sphinx.ext.viewcode',
-    'sphinx.ext.githubpages']
+    'sphinx.ext.coverage',
+    'sphinx.ext.githubpages',
+    'sphinx.ext.napoleon']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -51,9 +50,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = 'lapsim'
-copyright = '2020, Colette'
-author = 'Colette'
+project = 'Lap Simulator'
+copyright = '2020, Longhorn Racing Solar'
+author = 'LHRS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -117,7 +116,7 @@ html_sidebars = {
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'lapsimdoc'
+htmlhelp_basename = 'LapSimulatordoc'
 
 
 # -- Options for LaTeX output ---------------------------------------------
@@ -144,7 +143,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'lapsim.tex', 'lapsim Documentation',
+    (master_doc, 'LapSimulator.tex', 'Lap Simulator Documentation',
      'Colette', 'manual'),
 ]
 
@@ -154,7 +153,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'lapsim', 'lapsim Documentation',
+    (master_doc, 'lapsimulator', 'Lap Simulator Documentation',
      [author], 1)
 ]
 
@@ -165,8 +164,8 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'lapsim', 'lapsim Documentation',
-     author, 'lapsim', 'One line description of project.',
+    (master_doc, 'LapSimulator', 'Lap Simulator Documentation',
+     author, 'LapSimulator', 'One line description of project.',
      'Miscellaneous'),
 ]
 
