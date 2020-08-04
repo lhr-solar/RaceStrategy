@@ -1,3 +1,9 @@
+"""
+main.py
+====================================
+The core module of my example project
+"""
+
 # main script for running race strat software
 
 from solarpanel.main import main as solar_power
@@ -9,6 +15,7 @@ gravity    = 9.81  #m/s^2
 
 
 class Car:          #starts at 50% only uses 2%
+    """An example docstring for a class definition."""
     def __init__(self, max_speed = 90, start_soc = 50, end_soc = 48, 
                  capacity = 5, mass = 227, rolling_resistance = 0.020, 
                  drag_coefficient = 0.256, cross_area = 1.2):
@@ -30,6 +37,13 @@ class Car:          #starts at 50% only uses 2%
 
     # gives the best speed we can run
     def best_speed(self, distance):
+        """
+        Return the most important thing about a person.
+        Parameters
+        ----------
+        your_name
+            A string indicating the name of the person.
+        """
         acceleration   = 0
         gradient_angle = 0     #
         air_density    = 1.225 # kg/m^3

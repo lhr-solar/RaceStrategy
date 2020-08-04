@@ -1,0 +1,40 @@
+return time to recharge battery while coasting
+
+recharge_rate * time = (upper_capacity - current_capacity) + energy used
+
+{recharge_rate-(1/3600) * coasting_velocity * ((mass * gravity * rolling_resistance) +
+                (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + # 0.0386 for km/h
+                (mass * acceleration))}*time 
+                =
+                (upper_capacity - current_capacity)
+                
+time = (upper_capacity - current_capacity) / {recharge_rate-(1/3600) * coasting_velocity * ((mass * gravity * rolling_resistance) +
+                (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + 0.0386 for km/h
+                (mass * acceleration))}
+                
+def calc_recharge_time(recharge_rate, coasting_velocity, current_capacity):
+    upper_battery_capacity = 4.0 # KWh, point when to swap back to battery power
+
+    time = 0
+    
+    gained_energy = recharge_rate * time # KWh 
+    energy_used = (1/3600) * time*coasting_velocity * ((mass * gravity * rolling_resistance) +
+                (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + # 0.0386 for km/h
+                (mass * acceleration))
+
+# high_velocity = 0
+
+# for velocity in range(max_speed, 0, -1): # velocity in km/h
+#     time = distance / velocity
+#     gained_energy = recharge_rate * time # KWh 
+#     energy = (1/3600) * distance * ((mass * gravity * rolling_resistance) +
+#              (0.0386 * air_density * drag_coefficient * cross_area * velocity ** 2) + # 0.0386 for km/h
+#              (mass * acceleration))
+
+#     print(f"energy: {energy:2.3f} KW, velocity: {velocity:2.3f} km/h, energy gained: {gained_energy:2.3f} KW")
+#     if (not high_velocity and (capacity - energy + gained_energy) >= desired_end_capacity):
+#         high_velocity = velocity
+        
+#     if(energy <= gained_energy): # find best coasting speed
+#         print("\nCoasting Speed: " + str(velocity))
+#         break

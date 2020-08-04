@@ -9,7 +9,7 @@ if "%SPHINXBUILD%" == "" (
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
-set SPHINXPROJ=lapsim
+set SPHINXPROJ=LapSimulator
 
 if "%1" == "" goto help
 
