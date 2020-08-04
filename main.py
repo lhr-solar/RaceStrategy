@@ -1,9 +1,11 @@
 # main script for running race strat software
 
 from solarpanel.main import main as solar_power
+from battery.IO import *
+inputs = GetInputs()
 
-lap_length = 5 # in kilometers
-laps       = 20 
+lap_length = inputs['lap_length'] # in kilometers
+laps       = int(inputs['laps'])
 distance   = lap_length * laps
 gravity    = 9.81  #m/s^2
 
