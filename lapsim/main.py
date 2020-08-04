@@ -22,14 +22,14 @@ class Car:          #starts at 50% only uses 2%
                  capacity = 5, mass = 227, rolling_resistance = 0.020, 
                  drag_coefficient = 0.256, cross_area = 1.2):
 
-        self.max_speed          = max_speed          # kph
-        self.start_soc          = start_soc          # %, soc = state of charge
-        self.end_soc            = end_soc            # %, what we want the soc to be at the end
-        self.capacity           = capacity           # KWh
-        self.mass               = mass               # kg
-        self.rolling_resistance = rolling_resistance # average for car tires on asphalt
-        self.drag_coefficient   = drag_coefficient   # from thiago
-        self.cross_area         = cross_area         # m^2, from thiago
+        self.max_speed          = int(inputs['max_speed'])    # kph
+        self.start_soc          = inputs['start_soc']         # %, soc = state of charge
+        self.end_soc            = inputs['end_soc']           # %, what we want the soc to be at the end
+        self.capacity           = inputs['capacity']          # KWh
+        self.mass               = inputs['mass']              # kg
+        self.rolling_resistance = inputs['rolling_resistance']# average for car tires on asphalt
+        self.drag_coefficient   = inputs['drag_coefficient']  # from thiago
+        self.cross_area         = inputs['cross_area']        # m^2, from thiago
         self.recharge_rate      = solar_power()
         print(f"recharge rate = {self.recharge_rate}")
 
