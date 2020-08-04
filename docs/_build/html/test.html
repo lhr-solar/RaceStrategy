@@ -1,53 +1,61 @@
 
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Support &#8212; Lap Simulator  documentation</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Main Script &#8212; Lap Simulator  documentation</title>
     <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true,
-        SOURCELINK_SUFFIX: '.txt'
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="prev" title="Welcome to Lap Simulator’s documentation!" href="index.html" />
    
   <link rel="stylesheet" href="_static/custom.css" type="text/css" />
   
+  
   <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
 
-  </head>
-  <body>
+  </head><body>
   
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <div class="section" id="support">
-<h1>Support<a class="headerlink" href="#support" title="Permalink to this headline">¶</a></h1>
-<p>The easiest way to get help with the project is to join the <code class="docutils literal"><span class="pre">#crawler</span></code>
-channel on <a class="reference external" href="irc://freenode.net">Freenode</a>. We hang out there and you can get real-time help with
-your projects.  The other good way is to open an issue on <a class="reference external" href="http://github.com/example/crawler/issues">Github</a>.</p>
-<p>The mailing list at <a class="reference external" href="https://groups.google.com/forum/#!forum/crawler">https://groups.google.com/forum/#!forum/crawler</a> is also available for support.</p>
+  <div class="section" id="module-lapsim.main">
+<span id="main-script"></span><h1>Main Script<a class="headerlink" href="#module-lapsim.main" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="main-py">
+<h2>main.py<a class="headerlink" href="#main-py" title="Permalink to this headline">¶</a></h2>
+<p>The core module of the Lap Simulator</p>
+<dl class="py class">
+<dt id="lapsim.main.Car">
+<em class="property">class </em><code class="sig-prename descclassname">lapsim.main.</code><code class="sig-name descname">Car</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">max_speed</span><span class="o">=</span><span class="default_value">90</span></em>, <em class="sig-param"><span class="n">start_soc</span><span class="o">=</span><span class="default_value">50</span></em>, <em class="sig-param"><span class="n">end_soc</span><span class="o">=</span><span class="default_value">48</span></em>, <em class="sig-param"><span class="n">capacity</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">mass</span><span class="o">=</span><span class="default_value">227</span></em>, <em class="sig-param"><span class="n">rolling_resistance</span><span class="o">=</span><span class="default_value">0.02</span></em>, <em class="sig-param"><span class="n">drag_coefficient</span><span class="o">=</span><span class="default_value">0.256</span></em>, <em class="sig-param"><span class="n">cross_area</span><span class="o">=</span><span class="default_value">1.2</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.main.Car" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing the solar car</p>
+<dl class="py method">
+<dt id="lapsim.main.Car.best_speed">
+<code class="sig-name descname">best_speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.main.Car.best_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best speed the car can currently drive at over the given distance.
+:param distance: A value indicating the distance to calculate the speed with.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
 </div>
 
 
           </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
@@ -60,15 +68,15 @@ your projects.  The other good way is to open an issue on <a class="reference ex
 </ul>
 </div>
 <div id="searchbox" style="display: none" role="search">
-  <h3>Quick search</h3>
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <div><input type="text" name="q" /></div>
-      <div><input type="submit" value="Go" /></div>
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
     </form>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>$('#searchbox').show(0);</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -77,8 +85,8 @@ your projects.  The other good way is to open an issue on <a class="reference ex
       &copy;2020, Longhorn Racing Solar.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 1.6.7</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.8</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
       <a href="_sources/test.rst.txt"
