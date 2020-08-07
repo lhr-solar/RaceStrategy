@@ -1,4 +1,15 @@
 # solar panel power calculations
+"""The solar panel output calculator.
+
+Calculates solar panel output by using the size and efficiency of the solar panels. This also takes 
+cloud coverage into account and subtracts for small bits of likely error in hardware. It also uses 
+the current location which in this case is assumed to be Austin but should be changed if not since this
+data could not be scraped easily. Map of solar data can be found here: https://maps.nrel.gov/nsrdb-viewer/
+
+    Typical usage example:
+
+    recharge_rate = main()
+"""
 
 from bs4 import BeautifulSoup
 import requests
@@ -6,6 +17,8 @@ import requests
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
 def cloud_coverage():
+    """Returns cloud coverage in the sky times 0.8 so that this can be easily imported into the performance ratio function.
+    """
     request = requests.get("https://weather.com/weather/today/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
     soup = BeautifulSoup(request.content, 'html.parser')
     cloud_condition = soup.find('div', class_='_-_-components-src-organism-CurrentConditions-CurrentConditions--phraseValue--mZC_p').get_text()
@@ -30,6 +43,8 @@ def cloud_coverage():
     return cloud_percent
 
 def PR_calculation():
+    """Returns the solar panel's performance ratio based on cloud coverage and other assumed places of error.
+    """
     '''
     PR:
     - Inverter losses (4% to 10 %)
@@ -63,6 +78,11 @@ def PR_calculation():
     return PR
 
 def main():
+    """Calculates the solar panel's output using multiple different components.
+
+    Returns:
+        Solar panel output (energy), in kWh.
+    """
     '''
     E = A * r * H * PR
 

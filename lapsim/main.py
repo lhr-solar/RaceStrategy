@@ -5,46 +5,33 @@ The core module of the Lap Simulator
 """
 
 import math
-# main script for running race strat software
 
 from solarpanel.main import main as solar_power
+
 from car import Car
-from IO import GetInputs
-inputs = GetInputs()
+import inputs
 
-lap_length = inputs['lap_length'] # in kilometers
-laps       = int(inputs['laps'])
-distance   = lap_length * laps
-gravity    = 9.81  #m/s^2
-<<<<<<< HEAD
-=======
-
-
-class Car:          #starts at 50% only uses 2%
-    """A class representing the solar car"""
-    def __init__(self, max_speed = 90, start_soc = 50, end_soc = 48, 
-                 capacity = 5, mass = 227, rolling_resistance = 0.020, 
-                 drag_coefficient = 0.256, cross_area = 1.2):
-
-        self.max_speed          = int(inputs['max_speed'])    # kph
-        self.start_soc          = inputs['start_soc']         # %, soc = state of charge
-        self.end_soc            = inputs['end_soc']           # %, what we want the soc to be at the end
-        self.capacity           = inputs['capacity']          # KWh
-        self.mass               = inputs['mass']              # kg
-        self.rolling_resistance = inputs['rolling_resistance']# average for car tires on asphalt
-        self.drag_coefficient   = inputs['drag_coefficient']  # from thiago
-        self.cross_area         = inputs['cross_area']        # m^2, from thiago
-        self.recharge_rate      = solar_power()
-        print(f"recharge rate = {self.recharge_rate}")
-
-        self.current_capacity   = (start_soc * capacity) / 100 #KWh
-        self.end_capacity       = (end_soc   * capacity) / 100 # KWh
->>>>>>> 33158e9e489eec4fa8fbe8f5084f5a3057b7b24e
     
 def main():
+    """ The core code of the Lap Simulator
+
+    Reads inputs from the inputs.txt file and runs the simulation based off of 
+    those parameters. If some paramters are missing it fills them with defualt 
+    values.
+
+    Creates an output.txt file containing information about the simulation
+    based on the passed inputs, including individual lap information as well as
+    overall time, speed, and length of the race.
+    """
+    user_inputs = inputs.get_inputs()
+
+    lap_length = user_inputs["lap_length"] # km
+    laps       = int(user_inputs['laps'])
+    distance   = lap_length * laps
+    # gravity    = 9.81  #m/s^2
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
 
-    solar = Car(inputs)
+    solar = Car(user_inputs)
     curr_time = 0
     dist_left = distance
     for lap in range(laps):

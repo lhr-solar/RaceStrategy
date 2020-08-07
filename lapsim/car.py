@@ -1,9 +1,28 @@
-import math
+import math # sin
 
 gravity = 9.81 # m/s^2
 
-class Car:          #starts at 50% only uses 2%
-    """A class representing the solar car"""
+class Car:
+    """A class representing the solar car
+    
+    This class stores all characteristics of the car, such as the battery levels and dynamic
+    coefficients. It has access to race strategy functions that can determine desired speeds
+    based on certain conditions, as well as functions to update values of the car
+    such as capacity or energy.
+
+    Attributes:
+        max_speed: an int representing the fastest speed the car can reach
+        start_soc: a percentage representing the starting state of charge of the batteries
+        end_soc: a percentage representing the desired end state of charge of the batteries
+        capacity: an int of the total capacity of the batteries in KWh
+        mass: an int of the mass of the car in kg 
+        rolling_resistance: a float of the rolling resistance constant of the car
+        drag_c: a float of the drag coefficient of the car
+        cross_area: a float of the front cross sectional area of the car in m^2
+        recharge_rate: a float representing how much power the solar cells generate in KWh
+        current_capacity: a float that stores the current capacity of the batteries during the simulation in KWh
+        end_capacity: a float that stores the desired end capacity of the batteries in KWh
+    """
     def __init__(self, inputs, recharge_rate = 0.8):
 
         self.max_speed          = int(inputs["max_speed"]) # kph

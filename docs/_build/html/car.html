@@ -1,0 +1,168 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Class &#8212; Lap Simulator  documentation</title>
+    <link rel="stylesheet" href="_static/alabaster.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Solar Panel Module" href="solarpanel.html" />
+    <link rel="prev" title="support" href="support.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <div class="section" id="module-lapsim.car">
+<span id="car-class"></span><h1>Car Class<a class="headerlink" href="#module-lapsim.car" title="Permalink to this headline">¶</a></h1>
+<dl class="py class">
+<dt id="lapsim.car.Car">
+<em class="property">class </em><code class="sig-prename descclassname">lapsim.car.</code><code class="sig-name descname">Car</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">inputs</span></em>, <em class="sig-param"><span class="n">recharge_rate</span><span class="o">=</span><span class="default_value">0.8</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car" title="Permalink to this definition">¶</a></dt>
+<dd><p>A class representing the solar car</p>
+<p>This class stores all characteristics of the car, such as the battery levels and dynamic
+coefficients. It has access to race strategy functions that can determine desired speeds
+based on certain conditions, as well as functions to update values of the car
+such as capacity or energy.</p>
+<dl class="py attribute">
+<dt id="lapsim.car.Car.max_speed">
+<code class="sig-name descname">max_speed</code><a class="headerlink" href="#lapsim.car.Car.max_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>an int representing the fastest speed the car can reach</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.start_soc">
+<code class="sig-name descname">start_soc</code><a class="headerlink" href="#lapsim.car.Car.start_soc" title="Permalink to this definition">¶</a></dt>
+<dd><p>a percentage representing the starting state of charge of the batteries</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.end_soc">
+<code class="sig-name descname">end_soc</code><a class="headerlink" href="#lapsim.car.Car.end_soc" title="Permalink to this definition">¶</a></dt>
+<dd><p>a percentage representing the desired end state of charge of the batteries</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.capacity">
+<code class="sig-name descname">capacity</code><a class="headerlink" href="#lapsim.car.Car.capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>an int of the total capacity of the batteries in KWh</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.mass">
+<code class="sig-name descname">mass</code><a class="headerlink" href="#lapsim.car.Car.mass" title="Permalink to this definition">¶</a></dt>
+<dd><p>an int of the mass of the car in kg</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.rolling_resistance">
+<code class="sig-name descname">rolling_resistance</code><a class="headerlink" href="#lapsim.car.Car.rolling_resistance" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float of the rolling resistance constant of the car</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.drag_c">
+<code class="sig-name descname">drag_c</code><a class="headerlink" href="#lapsim.car.Car.drag_c" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float of the drag coefficient of the car</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.cross_area">
+<code class="sig-name descname">cross_area</code><a class="headerlink" href="#lapsim.car.Car.cross_area" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float of the front cross sectional area of the car in m^2</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.recharge_rate">
+<code class="sig-name descname">recharge_rate</code><a class="headerlink" href="#lapsim.car.Car.recharge_rate" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float representing how much power the solar cells generate in KWh</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.current_capacity">
+<code class="sig-name descname">current_capacity</code><a class="headerlink" href="#lapsim.car.Car.current_capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float that stores the current capacity of the batteries during the simulation in KWh</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="lapsim.car.Car.end_capacity">
+<code class="sig-name descname">end_capacity</code><a class="headerlink" href="#lapsim.car.Car.end_capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>a float that stores the desired end capacity of the batteries in KWh</p>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.best_speed">
+<code class="sig-name descname">best_speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.best_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the best speed the car can currently drive at over the given distance.
+:param distance: A value indicating the distance to calculate the speed with.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper"><div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="support.html" title="previous chapter">support</a></li>
+      <li>Next: <a href="solarpanel.html" title="next chapter">Solar Panel Module</a></li>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" />
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2020, Longhorn Racing Solar.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 3.1.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="_sources/car.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

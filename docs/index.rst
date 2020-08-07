@@ -5,6 +5,9 @@ Welcome to Lap Simulator's documentation!
    :maxdepth: 2
 
    test
+   support
+   car
+   solarpanel
 
 
 Indices and tables
