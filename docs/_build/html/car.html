@@ -110,10 +110,116 @@ such as capacity or energy.</p>
 </dd></dl>
 
 <dl class="py method">
+<dt id="lapsim.car.Car.air_drag">
+<code class="sig-name descname">air_drag</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">velocity</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.air_drag" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates how much power is needed to overcome air drag based on the
+current velocity of the car.</p>
+<p>power = 0.0386 * air density * drag coefficient * cross sectional area * velocity^2</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>velocity</strong> – The desired speed the car should travel at.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt id="lapsim.car.Car.best_speed">
 <code class="sig-name descname">best_speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.best_speed" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return the best speed the car can currently drive at over the given distance.
-:param distance: A value indicating the distance to calculate the speed with.</p>
+<dd><p>Takes a distance and calculates the best speed the car can currently drive at.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>distance</strong> – A value indicating the distance to calculate the speed with.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A speed, in kph, that the car should travel at to achieve maximum efficiency.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.calc_recharge_time">
+<code class="sig-name descname">calc_recharge_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">upper_battery_capacity</span><span class="o">=</span><span class="default_value">4</span></em>, <em class="sig-param"><span class="n">lap_length</span><span class="o">=</span><span class="default_value">5</span></em>, <em class="sig-param"><span class="n">distance</span><span class="o">=</span><span class="default_value">5</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.calc_recharge_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a total distance and calculates the time it would take for the car
+to recharge its batteries to the given capacity. Assumes that
+the car is travelling at the optimized coasting speed</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>upper_battery_capacity</strong> – The battery capacity the car should recharge to.</p></li>
+<li><p><strong>lap_length</strong> – The distance of one lap, in km.</p></li>
+<li><p><strong>distance</strong> – The total distance for the car to travel, in km.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A time, in hours, that the car would take to recharge its batteries while driving.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.coast_speed">
+<code class="sig-name descname">coast_speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.coast_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes a distance and calculates the best coasting speed the car can currently drive at.
+This speed will be something within the range of being able to power the car
+on mainly solar power so the battery is able to recharge while driving.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>distance</strong> – A value indicating the distance to calculate the speed with.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>A speed, in kph, that the car should travel at to recharge its batteries with.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.hill_climb">
+<code class="sig-name descname">hill_climb</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">velocity</span></em>, <em class="sig-param"><span class="n">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.hill_climb" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculates how much power is needed to climb up a slope depending on the
+current velocity and the gradient angle of the road.</p>
+<p>power = mass * gravity * velocity * sin(angle)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>velocity</strong> – The desired speed the car should travel at.</p></li>
+<li><p><strong>angle</strong> – The gradient angle of the road that the car travels over.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.motor_energy">
+<code class="sig-name descname">motor_energy</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">velocity</span></em>, <em class="sig-param"><span class="n">distance</span></em>, <em class="sig-param"><span class="n">angle</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.motor_energy" title="Permalink to this definition">¶</a></dt>
+<dd><p>Uses a velocity, distance, and gradient angle of the road to determine
+how much power is needed to drive the motor.</p>
+<p>This calculates the power needed based on rolling resistance, hill climbing,
+and air drag for the vehicle.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>velocity</strong> – The desired speed the car should travel at.</p></li>
+<li><p><strong>distance</strong> – The distance to travel at the given speed.</p></li>
+<li><p><strong>angle</strong> – The gradient angle of the road that the car travels over.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="lapsim.car.Car.update_capacity">
+<code class="sig-name descname">update_capacity</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">curr_velocity</span></em>, <em class="sig-param"><span class="n">distance</span></em><span class="sig-paren">)</span><a class="headerlink" href="#lapsim.car.Car.update_capacity" title="Permalink to this definition">¶</a></dt>
+<dd><p>Takes the current velocity the car is travelling at and a distance that
+the car travelled over to calculate how much power was used. This updates
+the current capacity of the car acccordingly.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>curr_velocity</strong> – The current velocity that the car is driving at.</p></li>
+<li><p><strong>distance</strong> – The distance that the car travelled within this section, in km.</p></li>
+</ul>
+</dd>
+</dl>
 </dd></dl>
 
 </dd></dl>
