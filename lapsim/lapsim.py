@@ -58,7 +58,7 @@ def run(solar, max_speed):
             length = straight[0]
             angle  = straight[1]
             # below desired end capacity, probably want to recharge
-            if solar.current_capacity < solar.end_capacity:
+            if solar.current_capacity < solar.end_capacity and angle >= 0:
                 velocity = solar.coast_speed(length, angle)
                 print(f"Travelling at coasting speed of {velocity}")
 
@@ -96,4 +96,4 @@ def run(solar, max_speed):
 
 # print(f"Best time was {best_time} with a top speed of {best_speed}")
 car = construct()
-run(car, 78)
+run(car, 90)

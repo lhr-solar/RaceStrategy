@@ -40,7 +40,7 @@ class Car:
     
 
     # gives the best speed we can run
-    def best_speed(self, distance):
+    def best_speed(self, distance, angle):
         """
         Takes a distance and calculates the best speed the car can currently drive at.
         
@@ -56,9 +56,10 @@ class Car:
         for velocity in range(self.max_speed, 0, -1): # velocity in km/h
             time = distance / velocity
             gained_energy = self.recharge_rate * time # KWh 
-            energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
-                    (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
-                    (self.mass * acceleration))
+            energy = self.motor_energy(velocity, distance, angle)
+            # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
+            #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
+            #         (self.mass * acceleration))
 
             if (self.current_capacity - energy + gained_energy) >= self.end_capacity:
                 return velocity
@@ -79,6 +80,15 @@ class Car:
         acceleration   = 0
         air_density    = 1.225 # kg/m^3
 
+        # if (abs(angle) > 0.5): # big road grade change
+        #     flat_v = self.coast_speed(distance, 0)
+        #     flat_energy = self.motor_energy(flat_v, distance, 0)
+        #     for velocity in range(1, self.max_speed):
+        #         test_energy = self.motor_energy(velocity, distance, angle)
+        #         if (abs(flat_energy - test_energy) <= 0.00001):
+        #             print(f"{flat_energy}, {test_energy}")
+        #             return velocity
+            
         for velocity in range(1, self.max_speed): # velocity in km/h
             time = distance / velocity
             gained_energy = self.recharge_rate * time # KWh 
@@ -87,9 +97,11 @@ class Car:
             #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
             #         (self.mass * acceleration))
 
-            if (energy > gained_energy): # find best coasting speed
+            if (energy >= gained_energy): # find best coasting speed
+                print("found velocity")
                 return velocity - 5
-        return 1
+        print("returning max speed")
+        return self.max_speed
 
 
     # return time to recharge battery while coasting(default charges to 80%)
@@ -184,12 +196,12 @@ class Car:
         Calculates how much power is needed to overcome air drag based on the 
         current velocity of the car.
 
-        power = 0.0386 * air density * drag coefficient * cross sectional area * velocity^2
+        power = 0.0386 * air density * drag coefficient * cross sectional area * velocity^3
         
         Args:
             velocity: The desired speed the car should travel at.
         
         """
         air_density = 1.225 # kg/m^3
-        power = 0.0386 * air_density * self.drag_c * self.cross_area * velocity**2 # watts
+        power = 0.0386 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
         return power / 1000 # kW
