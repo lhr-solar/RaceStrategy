@@ -73,7 +73,8 @@ def run(solar, max_speed):
             curr_time += lap_time
             print(f"Current SOC: {(solar.current_capacity * 100) / solar.capacity}")
             print(f"Distance remaining: {dist_left}")
-            print(f"Lap time: {lap_time}\n")
+            print(f"Lap time: {lap_time}")
+            print(f"Rolling Resistance Power Consumption: {solar.power_consumption(velocity)}\n")
         
     print(f"\n\nEnd capacity: {solar.current_capacity}")
     print(f"Total time: {curr_time}")
