@@ -1,5 +1,5 @@
 import math # sin
-
+import numpy as np
 gravity = 9.81 # m/s^2
 
 class Car:
@@ -79,15 +79,25 @@ class Car:
         """
         acceleration   = 0
         air_density    = 1.225 # kg/m^3
-
-        # if (abs(angle) > 0.5): # big road grade change
-        #     flat_v = self.coast_speed(distance, 0)
-        #     flat_energy = self.motor_energy(flat_v, distance, 0)
-        #     for velocity in range(1, self.max_speed):
-        #         test_energy = self.motor_energy(velocity, distance, angle)
-        #         if (abs(flat_energy - test_energy) <= 0.00001):
-        #             print(f"{flat_energy}, {test_energy}")
-        #             return velocity
+        '''
+        if (abs(angle) > 0.5): # big road grade change
+            flat_v = self.coast_speed(distance, 0)
+            flat_energy = self.motor_energy(flat_v, distance, 0)
+            # test_energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +\
+            #         (self.mass * gravity * velocity * math.sin(angle))/1000 + \
+            #          (0.0386 * air_density * self.drag_c * self.cross_area * velocity**3)/1000)
+            coeffs = [(0.0386 * air_density * self.drag_c * self.cross_area)/1000, 0, (self.mass * gravity *math.sin(angle*(math.pi)/180))/1000, \
+                    (self.mass * gravity * self.rolling_resistance - (flat_energy*3600)/distance)]
+            sol = np.roots(coeffs)
+            print(sol)
+            for item in sol:
+                if item.imag == 0:
+                    item = item.real
+                if type(item) == complex or item < 0:
+                    continue
+                else:
+                    return item
+        '''
             
         for velocity in range(1, self.max_speed): # velocity in km/h
             time = distance / velocity
@@ -164,7 +174,7 @@ class Car:
         # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
         #                 (0.0386 * air_density * self.drag_coefficient * self.cross_area * velocity ** 2) + # 0.0386 for km/h
         #                 (self.mass * acceleration))
-        energy = (1/3600) * distance * (self.rolling_resist() + 
+        energy = (1/3600) * distance * (self.power_consumption(velocity) + 
                                         self.hill_climb(velocity, angle) + 
                                         self.air_drag(velocity))
         return energy
@@ -203,6 +213,33 @@ class Car:
         
         """
         air_density = 1.225 # kg/m^3
-        # convert velocity to m/s and swap constant to 0.5
         power = 0.0386 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
         return power / 1000 # kW
+
+        
+
+    # p0 = pressure of the tire at which the rolling resistance experiment was conducted
+    # p = max safe pressure || whatever pressure we assign​
+    # d0 = actual diameter of the wheel
+    # dw = diameter of wheel w/o tire influence
+    # weight of car is 600 pounds
+    # 60% front || 40% back
+    # Results of Rolling Resistance: Graph of Power Consumption at Different Velocities, Different Air Pressure
+    # Constants && Assumptions used for the Following Calculations:
+    # d0 = 21.67 in = 0.5504 meters (actual diameter)
+    # dw = 16 in = 0.4064 meters (advertised nominal diameter)
+    # Total Weight of car will be 600 lbs: 60% front || 40% back
+    # p0 = 80 psi
+    # p = 75 psi
+    # K = 2.47 (derived from experimental data)
+    # V = velocity of the vehicle
+    # ALL values must be in SI units
+    def tire_contribution(self, K = 2.47, d0 = 0.5504, dw = 0.4064, p = 517107, p0 = 550581):
+        N = self.mass / gravity
+        h = 0.5 * (d0/dw) * math.pow((p/p0),0.3072) * \
+            (dw - math.pow(math.pow(dw,2)- (4*N/math.pi) * ((2.456+0.251*dw)/(19.58+0.5975*p)),0.5))
+        return h * K
+    # ​self, K,d0,dw,p,p0,N,V
+    def power_consumption(self, V):
+        return self.tire_contribution() * V * 1000 # kW -> W
+        
