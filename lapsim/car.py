@@ -203,5 +203,6 @@ class Car:
         
         """
         air_density = 1.225 # kg/m^3
+        # convert velocity to m/s and swap constant to 0.5
         power = 0.0386 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
         return power / 1000 # kW
