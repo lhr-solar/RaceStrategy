@@ -5,6 +5,8 @@ The core module of the Lap Simulator
 """
 
 import math
+import sys
+from io import StringIO
 
 from solarpanel.main import main as solar_power
 
@@ -50,51 +52,101 @@ def construct():
     return solar
 
 def run(solar, max_speed):
-    curr_time = 0
+    race_time = 0
     dist_left = distance
+    velocity_sum = 0
+    velocity_count = 0
+    min_velocity = 1000
+    max_velocity = -1
     for lap in range(laps):
-        print(f"In lap {lap}")
+        print(f"--- LAP {lap} ---")
+        count = 0
+        lap_time = 0
+        lap_start_soc = solar.current_capacity
+
         for straight in track:
+            print("\n")
+            print(f"Section {count}")
             length = straight[0]
             angle  = straight[1]
             # below desired end capacity, probably want to recharge
             if solar.current_capacity < solar.end_capacity and angle >= 0:
                 velocity = solar.coast_speed(length, angle)
-                print(f"Travelling at coasting speed of {velocity}")
-
+                print(f"Travelling at coasting speed of {velocity} km/h")
             else:
                 velocity = max_speed
                 # velocity = solar.best_speed(lap_length) + 24
-                print(f"Travelling at driving speed of {velocity}")
-        
+                print(f"Travelling at driving speed of {velocity} km/h")
+            
+            velocity_sum += velocity
+            velocity_count += 1
             solar.update_capacity(velocity, length, angle)
             dist_left -= length
-            lap_time = length / velocity
-            curr_time += lap_time
-            print(f"Current SOC: {(solar.current_capacity * 100) / solar.capacity}")
-            print(f"Distance remaining: {dist_left}")
-            print(f"Lap time: {lap_time}")
-            print(f"Rolling Resistance Power Consumption: {solar.power_consumption(velocity)}\n")
+            section_time = length / velocity
+            lap_time += section_time
+            
+            count += 1
+            min_velocity = velocity if min_velocity > velocity else min_velocity
+            max_velocity = velocity if max_velocity < velocity else max_velocity
+            
+            air_drag = solar.air_drag(velocity)
+            hill_climb = solar.hill_climb(velocity, angle)
+            rolling_resist = solar.power_consumption(velocity)
+
+            print(f"Current SOC:        {round((solar.current_capacity * 100) / solar.capacity, 3)} %")
+            print(f"Distance remaining: {round(dist_left, 3)} km")
+            print(f"Section time:       {round(lap_time * 60, 3)} min")
+            
+            print(f"--- Power Consumptions ---")
+            print(f"Air Drag:           {round((1/3600) * distance * air_drag, 3)} kWh")
+            print(f"Hill Climb:         {round((1/3600) * distance * hill_climb, 3)} kWh")
+            print(f"Rolling Resistance: {round((1/3600) * distance * rolling_resist, 3)} kWh")
+
+        lap_end_soc = solar.current_capacity
+        lap_recharge = solar.recharge_rate * lap_time
+        lap_loss = lap_start_soc + lap_recharge - lap_end_soc
+
+        print(f"\n--- Lap {lap} Results ---")
+        print(f"Lap Time:     {round((lap_time * 60), 3)} min")
+        print(f"Power Gains:  {round(lap_recharge, 3)} kWh")
+        print(f"Power Losses: {round(lap_loss, 3)} kWh")
+        print(f"End SOC:      {round((solar.current_capacity * 100) / solar.capacity, 3)} %")
+        print("\n")
+        race_time += lap_time
         
-    print(f"\n\nEnd capacity: {solar.current_capacity}")
-    print(f"Total time: {curr_time}")
-    return curr_time
+
+    print(f"\nEnd capacity: {round(solar.current_capacity,3)} kwh")
+    print(f"Total time: {round(race_time, 3)} hrs")
+    print(f"Peak    Velocity: {round(max_velocity, 3)} km/h")
+    print(f"Min     Velocity: {round(min_velocity, 3)} km/h")
+    print(f"Average velocity: {round((velocity_sum / velocity_count), 3)} km/h")
+    return race_time
     # print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
     # print(f"Coasting Speed: {coast_velocity} km/h")
     # print(f"Total Distance: {distance} km")
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
-# best_time = 100
-# best_speed = 0
-# car = construct()
-# for speed in range(1, 91):
-#     time = run(car, speed)
-#     if time < best_time:
-#         best_time = time
-#         best_speed = speed
-#     car.current_capacity = (car.capacity * car.start_soc) / 100
+best_time = 100
+best_speed = 0
+best_buffer = 0
 
-# print(f"Best time was {best_time} with a top speed of {best_speed}")
 car = construct()
-run(car, 90)
+test = ""
+old_stdout = sys.stdout # saves terminal stdout
+
+for speed in range(1, 91):
+    new_stdout = StringIO() # create new buffer to catch print outs
+    sys.stdout = new_stdout # set system stdout to this buffer
+    time = run(car, speed)
+    if time < best_time:
+        best_time = time
+        best_speed = speed
+        best_buffer = new_stdout # save buffer if it was the best time
+    car.current_capacity = (car.capacity * car.start_soc) / 100
+
+sys.stdout = old_stdout # reset stdout to terminal to print final output
+print(f"{best_buffer.getvalue()}")
+print(f"Best time was {best_time} with a top speed of {best_speed}")
+# car = construct()
+# run(car, 90)

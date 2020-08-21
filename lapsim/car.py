@@ -79,25 +79,26 @@ class Car:
         """
         acceleration   = 0
         air_density    = 1.225 # kg/m^3
-        '''
+        
         if (abs(angle) > 0.5): # big road grade change
-            flat_v = self.coast_speed(distance, 0)
-            flat_energy = self.motor_energy(flat_v, distance, 0)
-            # test_energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +\
-            #         (self.mass * gravity * velocity * math.sin(angle))/1000 + \
-            #          (0.0386 * air_density * self.drag_c * self.cross_area * velocity**3)/1000)
-            coeffs = [(0.0386 * air_density * self.drag_c * self.cross_area)/1000, 0, (self.mass * gravity *math.sin(angle*(math.pi)/180))/1000, \
-                    (self.mass * gravity * self.rolling_resistance - (flat_energy*3600)/distance)]
-            sol = np.roots(coeffs)
-            print(sol)
-            for item in sol:
-                if item.imag == 0:
-                    item = item.real
-                if type(item) == complex or item < 0:
-                    continue
-                else:
-                    return item
-        '''
+            return self.coast_speed(distance, 0)
+            # flat_energy = self.motor_energy(flat_v, distance, 0)
+            # # test_energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +\
+            # #         (self.mass * gravity * -20.365 * math.sin(angle))/1000 + \
+            # #         (0.0386 * air_density * self.drag_c * self.cross_area * -20.365**3)/1000)
+            # coeffs = [(0.0386 * air_density * self.drag_c * self.cross_area)/1000, 0, (self.mass * gravity * math.sin(angle*(math.pi)/180))/1000, \
+            #         (self.mass * gravity * self.rolling_resistance - (flat_energy*3600)/distance)]
+            # sol = np.roots(coeffs)
+            # print(sol)
+            # for item in sol:
+            #     if item.imag == 0:
+            #         item = item.real
+            #     if type(item) == "complex" or item < 0:
+            #         continue
+            #     else:
+            #         print(item)
+            #         return item
+        
             
         for velocity in range(1, self.max_speed): # velocity in km/h
             time = distance / velocity
@@ -108,9 +109,9 @@ class Car:
             #         (self.mass * acceleration))
 
             if (energy >= gained_energy): # find best coasting speed
-                print("found velocity")
+                # print("found velocity")
                 return velocity - 5
-        print("returning max speed")
+        # print("returning max speed")
         return self.max_speed
 
 
@@ -197,7 +198,7 @@ class Car:
             angle: The gradient angle of the road that the car travels over.
         
         """
-        power = self.mass * gravity * velocity * math.sin(angle) # watts
+        power = self.mass * gravity * velocity * math.sin(angle *(math.pi)/180) # watts
         return power / 1000 # kW
     
     # air drag = P = 0.5*rho*Cd*A*V^3
