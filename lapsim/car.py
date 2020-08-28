@@ -198,7 +198,8 @@ class Car:
             angle: The gradient angle of the road that the car travels over.
         
         """
-        power = self.mass * gravity * velocity * math.sin(angle *(math.pi)/180) # watts
+        #using m/s for velocity
+        power = self.mass * gravity * (velocity*(5/18)) * math.sin(angle *(math.pi)/180) # watts
         return power / 1000 # kW
     
     # air drag = P = 0.5*rho*Cd*A*V^3
@@ -213,8 +214,9 @@ class Car:
             velocity: The desired speed the car should travel at.
         
         """
+        #using m/s for velocity
         air_density = 1.225 # kg/m^3
-        power = 0.0386 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
+        power = 0.0386 * air_density * self.drag_c * self.cross_area * (velocity*(5/18))**3 # watts
         return power / 1000 # kW
 
         
