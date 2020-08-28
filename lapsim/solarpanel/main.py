@@ -21,7 +21,7 @@ def cloud_coverage():
     """
     request = requests.get("https://weather.com/weather/today/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
     soup = BeautifulSoup(request.content, 'html.parser')
-    cloud_condition = soup.find('div', class_='_-_-components-src-organism-CurrentConditions-CurrentConditions--phraseValue--mZC_p').get_text()
+    cloud_condition = soup.find('div', class_='_-_-node_modules--wxu-components-src-organism-CurrentConditions-CurrentConditions--phraseValue--2xXSr').get_text()
 
     # These are approximate values as finding an actual percent to scrape didn't yeild much luck
     if cloud_condition == "Clear" or cloud_condition == "Sunny":

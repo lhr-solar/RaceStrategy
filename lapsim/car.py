@@ -50,8 +50,8 @@ class Car:
         Returns:
             A speed, in kph, that the car should travel at to achieve maximum efficiency.
         """
-        acceleration   = 0
-        air_density    = 1.225 # kg/m^3
+        # acceleration   = 0
+        # air_density    = 1.225 # kg/m^3
 
         for velocity in range(self.max_speed, 0, -1): # velocity in km/h
             time = distance / velocity
@@ -77,8 +77,8 @@ class Car:
         Returns:
             A speed, in kph, that the car should travel at to recharge its batteries with.
         """
-        acceleration   = 0
-        air_density    = 1.225 # kg/m^3
+        # acceleration   = 0
+        # air_density    = 1.225 # kg/m^3
         
         if (abs(angle) > 0.5): # big road grade change
             return self.coast_speed(distance, 0)

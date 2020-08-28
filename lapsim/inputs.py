@@ -10,7 +10,10 @@ def get_inputs():
         for line in lines:
             var = line.strip().split(":")
             in_name = var[0]
-            inputs[in_name] = float(var[1])
+            if "show" in in_name:
+                inputs[in_name] = "true" in var[1].lower() 
+            else:
+                inputs[in_name] = float(var[1])
     f.close()
     return inputs
 
