@@ -7,6 +7,7 @@ The core module of the Lap Simulator
 import math
 import sys
 import csv
+from shutil import copyfile
 from io import StringIO
 
 from solarpanel.main import main as solar_power
@@ -52,6 +53,7 @@ def construct():
 
     solar = Car(user_inputs)
     solar.recharge_rate = solar_power()
+    # solar.recharge_rate = 0.8
     return solar
 
 def run(solar, max_speed):
@@ -61,7 +63,7 @@ def run(solar, max_speed):
     velocity_count = 0
     min_velocity = 1000
     max_velocity = -1
-    with open('sim.csv', 'w', newline='') as csvfile:
+    with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(['Time', 'Velocity', 'SOC', 'Air Drag', 'Hill Climb', 'Rolling Resistance', 'Angle'])
@@ -79,12 +81,20 @@ def run(solar, max_speed):
                 length = straight[0]
                 angle  = straight[1]
                 # below desired end capacity, probably want to recharge
-                if solar.current_capacity < solar.end_capacity and angle >= 0:
+                if solar.current_capacity < solar.end_capacity:
                     velocity = solar.coast_speed(length, angle)
+                    if (angle <= -0.5): # going downhill
+                        velocity += 5
+                    # elif (angle >= 0.5): # going uphill
+                    #     velocity -= 5
                     section_buffer.write(f"Travelling at coasting speed of {velocity} km/h\n")
                 else:
                     velocity = max_speed
                     # velocity = solar.best_speed(lap_length) + 24
+                    # if (angle >= 0.5): # going uphill
+                    #     velocity -= 5
+                    if (angle <= -0.5 and max_speed < 80): # going downhill
+                        velocity += 10
                     section_buffer.write(f"Travelling at driving speed of {velocity} km/h\n")
                 
                 velocity_sum += velocity
@@ -135,12 +145,12 @@ def run(solar, max_speed):
                 print(lap_buffer.getvalue())  
             lap_buffer.close()
 
-
     print(f"\nEnd capacity: {round(solar.current_capacity,3)} kwh")
-    print(f"Total time: {round(race_time, 3)} hrs")
+    print(f"Total time: {round(race_time, 3)} hrs\n")
     print(f"Peak    Velocity: {round(max_velocity, 3)} km/h")
     print(f"Min     Velocity: {round(min_velocity, 3)} km/h")
-    print(f"Average velocity: {round((velocity_sum / velocity_count), 3)} km/h")
+    print(f"Average velocity: {round((velocity_sum / velocity_count), 3)} km/h\n")
+    print(f"Recharge rate:    {solar.recharge_rate} kW/h")
     return race_time
     # print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
     # print(f"Coasting Speed: {coast_velocity} km/h")
@@ -148,7 +158,7 @@ def run(solar, max_speed):
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
-best_time = 100
+best_time = 10000000
 best_speed = 0
 best_buffer = 0
 
@@ -156,7 +166,7 @@ car = construct()
 test = ""
 old_stdout = sys.stdout # saves terminal stdout
 
-for speed in range(1, 91):
+for speed in range(20, 91):
     new_stdout = StringIO() # create new buffer to catch print outs
     sys.stdout = new_stdout # set system stdout to this buffer
     time = run(car, speed)
@@ -164,10 +174,12 @@ for speed in range(1, 91):
         best_time = time
         best_speed = speed
         best_buffer = new_stdout # save buffer if it was the best time
+        copyfile('temp.csv', 'sim.csv')
     car.current_capacity = (car.capacity * car.start_soc) / 100
 
 sys.stdout = old_stdout # reset stdout to terminal to print final output
 print(f"{best_buffer.getvalue()}")
 print(f"Best time was {best_time} with a top speed of {best_speed}")
+best_buffer.close()
 # car = construct()
 # run(car, 90)

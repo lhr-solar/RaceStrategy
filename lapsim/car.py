@@ -199,7 +199,7 @@ class Car:
         
         """
         #using m/s for velocity
-        power = self.mass * gravity * (velocity*(5/18)) * math.sin(angle *(math.pi)/180) # watts
+        power = self.mass * gravity * (velocity*(5/18)) * math.sin(angle * (math.pi)/180) # watts
         return power / 1000 # kW
     
     # air drag = P = 0.5*rho*Cd*A*V^3
