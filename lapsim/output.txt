@@ -1,0 +1,1053 @@
+Approximate Cloud Coverage: 0.0 %
+Performance Ratio: 88.55 %
+
+Roughly 4.6045 kWh/day
+In 5.2 hours of peak sunlight, roughly 0.8855 kWh
+
+Lap 0 - Section 0
+Travelling at driving speed of 90 km/h
+Current SOC:        49.818 %
+Distance remaining: 99.5 km
+Section time:       0.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 0 - Section 1
+Travelling at driving speed of 90 km/h
+Current SOC:        49.09 %
+Distance remaining: 97.5 km
+Section time:       1.667 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 0 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        49.137 %
+Distance remaining: 95.5 km
+Section time:       3.0 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 0 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        49.149 %
+Distance remaining: 95.0 km
+Section time:       3.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 0 Results ---
+Lap Time:     3.333 min
+Power Gains:  0.049 kWh
+Power Losses: 0.092 kWh
+End SOC:      49.149 %
+
+
+
+Lap 1 - Section 0
+Travelling at driving speed of 90 km/h
+Current SOC:        48.967 %
+Distance remaining: 94.5 km
+Section time:       0.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 1 - Section 1
+Travelling at driving speed of 90 km/h
+Current SOC:        48.239 %
+Distance remaining: 92.5 km
+Section time:       1.667 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 1 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        48.287 %
+Distance remaining: 90.5 km
+Section time:       3.0 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 1 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        48.299 %
+Distance remaining: 90.0 km
+Section time:       3.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 1 Results ---
+Lap Time:     3.333 min
+Power Gains:  0.049 kWh
+Power Losses: 0.092 kWh
+End SOC:      48.299 %
+
+
+
+Lap 2 - Section 0
+Travelling at driving speed of 90 km/h
+Current SOC:        48.116 %
+Distance remaining: 89.5 km
+Section time:       0.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 2 - Section 1
+Travelling at driving speed of 90 km/h
+Current SOC:        47.388 %
+Distance remaining: 87.5 km
+Section time:       1.667 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 2 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        47.436 %
+Distance remaining: 85.5 km
+Section time:       3.0 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 2 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        47.448 %
+Distance remaining: 85.0 km
+Section time:       3.333 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 2 Results ---
+Lap Time:     3.333 min
+Power Gains:  0.049 kWh
+Power Losses: 0.092 kWh
+End SOC:      47.448 %
+
+
+
+Lap 3 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        47.403 %
+Distance remaining: 84.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 3 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        47.224 %
+Distance remaining: 82.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 3 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        47.272 %
+Distance remaining: 80.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 3 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        47.284 %
+Distance remaining: 80.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 3 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      47.284 %
+
+
+
+Lap 4 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        47.239 %
+Distance remaining: 79.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 4 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        47.061 %
+Distance remaining: 77.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 4 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        47.108 %
+Distance remaining: 75.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 4 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        47.12 %
+Distance remaining: 75.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 4 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      47.12 %
+
+
+
+Lap 5 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        47.076 %
+Distance remaining: 74.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 5 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.897 %
+Distance remaining: 72.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 5 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.945 %
+Distance remaining: 70.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 5 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.957 %
+Distance remaining: 70.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 5 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.957 %
+
+
+
+Lap 6 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.912 %
+Distance remaining: 69.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 6 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.733 %
+Distance remaining: 67.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 6 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.781 %
+Distance remaining: 65.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 6 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.793 %
+Distance remaining: 65.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 6 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.793 %
+
+
+
+Lap 7 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.748 %
+Distance remaining: 64.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 7 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.569 %
+Distance remaining: 62.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 7 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.617 %
+Distance remaining: 60.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 7 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.629 %
+Distance remaining: 60.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 7 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.629 %
+
+
+
+Lap 8 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.584 %
+Distance remaining: 59.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 8 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.405 %
+Distance remaining: 57.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 8 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.453 %
+Distance remaining: 55.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 8 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.465 %
+Distance remaining: 55.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 8 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.465 %
+
+
+
+Lap 9 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.42 %
+Distance remaining: 54.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 9 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.242 %
+Distance remaining: 52.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 9 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.289 %
+Distance remaining: 50.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 9 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.301 %
+Distance remaining: 50.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 9 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.301 %
+
+
+
+Lap 10 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.257 %
+Distance remaining: 49.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 10 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.078 %
+Distance remaining: 47.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 10 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        46.126 %
+Distance remaining: 45.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 10 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        46.138 %
+Distance remaining: 45.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 10 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      46.138 %
+
+
+
+Lap 11 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        46.093 %
+Distance remaining: 44.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 11 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.914 %
+Distance remaining: 42.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 11 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.962 %
+Distance remaining: 40.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 11 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.974 %
+Distance remaining: 40.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 11 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.974 %
+
+
+
+Lap 12 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.929 %
+Distance remaining: 39.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 12 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.75 %
+Distance remaining: 37.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 12 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.798 %
+Distance remaining: 35.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 12 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.81 %
+Distance remaining: 35.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 12 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.81 %
+
+
+
+Lap 13 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.765 %
+Distance remaining: 34.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 13 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.587 %
+Distance remaining: 32.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 13 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.634 %
+Distance remaining: 30.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 13 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.646 %
+Distance remaining: 30.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 13 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.646 %
+
+
+
+Lap 14 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.602 %
+Distance remaining: 29.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 14 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.423 %
+Distance remaining: 27.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 14 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.471 %
+Distance remaining: 25.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 14 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.483 %
+Distance remaining: 25.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 14 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.483 %
+
+
+
+Lap 15 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.438 %
+Distance remaining: 24.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 15 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.259 %
+Distance remaining: 22.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 15 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.307 %
+Distance remaining: 20.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 15 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.319 %
+Distance remaining: 20.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 15 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.319 %
+
+
+
+Lap 16 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.274 %
+Distance remaining: 19.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 16 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.095 %
+Distance remaining: 17.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 16 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        45.143 %
+Distance remaining: 15.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 16 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        45.155 %
+Distance remaining: 15.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 16 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      45.155 %
+
+
+
+Lap 17 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        45.11 %
+Distance remaining: 14.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 17 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        44.931 %
+Distance remaining: 12.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 17 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        44.979 %
+Distance remaining: 10.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 17 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        44.991 %
+Distance remaining: 10.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 17 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      44.991 %
+
+
+
+Lap 18 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        44.946 %
+Distance remaining: 9.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 18 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        44.768 %
+Distance remaining: 7.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 18 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        44.815 %
+Distance remaining: 5.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 18 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        44.827 %
+Distance remaining: 5.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 18 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      44.827 %
+
+
+
+Lap 19 - Section 0
+Travelling at coasting speed of 61 km/h
+Current SOC:        44.783 %
+Distance remaining: 4.5 km
+Section time:       0.492 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 19 - Section 1
+Travelling at coasting speed of 61 km/h
+Current SOC:        44.604 %
+Distance remaining: 2.5 km
+Section time:       2.459 min
+--- Power Consumptions ---
+Air Drag:           0.002 kWh
+Hill Climb:         0.658 kWh
+Rolling Resistance: 1.239 kWh
+
+
+Lap 19 - Section 2
+Travelling at driving speed of 90 km/h
+Current SOC:        44.652 %
+Distance remaining: 0.5 km
+Section time:       3.792 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+Lap 19 - Section 3
+Travelling at driving speed of 90 km/h
+Current SOC:        44.664 %
+Distance remaining: 0.0 km
+Section time:       4.126 min
+--- Power Consumptions ---
+Air Drag:           0.006 kWh
+Hill Climb:         -0.97 kWh
+Rolling Resistance: 1.828 kWh
+
+
+--- Lap 19 Results ---
+Lap Time:     4.126 min
+Power Gains:  0.061 kWh
+Power Losses: 0.069 kWh
+End SOC:      44.664 %
+
+
+
+End capacity: 2.233 kwh
+Total time: 1.336 hrs
+Peak    Velocity: 90 km/h
+Min     Velocity: 61 km/h
+Average velocity: 77.675 km/h
+
+Best time was 1.3356102003642993 with a top speed of 90

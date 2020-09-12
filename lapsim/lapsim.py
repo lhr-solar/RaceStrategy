@@ -52,8 +52,8 @@ def construct():
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
 
     solar = Car(user_inputs)
-    solar.recharge_rate = solar_power()
-    # solar.recharge_rate = 0.8
+    # solar.recharge_rate = solar_power()
+    solar.recharge_rate = 0.8
     return solar
 
 def run(solar, max_speed):

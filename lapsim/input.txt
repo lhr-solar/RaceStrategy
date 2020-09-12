@@ -1,4 +1,4 @@
-max_speed: 90         
+max_speed: 90
 start_soc: 50         
 end_soc: 48          
 capacity: 5        
