@@ -11,9 +11,9 @@ from shutil import copyfile
 from io import StringIO
 
 from solarpanel.main import main as solar_power
-
 from car import Car
 import inputs
+import strats
 
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
@@ -52,7 +52,7 @@ def construct():
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
 
     solar = Car(user_inputs)
-    # solar.recharge_rate = solar_power()
+    #solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage'])) # 0.xx for simulating data, 1 for weather scraping
     solar.recharge_rate = 0.8
     return solar
 
@@ -73,43 +73,36 @@ def run(solar, max_speed):
             count = 0
             lap_time = 0
             lap_start_soc = solar.current_capacity
-
+            starting_soc = 0
+            
             for straight in track:
                 section_buffer = StringIO()
-                section_buffer.write("\n")
-                section_buffer.write(f"Lap {lap} - Section {count}\n")
                 length = straight[0]
                 angle  = straight[1]
-                # below desired end capacity, probably want to recharge
-                if solar.current_capacity < solar.end_capacity:
-                    velocity = solar.coast_speed(length, angle)
-                    if (angle <= -0.5): # going downhill
-                        velocity += 5
-                    # elif (angle >= 0.5): # going uphill
-                    #     velocity -= 5
-                    section_buffer.write(f"Travelling at coasting speed of {velocity} km/h\n")
-                else:
-                    velocity = max_speed
-                    # velocity = solar.best_speed(lap_length) + 24
-                    # if (angle >= 0.5): # going uphill
-                    #     velocity -= 5
-                    if (angle <= -0.5 and max_speed < 80): # going downhill
-                        velocity += 10
-                    section_buffer.write(f"Travelling at driving speed of {velocity} km/h\n")
+                section_buffer.write("\n")
+                section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
                 
+                result = strats.carl(solar, max_speed, angle, length, count)
+                
+                # update velocity
+                section_buffer.write(result[0]) # writing out buffer string
+                velocity = result[1]            # getting new velocity
                 velocity_sum += velocity
                 velocity_count += 1
+                
+                # update times
+                section_time  = length / velocity
+                section_time += result[2] # updating section time (if pitted)
+                lap_time     += section_time
+                race_time    += section_time
+                
+                # update capacity and distance left
                 solar.update_capacity(velocity, length, angle)
                 dist_left -= length
-                section_time = length / velocity
-                lap_time += section_time
                 
-                count += 1
                 min_velocity = velocity if min_velocity > velocity else min_velocity
                 max_velocity = velocity if max_velocity < velocity else max_velocity
 
-                race_time += section_time
-                
                 current_soc        = (solar.current_capacity * 100) / solar.capacity
                 air_drag           = (1/3600) * distance * solar.air_drag(velocity)
                 hill_climb         = (1/3600) * distance * solar.hill_climb(velocity, angle)
@@ -119,7 +112,8 @@ def run(solar, max_speed):
 
                 section_buffer.write(f"Current SOC:        {round(current_soc, 3)} %\n")
                 section_buffer.write(f"Distance remaining: {round(dist_left, 3)} km\n")
-                section_buffer.write(f"Section time:       {round(lap_time * 60, 3)} min\n")
+                section_buffer.write(f"Section time:       {round(section_time * 60 * 60, 3)} sec\n")
+                section_buffer.write(f"Section length:     {round(length, 3)} km\n")
                 
                 section_buffer.write(f"--- Power Consumptions ---\n")
                 section_buffer.write(f"Air Drag:           {round(air_drag, 3)} kWh\n")
@@ -128,16 +122,23 @@ def run(solar, max_speed):
                 if(section_print):
                     print(section_buffer.getvalue())
                 section_buffer.close()
+
+                if count == 0:
+                    starting_soc = current_soc
+
+                count += 1
             
             lap_end_soc = solar.current_capacity
             lap_recharge = solar.recharge_rate * lap_time
             lap_loss = lap_start_soc + lap_recharge - lap_end_soc
+            delta_soc = starting_soc - ((solar.current_capacity) * 100 / solar.capacity)
 
             lap_buffer.write(f"\n--- Lap {lap} Results ---\n")
-            lap_buffer.write(f"Lap Time:     {round((lap_time * 60), 3)} min\n")
-            lap_buffer.write(f"Power Gains:  {round(lap_recharge, 3)} kWh\n")
-            lap_buffer.write(f"Power Losses: {round(lap_loss, 3)} kWh\n")
-            lap_buffer.write(f"End SOC:      {round((solar.current_capacity * 100) / solar.capacity, 3)} %\n")
+            lap_buffer.write(f"Lap Time:      {round((lap_time * 60), 3)} min\n")
+            lap_buffer.write(f"Power Gains:   {round(lap_recharge, 3)} kWh\n")
+            lap_buffer.write(f"Power Losses:  {round(lap_loss, 3)} kWh\n")
+            lap_buffer.write(f"End SOC:       {round((solar.current_capacity * 100) / solar.capacity, 3)} %\n")
+            lap_buffer.write(f"Change in SOC: {round(delta_soc, 3)} %\n")
             lap_buffer.write("\n")
             # race_time += lap_time
 
@@ -179,7 +180,7 @@ for speed in range(20, 91):
 
 sys.stdout = old_stdout # reset stdout to terminal to print final output
 print(f"{best_buffer.getvalue()}")
-print(f"Best time was {best_time} with a top speed of {best_speed}")
+# print(f"Best time was {best_time} with a top speed of {best_speed}")
 best_buffer.close()
 # car = construct()
 # run(car, 90)

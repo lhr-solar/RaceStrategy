@@ -116,7 +116,7 @@ class Car:
 
 
     # return time to recharge battery while coasting(default charges to 80%)
-    def calc_recharge_time(self, upper_battery_capacity = 4, lap_length = 5, distance = 5, angle = 0):
+    def calc_recharge_time(self, upper_battery_capacity = 4):
         """
         Takes a total distance and calculates the time it would take for the car 
         to recharge its batteries to the given capacity. Assumes that 
@@ -131,9 +131,9 @@ class Car:
             A time, in hours, that the car would take to recharge its batteries while driving.
         
         """
-        coasting_velocity = self.coast_speed(lap_length, angle) # KWh, point when to swap back to battery power
+        # coasting_velocity = self.coast_speed(lap_length, angle) # KWh, point when to swap back to battery power
         time  = ((upper_battery_capacity - self.current_capacity) / 
-                (self.recharge_rate - self.motor_energy(coasting_velocity, distance, 0)))
+                (self.recharge_rate))
         return time
 
 
@@ -153,7 +153,8 @@ class Car:
         gained_energy = self.recharge_rate * time # KWh 
         
         energy = self.motor_energy(curr_velocity, distance, angle)
-        self.current_capacity += gained_energy - energy
+        #self.current_capacity += gained_energy - energy
+        self.current_capacity -= energy
 
 
     ### DYNAMICS EQUATIONS ###
@@ -175,15 +176,12 @@ class Car:
         # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
         #                 (0.0386 * air_density * self.drag_coefficient * self.cross_area * velocity ** 2) + # 0.0386 for km/h
         #                 (self.mass * acceleration))
-        energy = (1/3600) * distance * (self.power_consumption(velocity) + 
-                                        self.hill_climb(velocity, angle) + 
-                                        self.air_drag(velocity))
-        return energy
+        time = distance / velocity # hours
 
-    # rolling resistance
-    def rolling_resist(self):
-        power = self.mass * gravity * self.rolling_resistance
-        return power
+        energy = time * distance * (self.power_consumption(velocity) + 
+                                    self.hill_climb(velocity, angle) + 
+                                    self.air_drag(velocity))
+        return energy # kWh
 
     # hill climb = Power due to climb = W*V*sin(inclination);
     def hill_climb(self, velocity, angle):
@@ -244,5 +242,5 @@ class Car:
         return h * K
     # ​self, K,d0,dw,p,p0,N,V
     def power_consumption(self, V):
-        return self.tire_contribution() * V * 1000 # kW -> W
+        return self.tire_contribution() * V * 5/18 # kW
         

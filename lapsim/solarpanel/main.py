@@ -16,7 +16,7 @@ import requests
 
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
-def cloud_coverage():
+def cloud_coverage(cloud_data):
     """Returns cloud coverage in the sky times 0.8 so that this can be easily imported into the performance ratio function.
     """
     request = requests.get("https://weather.com/weather/today/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
@@ -24,25 +24,28 @@ def cloud_coverage():
     cloud_condition = soup.find('div', class_='_-_-node_modules-@wxu-components-src-organism-CurrentConditions-CurrentConditions--CurrentConditions--2_Nmm').get_text()
 
     # These are approximate values as finding an actual percent to scrape didn't yeild much luck
-    if cloud_condition == "Clear" or cloud_condition == "Sunny":
-        cloud_percent = 0.00
-    elif cloud_condition == "Mostly Clear" or cloud_condition == "Mostly Sunny":
-        cloud_percent = 0.125
-    elif cloud_condition == "Partly Cloudy" or cloud_condition == "Partly Sunny":
-        cloud_percent = 0.375
-    elif cloud_condition == "Mostly Cloudy":
-        cloud_percent = 0.625
-    elif cloud_condition == "Cloudy":
-        cloud_percent = 0.875
+    if cloud_data == 1:
+        if cloud_condition == "Clear" or cloud_condition == "Sunny":
+            cloud_percent = 0.00
+        elif cloud_condition == "Mostly Clear" or cloud_condition == "Mostly Sunny":
+            cloud_percent = 0.125
+        elif cloud_condition == "Partly Cloudy" or cloud_condition == "Partly Sunny":
+            cloud_percent = 0.375
+        elif cloud_condition == "Mostly Cloudy":
+            cloud_percent = 0.625
+        elif cloud_condition == "Cloudy":
+            cloud_percent = 0.875
+        else:
+            print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
+            cloud_percent = 0.375 #if rainy, hard to calculate clouds
     else:
-        print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
-        cloud_percent = 0.375 #if rainy, hard to calculate clouds
+        cloud_percent = cloud_data
     
     print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
     cloud_percent = cloud_percent * 0.8
     return cloud_percent
 
-def PR_calculation():
+def PR_calculation(cloud_data):
     """Returns the solar panel's performance ratio based on cloud coverage and other assumed places of error.
     """
     '''
@@ -51,7 +54,7 @@ def PR_calculation():
     - Temperature losses (5% to 20%)
     - DC cables losses (1 to 3 %)
     - AC cables losses (1 to 3 %)
-    - Shadings 0 % to 80% !!! (specific to each site)
+    - Shadings 0 % to 80% !!! (specific to each site)l
     - Losses at weak radiation 3% to 7%
     - Losses due to dust, snow... (2%)
     - Other Losses (?)
@@ -61,7 +64,7 @@ def PR_calculation():
     # All these values are percentages
     # TODO: find specifics, if available, about specific effects from above
     prdata = {
-        "cloud_coverage": cloud_coverage(),
+        "cloud_coverage": cloud_coverage(cloud_data),
         #"cloud_coverage": 0.05, #this is theoretical maximum
         "inverter_loss": 0.04,
         "dc_loss": 0.01,
@@ -77,7 +80,7 @@ def PR_calculation():
 
     return PR
 
-def main():
+def main(cloud_data):
     """Calculates the solar panel's output using multiple different components.
 
     Returns:
@@ -106,7 +109,7 @@ def main():
 
     # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
     # used to calculate how close to actual input the solar panels are (higher is better) 
-    PR = PR_calculation()
+    PR = PR_calculation(cloud_data)
     #PR = 1.00 # turn this on for perfect conditions
     print(f"Performance Ratio: {round(PR*100, 2)} %\n")
 

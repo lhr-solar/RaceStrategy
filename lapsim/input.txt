@@ -10,3 +10,4 @@ lap_length: 5
 laps: 20
 show_laps: true
 show_section: true
+cloud_coverage: 0
