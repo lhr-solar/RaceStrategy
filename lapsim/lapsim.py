@@ -7,17 +7,24 @@ The core module of the Lap Simulator
 import math
 import sys
 import csv
-from shutil import copyfile
-from io import StringIO
-
-from solarpanel.main import main as solar_power
-from car import Car
 import inputs
 import strats
 
+from shutil          import copyfile
+from io              import StringIO
+from solarpanel.main import main as solar_power
+from car             import Car
+from pint            import UnitRegistry
+from config          import ureg
+
+
+# ureg_storage.init()
+# ureg = ureg_storage.ureg
+# ureg = UnitRegistry()
+
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
-lap_length    = 0
+lap_length    = 0 * ureg.kilometer
 laps          = int(user_inputs['laps'])
 lap_print     = user_inputs['show_laps']
 section_print = user_inputs['show_section']
@@ -27,10 +34,10 @@ track = []
 with open("track.txt") as f:
     lines = f.readlines()
     for line in lines:
-        var = line.strip().split(",")
-        length = float(var[0])
+        var         = line.strip().split(",")
+        length      = float(var[0]) * ureg.kilometer
         lap_length += length
-        angle  = float(var[1])
+        angle       = float(var[1]) * ureg.degrees
         track.append([length, angle])
 f.close()
 
@@ -53,27 +60,29 @@ def construct():
 
     solar = Car(user_inputs)
     #solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage'])) # 0.xx for simulating data, 1 for weather scraping
-    solar.recharge_rate = 0.8
+    solar.recharge_rate = 0.8 * ureg.kilowatts
     return solar
 
 def run(solar, max_speed):
-    race_time = 0
-    dist_left = distance
-    velocity_sum = 0
+    race_time      = 0
+    dist_left      = distance
+    velocity_sum   = 0
     velocity_count = 0
-    min_velocity = 1000
-    max_velocity = -1
+    min_velocity   = 1000 * ureg.kilometer
+    max_velocity   = -1   * ureg.kilometer
+
     with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
         writer.writerow(['Time', 'Velocity', 'SOC', 'Air Drag', 'Hill Climb', 'Rolling Resistance', 'Angle'])
+        
         for lap in range(laps):
             lap_buffer = StringIO()
             # lap_buffer.write(f"--- LAP {lap} ---\n")
-            count = 0
-            lap_time = 0
+            count         = 0
+            lap_time      = 0
             lap_start_soc = solar.current_capacity
-            starting_soc = 0
+            starting_soc  = 0
             
             for straight in track:
                 section_buffer = StringIO()
@@ -104,9 +113,9 @@ def run(solar, max_speed):
                 max_velocity = velocity if max_velocity < velocity else max_velocity
 
                 current_soc        = (solar.current_capacity * 100) / solar.capacity
-                air_drag           = (1/3600) * distance * solar.air_drag(velocity)
-                hill_climb         = (1/3600) * distance * solar.hill_climb(velocity, angle)
-                rolling_resistance = (1/3600) * distance * solar.power_consumption(velocity)
+                air_drag           = section_time * solar.air_drag(velocity)
+                hill_climb         = section_time * solar.hill_climb(velocity, angle)
+                rolling_resistance = section_time * solar.power_consumption(velocity)
 
                 writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
 
@@ -168,6 +177,7 @@ test = ""
 old_stdout = sys.stdout # saves terminal stdout
 
 for speed in range(20, 91):
+    speed *= ureg.kilometer / ureg.hours
     new_stdout = StringIO() # create new buffer to catch print outs
     sys.stdout = new_stdout # set system stdout to this buffer
     time = run(car, speed)
