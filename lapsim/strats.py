@@ -23,13 +23,14 @@ def carl (solar, max_speed, angle, length, count):
 # carlos - drive fast no coast
 def carlos (solar, max_speed, angle, length, section):
     # pit time
+    max_speed = 90
     time = 0
     result = f"Travelling at driving speed of {max_speed} km/h"
 
     if section == 0 and solar.current_capacity <= 1:
         result += " - pitted and recharged"
-        time = solar.calc_recharge_time(5) # charge to 100%
-        solar.current_capacity = 5   
+        time = solar.calc_recharge_time(2) # charge to 100%
+        solar.current_capacity = 2
     result += "\n"
     
     return result, max_speed, time

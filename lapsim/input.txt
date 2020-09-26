@@ -8,6 +8,6 @@ drag_coefficient: 0.256
 cross_area: 1.2
 lap_length: 5
 laps: 20
-show_laps: false
-show_section: false
+show_laps: true
+show_section: true
 cloud_coverage: 0

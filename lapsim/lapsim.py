@@ -14,17 +14,11 @@ from shutil          import copyfile
 from io              import StringIO
 from solarpanel.main import main as solar_power
 from car             import Car
-from pint            import UnitRegistry
-from config          import ureg
 
-
-# ureg_storage.init()
-# ureg = ureg_storage.ureg
-# ureg = UnitRegistry()
 
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
-lap_length    = 0 * ureg.kilometer
+lap_length    = 0
 laps          = int(user_inputs['laps'])
 lap_print     = user_inputs['show_laps']
 section_print = user_inputs['show_section']
@@ -35,9 +29,9 @@ with open("track.txt") as f:
     lines = f.readlines()
     for line in lines:
         var         = line.strip().split(",")
-        length      = float(var[0]) * ureg.kilometer
+        length      = float(var[0])
         lap_length += length
-        angle       = float(var[1]) * ureg.degrees
+        angle       = float(var[1])
         track.append([length, angle])
 f.close()
 
@@ -60,7 +54,7 @@ def construct():
 
     solar = Car(user_inputs)
     #solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage'])) # 0.xx for simulating data, 1 for weather scraping
-    solar.recharge_rate = 0.8 * ureg.kilowatts
+    solar.recharge_rate = 0.8
     return solar
 
 def run(solar, max_speed):
@@ -68,8 +62,8 @@ def run(solar, max_speed):
     dist_left      = distance
     velocity_sum   = 0
     velocity_count = 0
-    min_velocity   = 1000 * ureg.kilometer / ureg.hours
-    max_velocity   = -1   * ureg.kilometer / ureg.hours
+    min_velocity   = 1000
+    max_velocity   = -1  
 
     with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
@@ -91,7 +85,7 @@ def run(solar, max_speed):
                 section_buffer.write("\n")
                 section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
                 
-                result = strats.carl(solar, max_speed, angle, length, count)
+                result = strats.carlos(solar, max_speed, angle, length, count)
                 
                 # update velocity
                 section_buffer.write(result[0]) # writing out buffer string
@@ -168,8 +162,8 @@ def run(solar, max_speed):
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
-best_time   = 10000000 * ureg.hours
-best_speed  = 0 * ureg.kilometer / ureg.hours
+best_time   = 10000000
+best_speed  = 0
 best_buffer = 0
 
 car = construct()
@@ -177,7 +171,6 @@ test = ""
 old_stdout = sys.stdout # saves terminal stdout
 
 for speed in range(20, 91):
-    speed *= ureg.kilometer / ureg.hours
     new_stdout = StringIO() # create new buffer to catch print outs
     sys.stdout = new_stdout # set system stdout to this buffer
     time = run(car, speed)

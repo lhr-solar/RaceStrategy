@@ -1,10 +1,7 @@
 import math # sin
 import numpy as np
 
-from pint   import UnitRegistry
-from config import ureg
-
-gravity = 9.81 * ureg.meter / (ureg.second ** 2) # m/s^2
+gravity = 9.81 # m/s^2
 
 class Car:
     """A class representing the solar car
@@ -29,15 +26,15 @@ class Car:
     """
     def __init__(self, inputs, recharge_rate = 0.8):
 
-        self.max_speed          = int(inputs["max_speed"]) * ureg.kilometer / ureg.hours   # kph
-        self.start_soc          = inputs["start_soc"]                                      # %, soc = state of charge
-        self.end_soc            = inputs["end_soc"]                                        # %, what we want the soc to be at the end
-        self.capacity           = inputs["capacity"]       * ureg.kilowatt_hour            # KWh
-        self.mass               = inputs["mass"]           * ureg.kilogram                 # kg
-        self.rolling_resistance = inputs["rolling_resistance"]                             # average for car tires on asphalt
-        self.drag_c             = inputs["drag_coefficient"]                               # from thiago
-        self.cross_area         = inputs["cross_area"]     * (ureg.meter ** 2)             # m^2, from thiago
-        self.recharge_rate      = recharge_rate            * ureg.kilowatt                 # kW           
+        self.max_speed          = int(inputs["max_speed"])     # kph
+        self.start_soc          = inputs["start_soc"]          # %, soc = state of charge
+        self.end_soc            = inputs["end_soc"]            # %, what we want the soc to be at the end
+        self.capacity           = inputs["capacity"]           # KWh
+        self.mass               = inputs["mass"]               # kg
+        self.rolling_resistance = inputs["rolling_resistance"] # average for car tires on asphalt
+        self.drag_c             = inputs["drag_coefficient"]   # from thiago
+        self.cross_area         = inputs["cross_area"]         # m^2, from thiago
+        self.recharge_rate      = recharge_rate                # kW           
 
         self.current_capacity   = (self.start_soc * self.capacity) / 100 # KWh
         self.end_capacity       = (self.end_soc   * self.capacity) / 100 # KWh
@@ -104,8 +101,7 @@ class Car:
             #         return item
         
             
-        for velocity in range(1, int(self.max_speed.magnitude)): # velocity in km/h
-            velocity *= ureg.kilometer / ureg.hours
+        for velocity in range(1, int(self.max_speed)): # velocity in km/h
             time = distance / velocity
             gained_energy = self.recharge_rate * time # KWh 
             energy = self.motor_energy(velocity, distance, angle)
@@ -115,7 +111,7 @@ class Car:
 
             if (energy >= gained_energy): # find best coasting speed
                 # print("found velocity")
-                return velocity - (5*ureg.kilometer/ureg.hours)
+                return velocity - 5 if (velocity - 5 > 0) else velocity
         # print("returning max speed")
         return self.max_speed
 
@@ -155,13 +151,14 @@ class Car:
         """
         time = distance / curr_velocity
 
-        # gained_energy = self.recharge_rate * time # KWh 
+        gained_energy = self.recharge_rate * time # KWh 
         
         energy = self.motor_energy(curr_velocity, distance, angle)
-        # print(energy) #units??
+        # print(energy)
         # print(self.current_capacity)
-        #self.current_capacity += gained_energy - energy
-        self.current_capacity -= energy
+
+        self.current_capacity += gained_energy - energy
+        # self.current_capacity -= energy
 
 
     ### DYNAMICS EQUATIONS ###
@@ -187,11 +184,12 @@ class Car:
 
         power = (self.power_consumption(velocity) + 
                  self.hill_climb(velocity, angle) + 
-                 self.air_drag(velocity)).to(ureg.kilowatts)
+                 self.air_drag(velocity)) / 1000 # kW
 
         energy = time * power
 
         return energy # kWh
+
 
     # hill climb = Power due to climb = W*V*sin(inclination);
     def hill_climb(self, velocity, angle):
@@ -206,8 +204,8 @@ class Car:
             angle: The gradient angle of the road that the car travels over.
         
         """
-        # using m/s for velocity
-        velocity = velocity.to(ureg.meters / ureg.seconds)
+
+        velocity *= (5/18) # k/h to m/s
         power = self.mass * gravity * velocity * math.sin(angle * (math.pi)/180) # watts
         
         if power < 0:
@@ -215,6 +213,7 @@ class Car:
 
         return power # W
     
+
     # air drag = P = 0.5*rho*Cd*A*V^3
     def air_drag(self, velocity):
         """
@@ -227,13 +226,11 @@ class Car:
             velocity: The desired speed the car should travel at.
         
         """
-        #using m/s for velocity
-        velocity = velocity.to(ureg.meters / ureg.seconds)
-        air_density = 1.225 * ureg.kilogram / (ureg.meters ** 3)# kg/m^3
-        power = 0.5 * air_density * self.drag_c * self.cross_area * \
-                velocity**3 # watts
-        return power # W
 
+        velocity *= (5/18) # k/h to m/s
+        air_density = 1.225 # kg/m^3
+        power = 0.5 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
+        return power # W
         
 
     # p0 = pressure of the tire at which the rolling resistance experiment was conducted
@@ -253,14 +250,14 @@ class Car:
     # V  = velocity of the vehicle
     # ALL values must be in SI units
     def tire_contribution(self, K = 2.47, d0 = 21.67, dw = 16, p = 75, p0 = 80):
-        N = (self.mass.magnitude * 2.20462)  # normal force, convert kg to lbs = mg
+        N = (self.mass * 2.20462)  # normal force, convert kg to lbs = mg
         h = (0.5 * (d0/dw) * math.pow((p/p0), 0.3072) * \
                 (dw - math.pow(math.pow(dw, 2) - (4 * N/math.pi) * \
                 ((2.456 + 0.251 * dw) / (19.58 + 0.5975 * p)), 0.5))) # should be a unit inches
-        return (h * K * 4.44822) * ureg.newtons# rolling resistance force, converted lb-force to newtons
+        return (h * K * 4.44822) # rolling resistance force, converted lb-force to newtons
 
     # ​self, K,d0,dw,p,p0,N,V
     def power_consumption(self, V):
-        V = V.to(ureg.meters / ureg.seconds)
+        V *= (5/18) # k/h to m/s
         return (self.tire_contribution() * V) # W
         
