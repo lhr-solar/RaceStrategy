@@ -85,7 +85,8 @@ def run(solar, max_speed):
                 section_buffer.write("\n")
                 section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
                 
-                result = strats.carlos(solar, max_speed, angle, length, count)
+                result = strats.carl(solar, max_speed, angle, length, count)
+                # result = strats.carlos(solar, max_speed, angle, dist_left / distance, count)
                 
                 # update velocity
                 section_buffer.write(result[0]) # writing out buffer string
@@ -169,8 +170,9 @@ best_buffer = 0
 car = construct()
 test = ""
 old_stdout = sys.stdout # saves terminal stdout
+top_speed  = 91
 
-for speed in range(20, 91):
+for speed in range(20, top_speed):
     new_stdout = StringIO() # create new buffer to catch print outs
     sys.stdout = new_stdout # set system stdout to this buffer
     time = run(car, speed)

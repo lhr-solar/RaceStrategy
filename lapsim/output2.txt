@@ -2760,20 +2760,20 @@ Change in SOC: 3.789 %
 
 
 Lap 8 - Section 0 - Angle 0.0
-Travelling at driving speed of 90 km/h - pitted and recharged
-Current SOC:        39.791 %
+Travelling at driving speed of 90 km/h
+Current SOC:        17.807 %
 Distance remaining: 65.741 km
-Section time:       4960.979 sec
+Section time:       14.519 sec
 Section length:     0.363 km
 --- Power Consumptions ---
-Air Drag:           4051.466 kWh
+Air Drag:           11.857 kWh
 Hill Climb:         0.0 kWh
-Rolling Resistance: 614.077 kWh
+Rolling Resistance: 1.797 kWh
 
 
 Lap 8 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        39.216 %
+Current SOC:        17.232 %
 Distance remaining: 65.378 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -2785,7 +2785,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 8 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        39.054 %
+Current SOC:        17.07 %
 Distance remaining: 65.095 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -2797,7 +2797,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 8 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        38.862 %
+Current SOC:        16.878 %
 Distance remaining: 64.823 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -2809,7 +2809,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 8 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        38.807 %
+Current SOC:        16.823 %
 Distance remaining: 64.727 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -2821,7 +2821,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 8 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        38.735 %
+Current SOC:        16.751 %
 Distance remaining: 64.615 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -2833,7 +2833,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 8 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        38.656 %
+Current SOC:        16.671 %
 Distance remaining: 64.476 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -2845,7 +2845,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 8 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        38.476 %
+Current SOC:        16.492 %
 Distance remaining: 64.225 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -2857,7 +2857,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 8 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        38.311 %
+Current SOC:        16.327 %
 Distance remaining: 64.049 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -2869,7 +2869,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 8 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        38.2 %
+Current SOC:        16.215 %
 Distance remaining: 63.953 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -2881,7 +2881,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 8 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        38.089 %
+Current SOC:        16.105 %
 Distance remaining: 63.761 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -2893,7 +2893,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 8 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        37.994 %
+Current SOC:        16.01 %
 Distance remaining: 63.595 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -2905,7 +2905,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 8 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        37.929 %
+Current SOC:        15.945 %
 Distance remaining: 63.494 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -2917,7 +2917,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 8 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        37.818 %
+Current SOC:        15.834 %
 Distance remaining: 63.387 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -2929,7 +2929,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 8 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        37.726 %
+Current SOC:        15.742 %
 Distance remaining: 63.227 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -2941,7 +2941,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 8 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        37.545 %
+Current SOC:        15.56 %
 Distance remaining: 62.997 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -2953,7 +2953,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 8 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        37.17 %
+Current SOC:        15.186 %
 Distance remaining: 62.346 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -2965,7 +2965,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 8 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        37.008 %
+Current SOC:        15.024 %
 Distance remaining: 62.138 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -2977,7 +2977,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 8 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        36.959 %
+Current SOC:        14.975 %
 Distance remaining: 62.053 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -2989,7 +2989,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 8 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        36.883 %
+Current SOC:        14.898 %
 Distance remaining: 61.919 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -3001,7 +3001,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 8 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        36.832 %
+Current SOC:        14.848 %
 Distance remaining: 61.855 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -3013,7 +3013,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 8 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        36.607 %
+Current SOC:        14.623 %
 Distance remaining: 61.551 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -3025,7 +3025,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 8 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        36.482 %
+Current SOC:        14.497 %
 Distance remaining: 61.332 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -3037,7 +3037,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 8 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        36.417 %
+Current SOC:        14.433 %
 Distance remaining: 61.22 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3049,7 +3049,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 8 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        36.335 %
+Current SOC:        14.35 %
 Distance remaining: 61.076 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -3061,7 +3061,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 8 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        36.233 %
+Current SOC:        14.249 %
 Distance remaining: 60.9 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3073,7 +3073,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 8 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        36.088 %
+Current SOC:        14.104 %
 Distance remaining: 60.745 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -3085,7 +3085,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 8 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        36.002 %
+Current SOC:        14.018 %
 Distance remaining: 60.595 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -3096,17 +3096,17 @@ Rolling Resistance: 0.74 kWh
 
 
 --- Lap 8 Results ---
-Lap Time:      86.113 min
-Power Gains:   1.148 kWh
+Lap Time:      3.672 min
+Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       36.002 %
+End SOC:       14.018 %
 Change in SOC: 3.789 %
 
 
 
 Lap 9 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        35.793 %
+Current SOC:        13.809 %
 Distance remaining: 60.232 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -3118,7 +3118,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 9 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        35.218 %
+Current SOC:        13.234 %
 Distance remaining: 59.869 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -3130,7 +3130,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 9 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        35.056 %
+Current SOC:        13.071 %
 Distance remaining: 59.586 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -3142,7 +3142,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 9 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        34.864 %
+Current SOC:        12.88 %
 Distance remaining: 59.314 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -3154,7 +3154,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 9 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        34.809 %
+Current SOC:        12.825 %
 Distance remaining: 59.218 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3166,7 +3166,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 9 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        34.737 %
+Current SOC:        12.753 %
 Distance remaining: 59.106 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3178,7 +3178,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 9 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        34.658 %
+Current SOC:        12.673 %
 Distance remaining: 58.967 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -3190,7 +3190,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 9 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        34.478 %
+Current SOC:        12.494 %
 Distance remaining: 58.716 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -3202,7 +3202,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 9 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        34.313 %
+Current SOC:        12.329 %
 Distance remaining: 58.54 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3214,7 +3214,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 9 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        34.202 %
+Current SOC:        12.217 %
 Distance remaining: 58.444 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3226,7 +3226,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 9 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        34.091 %
+Current SOC:        12.107 %
 Distance remaining: 58.252 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -3238,7 +3238,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 9 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        33.996 %
+Current SOC:        12.012 %
 Distance remaining: 58.086 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -3250,7 +3250,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 9 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        33.931 %
+Current SOC:        11.946 %
 Distance remaining: 57.985 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -3262,7 +3262,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 9 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        33.82 %
+Current SOC:        11.836 %
 Distance remaining: 57.878 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -3274,7 +3274,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 9 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        33.728 %
+Current SOC:        11.744 %
 Distance remaining: 57.718 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -3286,7 +3286,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 9 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        33.547 %
+Current SOC:        11.562 %
 Distance remaining: 57.489 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -3298,7 +3298,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 9 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        33.172 %
+Current SOC:        11.188 %
 Distance remaining: 56.837 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -3310,7 +3310,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 9 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        33.01 %
+Current SOC:        11.026 %
 Distance remaining: 56.629 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -3322,7 +3322,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 9 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        32.961 %
+Current SOC:        10.977 %
 Distance remaining: 56.544 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -3334,7 +3334,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 9 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        32.885 %
+Current SOC:        10.9 %
 Distance remaining: 56.41 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -3346,7 +3346,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 9 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        32.834 %
+Current SOC:        10.849 %
 Distance remaining: 56.346 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -3358,7 +3358,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 9 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        32.609 %
+Current SOC:        10.625 %
 Distance remaining: 56.042 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -3370,7 +3370,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 9 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        32.484 %
+Current SOC:        10.499 %
 Distance remaining: 55.823 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -3382,7 +3382,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 9 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        32.419 %
+Current SOC:        10.435 %
 Distance remaining: 55.711 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3394,7 +3394,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 9 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        32.336 %
+Current SOC:        10.352 %
 Distance remaining: 55.567 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -3406,7 +3406,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 9 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        32.235 %
+Current SOC:        10.251 %
 Distance remaining: 55.391 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3418,7 +3418,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 9 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        32.09 %
+Current SOC:        10.106 %
 Distance remaining: 55.236 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -3430,7 +3430,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 9 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        32.004 %
+Current SOC:        10.02 %
 Distance remaining: 55.087 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -3444,14 +3444,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       32.004 %
+End SOC:       10.02 %
 Change in SOC: 3.789 %
 
 
 
 Lap 10 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        31.795 %
+Current SOC:        9.811 %
 Distance remaining: 54.724 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -3463,7 +3463,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 10 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        31.22 %
+Current SOC:        9.236 %
 Distance remaining: 54.361 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -3475,7 +3475,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 10 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        31.058 %
+Current SOC:        9.073 %
 Distance remaining: 54.078 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -3487,7 +3487,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 10 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        30.866 %
+Current SOC:        8.882 %
 Distance remaining: 53.806 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -3499,7 +3499,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 10 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        30.811 %
+Current SOC:        8.826 %
 Distance remaining: 53.709 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3511,7 +3511,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 10 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        30.739 %
+Current SOC:        8.755 %
 Distance remaining: 53.597 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3523,7 +3523,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 10 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        30.66 %
+Current SOC:        8.675 %
 Distance remaining: 53.459 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -3535,7 +3535,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 10 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        30.48 %
+Current SOC:        8.496 %
 Distance remaining: 53.208 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -3547,7 +3547,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 10 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        30.315 %
+Current SOC:        8.331 %
 Distance remaining: 53.032 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3559,7 +3559,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 10 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        30.204 %
+Current SOC:        8.219 %
 Distance remaining: 52.935 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3571,7 +3571,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 10 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        30.093 %
+Current SOC:        8.109 %
 Distance remaining: 52.743 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -3583,7 +3583,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 10 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        29.998 %
+Current SOC:        8.014 %
 Distance remaining: 52.578 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -3595,7 +3595,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 10 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        29.933 %
+Current SOC:        7.948 %
 Distance remaining: 52.476 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -3607,7 +3607,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 10 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        29.822 %
+Current SOC:        7.838 %
 Distance remaining: 52.37 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -3619,7 +3619,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 10 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        29.73 %
+Current SOC:        7.746 %
 Distance remaining: 52.21 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -3631,7 +3631,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 10 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        29.549 %
+Current SOC:        7.564 %
 Distance remaining: 51.98 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -3643,7 +3643,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 10 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        29.174 %
+Current SOC:        7.19 %
 Distance remaining: 51.329 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -3655,7 +3655,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 10 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        29.012 %
+Current SOC:        7.028 %
 Distance remaining: 51.121 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -3667,7 +3667,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 10 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        28.963 %
+Current SOC:        6.979 %
 Distance remaining: 51.035 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -3679,7 +3679,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 10 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        28.887 %
+Current SOC:        6.902 %
 Distance remaining: 50.902 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -3691,7 +3691,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 10 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        28.836 %
+Current SOC:        6.851 %
 Distance remaining: 50.838 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -3703,7 +3703,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 10 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        28.611 %
+Current SOC:        6.627 %
 Distance remaining: 50.533 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -3715,7 +3715,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 10 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        28.486 %
+Current SOC:        6.501 %
 Distance remaining: 50.315 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -3727,7 +3727,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 10 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        28.421 %
+Current SOC:        6.437 %
 Distance remaining: 50.202 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3739,7 +3739,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 10 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        28.338 %
+Current SOC:        6.354 %
 Distance remaining: 50.058 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -3751,7 +3751,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 10 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        28.237 %
+Current SOC:        6.253 %
 Distance remaining: 49.882 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3763,7 +3763,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 10 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        28.092 %
+Current SOC:        6.108 %
 Distance remaining: 49.727 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -3775,7 +3775,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 10 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        28.006 %
+Current SOC:        6.022 %
 Distance remaining: 49.578 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -3789,26 +3789,28 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       28.006 %
+End SOC:       6.022 %
 Change in SOC: 3.789 %
 
 
+dist left: 0.4500000000000028
+
 
 Lap 11 - Section 0 - Angle 0.0
-Travelling at driving speed of 90 km/h
-Current SOC:        27.797 %
+Travelling at driving speed of 90 km/h - pitted and recharged
+Current SOC:        46.591 %
 Distance remaining: 49.215 km
-Section time:       14.519 sec
+Section time:       9189.651 sec
 Section length:     0.363 km
 --- Power Consumptions ---
-Air Drag:           11.857 kWh
+Air Drag:           7504.882 kWh
 Hill Climb:         0.0 kWh
-Rolling Resistance: 1.797 kWh
+Rolling Resistance: 1137.507 kWh
 
 
 Lap 11 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        27.222 %
+Current SOC:        46.016 %
 Distance remaining: 48.852 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -3820,7 +3822,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 11 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        27.06 %
+Current SOC:        45.854 %
 Distance remaining: 48.569 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -3832,7 +3834,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 11 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        26.868 %
+Current SOC:        45.662 %
 Distance remaining: 48.297 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -3844,7 +3846,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 11 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        26.813 %
+Current SOC:        45.607 %
 Distance remaining: 48.201 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3856,7 +3858,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 11 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        26.741 %
+Current SOC:        45.535 %
 Distance remaining: 48.089 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -3868,7 +3870,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 11 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        26.662 %
+Current SOC:        45.456 %
 Distance remaining: 47.95 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -3880,7 +3882,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 11 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        26.482 %
+Current SOC:        45.276 %
 Distance remaining: 47.699 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -3892,7 +3894,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 11 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        26.317 %
+Current SOC:        45.111 %
 Distance remaining: 47.523 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -3904,7 +3906,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 11 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        26.206 %
+Current SOC:        45.0 %
 Distance remaining: 47.427 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -3916,7 +3918,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 11 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        26.095 %
+Current SOC:        44.889 %
 Distance remaining: 47.235 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -3928,7 +3930,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 11 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        26.0 %
+Current SOC:        44.794 %
 Distance remaining: 47.069 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -3940,7 +3942,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 11 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        25.935 %
+Current SOC:        44.729 %
 Distance remaining: 46.968 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -3952,7 +3954,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 11 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        25.824 %
+Current SOC:        44.618 %
 Distance remaining: 46.861 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -3964,7 +3966,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 11 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        25.732 %
+Current SOC:        44.526 %
 Distance remaining: 46.701 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -3976,7 +3978,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 11 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        25.551 %
+Current SOC:        44.345 %
 Distance remaining: 46.471 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -3988,7 +3990,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 11 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        25.176 %
+Current SOC:        43.97 %
 Distance remaining: 45.82 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -4000,7 +4002,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 11 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        25.014 %
+Current SOC:        43.808 %
 Distance remaining: 45.612 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -4012,7 +4014,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 11 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        24.965 %
+Current SOC:        43.759 %
 Distance remaining: 45.527 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -4024,7 +4026,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 11 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        24.889 %
+Current SOC:        43.683 %
 Distance remaining: 45.393 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -4036,7 +4038,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 11 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        24.838 %
+Current SOC:        43.632 %
 Distance remaining: 45.329 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -4048,7 +4050,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 11 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        24.613 %
+Current SOC:        43.407 %
 Distance remaining: 45.025 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -4060,7 +4062,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 11 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        24.488 %
+Current SOC:        43.282 %
 Distance remaining: 44.806 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -4072,7 +4074,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 11 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        24.423 %
+Current SOC:        43.217 %
 Distance remaining: 44.694 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4084,7 +4086,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 11 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        24.34 %
+Current SOC:        43.135 %
 Distance remaining: 44.55 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -4096,7 +4098,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 11 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        24.239 %
+Current SOC:        43.033 %
 Distance remaining: 44.374 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4108,7 +4110,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 11 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        24.094 %
+Current SOC:        42.888 %
 Distance remaining: 44.219 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -4120,7 +4122,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 11 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        24.008 %
+Current SOC:        42.802 %
 Distance remaining: 44.069 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -4131,17 +4133,17 @@ Rolling Resistance: 0.74 kWh
 
 
 --- Lap 11 Results ---
-Lap Time:      3.672 min
-Power Gains:   0.049 kWh
+Lap Time:      156.591 min
+Power Gains:   2.088 kWh
 Power Losses:  0.249 kWh
-End SOC:       24.008 %
+End SOC:       42.802 %
 Change in SOC: 3.789 %
 
 
 
 Lap 12 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        23.799 %
+Current SOC:        42.593 %
 Distance remaining: 43.706 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -4153,7 +4155,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 12 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        23.224 %
+Current SOC:        42.018 %
 Distance remaining: 43.343 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -4165,7 +4167,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 12 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        23.062 %
+Current SOC:        41.856 %
 Distance remaining: 43.06 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -4177,7 +4179,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 12 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        22.87 %
+Current SOC:        41.664 %
 Distance remaining: 42.788 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -4189,7 +4191,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 12 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        22.815 %
+Current SOC:        41.609 %
 Distance remaining: 42.692 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4201,7 +4203,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 12 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        22.743 %
+Current SOC:        41.537 %
 Distance remaining: 42.58 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4213,7 +4215,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 12 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        22.663 %
+Current SOC:        41.458 %
 Distance remaining: 42.441 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -4225,7 +4227,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 12 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        22.484 %
+Current SOC:        41.278 %
 Distance remaining: 42.19 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -4237,7 +4239,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 12 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        22.319 %
+Current SOC:        41.113 %
 Distance remaining: 42.014 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4249,7 +4251,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 12 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        22.207 %
+Current SOC:        41.002 %
 Distance remaining: 41.918 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4261,7 +4263,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 12 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        22.097 %
+Current SOC:        40.891 %
 Distance remaining: 41.726 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -4273,7 +4275,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 12 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        22.002 %
+Current SOC:        40.796 %
 Distance remaining: 41.561 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -4285,7 +4287,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 12 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        21.937 %
+Current SOC:        40.731 %
 Distance remaining: 41.459 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -4297,7 +4299,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 12 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        21.826 %
+Current SOC:        40.62 %
 Distance remaining: 41.352 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -4309,7 +4311,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 12 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        21.734 %
+Current SOC:        40.528 %
 Distance remaining: 41.192 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -4321,7 +4323,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 12 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        21.553 %
+Current SOC:        40.347 %
 Distance remaining: 40.963 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -4333,7 +4335,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 12 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        21.178 %
+Current SOC:        39.972 %
 Distance remaining: 40.311 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -4345,7 +4347,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 12 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        21.016 %
+Current SOC:        39.81 %
 Distance remaining: 40.103 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -4357,7 +4359,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 12 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        20.967 %
+Current SOC:        39.761 %
 Distance remaining: 40.018 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -4369,7 +4371,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 12 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        20.891 %
+Current SOC:        39.685 %
 Distance remaining: 39.884 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -4381,7 +4383,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 12 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        20.84 %
+Current SOC:        39.634 %
 Distance remaining: 39.82 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -4393,7 +4395,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 12 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        20.615 %
+Current SOC:        39.409 %
 Distance remaining: 39.516 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -4405,7 +4407,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 12 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        20.49 %
+Current SOC:        39.284 %
 Distance remaining: 39.297 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -4417,7 +4419,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 12 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        20.425 %
+Current SOC:        39.219 %
 Distance remaining: 39.185 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4429,7 +4431,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 12 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        20.342 %
+Current SOC:        39.136 %
 Distance remaining: 39.041 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -4441,7 +4443,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 12 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        20.241 %
+Current SOC:        39.035 %
 Distance remaining: 38.865 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4453,7 +4455,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 12 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        20.096 %
+Current SOC:        38.89 %
 Distance remaining: 38.71 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -4465,7 +4467,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 12 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        20.01 %
+Current SOC:        38.804 %
 Distance remaining: 38.561 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -4479,14 +4481,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       20.01 %
+End SOC:       38.804 %
 Change in SOC: 3.789 %
 
 
 
 Lap 13 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        19.801 %
+Current SOC:        38.595 %
 Distance remaining: 38.198 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -4498,7 +4500,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 13 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        19.226 %
+Current SOC:        38.02 %
 Distance remaining: 37.835 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -4510,7 +4512,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 13 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        19.064 %
+Current SOC:        37.858 %
 Distance remaining: 37.552 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -4522,7 +4524,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 13 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        18.872 %
+Current SOC:        37.666 %
 Distance remaining: 37.28 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -4534,7 +4536,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 13 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        18.817 %
+Current SOC:        37.611 %
 Distance remaining: 37.183 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4546,7 +4548,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 13 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        18.745 %
+Current SOC:        37.539 %
 Distance remaining: 37.071 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4558,7 +4560,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 13 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        18.665 %
+Current SOC:        37.46 %
 Distance remaining: 36.933 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -4570,7 +4572,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 13 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        18.486 %
+Current SOC:        37.28 %
 Distance remaining: 36.682 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -4582,7 +4584,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 13 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        18.321 %
+Current SOC:        37.115 %
 Distance remaining: 36.506 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4594,7 +4596,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 13 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        18.209 %
+Current SOC:        37.004 %
 Distance remaining: 36.409 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4606,7 +4608,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 13 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        18.099 %
+Current SOC:        36.893 %
 Distance remaining: 36.217 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -4618,7 +4620,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 13 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        18.004 %
+Current SOC:        36.798 %
 Distance remaining: 36.052 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -4630,7 +4632,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 13 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        17.939 %
+Current SOC:        36.733 %
 Distance remaining: 35.95 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -4642,7 +4644,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 13 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        17.828 %
+Current SOC:        36.622 %
 Distance remaining: 35.844 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -4654,7 +4656,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 13 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        17.736 %
+Current SOC:        36.53 %
 Distance remaining: 35.684 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -4666,7 +4668,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 13 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        17.554 %
+Current SOC:        36.349 %
 Distance remaining: 35.454 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -4678,7 +4680,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 13 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        17.18 %
+Current SOC:        35.974 %
 Distance remaining: 34.803 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -4690,7 +4692,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 13 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        17.018 %
+Current SOC:        35.812 %
 Distance remaining: 34.595 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -4702,7 +4704,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 13 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        16.969 %
+Current SOC:        35.763 %
 Distance remaining: 34.509 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -4714,7 +4716,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 13 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        16.893 %
+Current SOC:        35.687 %
 Distance remaining: 34.376 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -4726,7 +4728,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 13 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        16.842 %
+Current SOC:        35.636 %
 Distance remaining: 34.312 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -4738,7 +4740,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 13 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        16.617 %
+Current SOC:        35.411 %
 Distance remaining: 34.007 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -4750,7 +4752,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 13 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        16.492 %
+Current SOC:        35.286 %
 Distance remaining: 33.789 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -4762,7 +4764,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 13 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        16.427 %
+Current SOC:        35.221 %
 Distance remaining: 33.677 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4774,7 +4776,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 13 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        16.344 %
+Current SOC:        35.138 %
 Distance remaining: 33.532 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -4786,7 +4788,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 13 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        16.243 %
+Current SOC:        35.037 %
 Distance remaining: 33.356 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4798,7 +4800,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 13 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        16.098 %
+Current SOC:        34.892 %
 Distance remaining: 33.201 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -4810,7 +4812,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 13 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        16.012 %
+Current SOC:        34.806 %
 Distance remaining: 33.052 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -4824,26 +4826,26 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       16.012 %
+End SOC:       34.806 %
 Change in SOC: 3.789 %
 
 
 
 Lap 14 - Section 0 - Angle 0.0
-Travelling at driving speed of 90 km/h - pitted and recharged
-Current SOC:        39.791 %
+Travelling at driving speed of 90 km/h
+Current SOC:        34.597 %
 Distance remaining: 32.689 km
-Section time:       5411.864 sec
+Section time:       14.519 sec
 Section length:     0.363 km
 --- Power Consumptions ---
-Air Drag:           4419.689 kWh
+Air Drag:           11.857 kWh
 Hill Climb:         0.0 kWh
-Rolling Resistance: 669.888 kWh
+Rolling Resistance: 1.797 kWh
 
 
 Lap 14 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        39.216 %
+Current SOC:        34.022 %
 Distance remaining: 32.326 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -4855,7 +4857,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 14 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        39.054 %
+Current SOC:        33.86 %
 Distance remaining: 32.043 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -4867,7 +4869,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 14 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        38.862 %
+Current SOC:        33.668 %
 Distance remaining: 31.771 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -4879,7 +4881,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 14 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        38.807 %
+Current SOC:        33.613 %
 Distance remaining: 31.675 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4891,7 +4893,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 14 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        38.735 %
+Current SOC:        33.541 %
 Distance remaining: 31.563 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -4903,7 +4905,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 14 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        38.656 %
+Current SOC:        33.462 %
 Distance remaining: 31.424 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -4915,7 +4917,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 14 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        38.476 %
+Current SOC:        33.282 %
 Distance remaining: 31.173 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -4927,7 +4929,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 14 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        38.311 %
+Current SOC:        33.117 %
 Distance remaining: 30.997 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -4939,7 +4941,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 14 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        38.2 %
+Current SOC:        33.006 %
 Distance remaining: 30.901 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -4951,7 +4953,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 14 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        38.089 %
+Current SOC:        32.895 %
 Distance remaining: 30.709 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -4963,7 +4965,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 14 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        37.994 %
+Current SOC:        32.8 %
 Distance remaining: 30.543 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -4975,7 +4977,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 14 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        37.929 %
+Current SOC:        32.735 %
 Distance remaining: 30.442 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -4987,7 +4989,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 14 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        37.818 %
+Current SOC:        32.624 %
 Distance remaining: 30.335 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -4999,7 +5001,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 14 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        37.726 %
+Current SOC:        32.532 %
 Distance remaining: 30.175 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -5011,7 +5013,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 14 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        37.545 %
+Current SOC:        32.351 %
 Distance remaining: 29.945 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -5023,7 +5025,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 14 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        37.17 %
+Current SOC:        31.976 %
 Distance remaining: 29.294 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -5035,7 +5037,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 14 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        37.008 %
+Current SOC:        31.814 %
 Distance remaining: 29.086 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -5047,7 +5049,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 14 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        36.959 %
+Current SOC:        31.765 %
 Distance remaining: 29.001 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -5059,7 +5061,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 14 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        36.883 %
+Current SOC:        31.689 %
 Distance remaining: 28.867 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -5071,7 +5073,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 14 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        36.832 %
+Current SOC:        31.638 %
 Distance remaining: 28.803 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -5083,7 +5085,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 14 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        36.607 %
+Current SOC:        31.413 %
 Distance remaining: 28.499 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -5095,7 +5097,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 14 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        36.482 %
+Current SOC:        31.288 %
 Distance remaining: 28.28 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -5107,7 +5109,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 14 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        36.417 %
+Current SOC:        31.223 %
 Distance remaining: 28.168 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5119,7 +5121,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 14 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        36.335 %
+Current SOC:        31.14 %
 Distance remaining: 28.024 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -5131,7 +5133,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 14 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        36.233 %
+Current SOC:        31.039 %
 Distance remaining: 27.848 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5143,7 +5145,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 14 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        36.088 %
+Current SOC:        30.894 %
 Distance remaining: 27.693 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -5155,7 +5157,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 14 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        36.002 %
+Current SOC:        30.808 %
 Distance remaining: 27.543 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -5166,17 +5168,17 @@ Rolling Resistance: 0.74 kWh
 
 
 --- Lap 14 Results ---
-Lap Time:      93.628 min
-Power Gains:   1.248 kWh
+Lap Time:      3.672 min
+Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       36.002 %
+End SOC:       30.808 %
 Change in SOC: 3.789 %
 
 
 
 Lap 15 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        35.793 %
+Current SOC:        30.599 %
 Distance remaining: 27.18 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5188,7 +5190,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 15 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        35.218 %
+Current SOC:        30.024 %
 Distance remaining: 26.817 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5200,7 +5202,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 15 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        35.056 %
+Current SOC:        29.862 %
 Distance remaining: 26.534 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -5212,7 +5214,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 15 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        34.864 %
+Current SOC:        29.67 %
 Distance remaining: 26.262 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -5224,7 +5226,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 15 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        34.809 %
+Current SOC:        29.615 %
 Distance remaining: 26.166 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5236,7 +5238,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 15 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        34.737 %
+Current SOC:        29.543 %
 Distance remaining: 26.054 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5248,7 +5250,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 15 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        34.658 %
+Current SOC:        29.463 %
 Distance remaining: 25.915 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -5260,7 +5262,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 15 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        34.478 %
+Current SOC:        29.284 %
 Distance remaining: 25.664 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -5272,7 +5274,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 15 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        34.313 %
+Current SOC:        29.119 %
 Distance remaining: 25.488 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5284,7 +5286,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 15 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        34.202 %
+Current SOC:        29.007 %
 Distance remaining: 25.392 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5296,7 +5298,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 15 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        34.091 %
+Current SOC:        28.897 %
 Distance remaining: 25.2 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -5308,7 +5310,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 15 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        33.996 %
+Current SOC:        28.802 %
 Distance remaining: 25.035 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -5320,7 +5322,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 15 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        33.931 %
+Current SOC:        28.737 %
 Distance remaining: 24.933 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -5332,7 +5334,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 15 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        33.82 %
+Current SOC:        28.626 %
 Distance remaining: 24.826 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -5344,7 +5346,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 15 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        33.728 %
+Current SOC:        28.534 %
 Distance remaining: 24.666 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -5356,7 +5358,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 15 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        33.547 %
+Current SOC:        28.353 %
 Distance remaining: 24.437 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -5368,7 +5370,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 15 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        33.172 %
+Current SOC:        27.978 %
 Distance remaining: 23.785 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -5380,7 +5382,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 15 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        33.01 %
+Current SOC:        27.816 %
 Distance remaining: 23.577 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -5392,7 +5394,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 15 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        32.961 %
+Current SOC:        27.767 %
 Distance remaining: 23.492 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -5404,7 +5406,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 15 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        32.885 %
+Current SOC:        27.691 %
 Distance remaining: 23.358 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -5416,7 +5418,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 15 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        32.834 %
+Current SOC:        27.64 %
 Distance remaining: 23.294 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -5428,7 +5430,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 15 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        32.609 %
+Current SOC:        27.415 %
 Distance remaining: 22.99 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -5440,7 +5442,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 15 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        32.484 %
+Current SOC:        27.29 %
 Distance remaining: 22.771 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -5452,7 +5454,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 15 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        32.419 %
+Current SOC:        27.225 %
 Distance remaining: 22.659 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5464,7 +5466,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 15 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        32.336 %
+Current SOC:        27.142 %
 Distance remaining: 22.515 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -5476,7 +5478,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 15 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        32.235 %
+Current SOC:        27.041 %
 Distance remaining: 22.339 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5488,7 +5490,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 15 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        32.09 %
+Current SOC:        26.896 %
 Distance remaining: 22.184 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -5500,7 +5502,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 15 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        32.004 %
+Current SOC:        26.81 %
 Distance remaining: 22.035 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -5514,14 +5516,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       32.004 %
+End SOC:       26.81 %
 Change in SOC: 3.789 %
 
 
 
 Lap 16 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        31.795 %
+Current SOC:        26.601 %
 Distance remaining: 21.672 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5533,7 +5535,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 16 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        31.22 %
+Current SOC:        26.026 %
 Distance remaining: 21.309 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5545,7 +5547,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 16 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        31.058 %
+Current SOC:        25.864 %
 Distance remaining: 21.026 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -5557,7 +5559,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 16 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        30.866 %
+Current SOC:        25.672 %
 Distance remaining: 20.754 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -5569,7 +5571,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 16 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        30.811 %
+Current SOC:        25.617 %
 Distance remaining: 20.657 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5581,7 +5583,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 16 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        30.739 %
+Current SOC:        25.545 %
 Distance remaining: 20.545 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5593,7 +5595,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 16 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        30.66 %
+Current SOC:        25.465 %
 Distance remaining: 20.407 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -5605,7 +5607,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 16 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        30.48 %
+Current SOC:        25.286 %
 Distance remaining: 20.156 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -5617,7 +5619,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 16 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        30.315 %
+Current SOC:        25.121 %
 Distance remaining: 19.98 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5629,7 +5631,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 16 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        30.204 %
+Current SOC:        25.009 %
 Distance remaining: 19.883 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5641,7 +5643,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 16 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        30.093 %
+Current SOC:        24.899 %
 Distance remaining: 19.691 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -5653,7 +5655,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 16 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        29.998 %
+Current SOC:        24.804 %
 Distance remaining: 19.526 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -5665,7 +5667,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 16 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        29.933 %
+Current SOC:        24.739 %
 Distance remaining: 19.424 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -5677,7 +5679,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 16 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        29.822 %
+Current SOC:        24.628 %
 Distance remaining: 19.318 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -5689,7 +5691,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 16 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        29.73 %
+Current SOC:        24.536 %
 Distance remaining: 19.158 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -5701,7 +5703,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 16 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        29.549 %
+Current SOC:        24.354 %
 Distance remaining: 18.928 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -5713,7 +5715,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 16 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        29.174 %
+Current SOC:        23.98 %
 Distance remaining: 18.277 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -5725,7 +5727,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 16 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        29.012 %
+Current SOC:        23.818 %
 Distance remaining: 18.069 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -5737,7 +5739,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 16 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        28.963 %
+Current SOC:        23.769 %
 Distance remaining: 17.983 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -5749,7 +5751,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 16 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        28.887 %
+Current SOC:        23.693 %
 Distance remaining: 17.85 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -5761,7 +5763,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 16 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        28.836 %
+Current SOC:        23.642 %
 Distance remaining: 17.786 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -5773,7 +5775,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 16 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        28.611 %
+Current SOC:        23.417 %
 Distance remaining: 17.481 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -5785,7 +5787,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 16 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        28.486 %
+Current SOC:        23.292 %
 Distance remaining: 17.263 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -5797,7 +5799,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 16 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        28.421 %
+Current SOC:        23.227 %
 Distance remaining: 17.151 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5809,7 +5811,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 16 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        28.338 %
+Current SOC:        23.144 %
 Distance remaining: 17.006 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -5821,7 +5823,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 16 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        28.237 %
+Current SOC:        23.043 %
 Distance remaining: 16.83 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5833,7 +5835,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 16 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        28.092 %
+Current SOC:        22.898 %
 Distance remaining: 16.675 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -5845,7 +5847,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 16 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        28.006 %
+Current SOC:        22.812 %
 Distance remaining: 16.526 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -5859,14 +5861,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       28.006 %
+End SOC:       22.812 %
 Change in SOC: 3.789 %
 
 
 
 Lap 17 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        27.797 %
+Current SOC:        22.603 %
 Distance remaining: 16.163 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5878,7 +5880,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 17 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        27.222 %
+Current SOC:        22.028 %
 Distance remaining: 15.8 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -5890,7 +5892,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 17 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        27.06 %
+Current SOC:        21.866 %
 Distance remaining: 15.517 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -5902,7 +5904,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 17 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        26.868 %
+Current SOC:        21.674 %
 Distance remaining: 15.245 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -5914,7 +5916,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 17 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        26.813 %
+Current SOC:        21.619 %
 Distance remaining: 15.149 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5926,7 +5928,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 17 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        26.741 %
+Current SOC:        21.547 %
 Distance remaining: 15.037 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -5938,7 +5940,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 17 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        26.662 %
+Current SOC:        21.467 %
 Distance remaining: 14.898 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -5950,7 +5952,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 17 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        26.482 %
+Current SOC:        21.288 %
 Distance remaining: 14.647 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -5962,7 +5964,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 17 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        26.317 %
+Current SOC:        21.123 %
 Distance remaining: 14.471 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -5974,7 +5976,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 17 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        26.206 %
+Current SOC:        21.011 %
 Distance remaining: 14.375 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -5986,7 +5988,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 17 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        26.095 %
+Current SOC:        20.901 %
 Distance remaining: 14.183 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -5998,7 +6000,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 17 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        26.0 %
+Current SOC:        20.806 %
 Distance remaining: 14.017 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -6010,7 +6012,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 17 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        25.935 %
+Current SOC:        20.741 %
 Distance remaining: 13.916 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -6022,7 +6024,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 17 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        25.824 %
+Current SOC:        20.63 %
 Distance remaining: 13.809 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -6034,7 +6036,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 17 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        25.732 %
+Current SOC:        20.538 %
 Distance remaining: 13.649 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -6046,7 +6048,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 17 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        25.551 %
+Current SOC:        20.356 %
 Distance remaining: 13.419 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -6058,7 +6060,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 17 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        25.176 %
+Current SOC:        19.982 %
 Distance remaining: 12.768 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -6070,7 +6072,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 17 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        25.014 %
+Current SOC:        19.82 %
 Distance remaining: 12.56 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -6082,7 +6084,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 17 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        24.965 %
+Current SOC:        19.771 %
 Distance remaining: 12.475 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -6094,7 +6096,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 17 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        24.889 %
+Current SOC:        19.695 %
 Distance remaining: 12.341 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -6106,7 +6108,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 17 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        24.838 %
+Current SOC:        19.644 %
 Distance remaining: 12.277 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -6118,7 +6120,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 17 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        24.613 %
+Current SOC:        19.419 %
 Distance remaining: 11.973 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -6130,7 +6132,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 17 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        24.488 %
+Current SOC:        19.294 %
 Distance remaining: 11.754 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -6142,7 +6144,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 17 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        24.423 %
+Current SOC:        19.229 %
 Distance remaining: 11.642 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -6154,7 +6156,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 17 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        24.34 %
+Current SOC:        19.146 %
 Distance remaining: 11.498 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -6166,7 +6168,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 17 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        24.239 %
+Current SOC:        19.045 %
 Distance remaining: 11.322 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -6178,7 +6180,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 17 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        24.094 %
+Current SOC:        18.9 %
 Distance remaining: 11.167 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -6190,7 +6192,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 17 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        24.008 %
+Current SOC:        18.814 %
 Distance remaining: 11.017 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -6204,14 +6206,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       24.008 %
+End SOC:       18.814 %
 Change in SOC: 3.789 %
 
 
 
 Lap 18 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        23.799 %
+Current SOC:        18.605 %
 Distance remaining: 10.654 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -6223,7 +6225,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 18 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        23.224 %
+Current SOC:        18.03 %
 Distance remaining: 10.291 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -6235,7 +6237,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 18 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        23.062 %
+Current SOC:        17.868 %
 Distance remaining: 10.008 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -6247,7 +6249,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 18 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        22.87 %
+Current SOC:        17.676 %
 Distance remaining: 9.736 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -6259,7 +6261,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 18 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        22.815 %
+Current SOC:        17.621 %
 Distance remaining: 9.64 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -6271,7 +6273,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 18 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        22.743 %
+Current SOC:        17.549 %
 Distance remaining: 9.528 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -6283,7 +6285,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 18 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        22.663 %
+Current SOC:        17.469 %
 Distance remaining: 9.389 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -6295,7 +6297,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 18 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        22.484 %
+Current SOC:        17.29 %
 Distance remaining: 9.138 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -6307,7 +6309,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 18 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        22.319 %
+Current SOC:        17.125 %
 Distance remaining: 8.962 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -6319,7 +6321,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 18 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        22.207 %
+Current SOC:        17.013 %
 Distance remaining: 8.866 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -6331,7 +6333,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 18 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        22.097 %
+Current SOC:        16.903 %
 Distance remaining: 8.674 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -6343,7 +6345,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 18 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        22.002 %
+Current SOC:        16.808 %
 Distance remaining: 8.509 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -6355,7 +6357,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 18 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        21.937 %
+Current SOC:        16.743 %
 Distance remaining: 8.407 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -6367,7 +6369,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 18 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        21.826 %
+Current SOC:        16.632 %
 Distance remaining: 8.3 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -6379,7 +6381,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 18 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        21.734 %
+Current SOC:        16.54 %
 Distance remaining: 8.14 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -6391,7 +6393,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 18 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        21.553 %
+Current SOC:        16.358 %
 Distance remaining: 7.911 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -6403,7 +6405,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 18 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        21.178 %
+Current SOC:        15.984 %
 Distance remaining: 7.259 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -6415,7 +6417,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 18 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        21.016 %
+Current SOC:        15.822 %
 Distance remaining: 7.051 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -6427,7 +6429,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 18 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        20.967 %
+Current SOC:        15.773 %
 Distance remaining: 6.966 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -6439,7 +6441,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 18 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        20.891 %
+Current SOC:        15.696 %
 Distance remaining: 6.832 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -6451,7 +6453,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 18 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        20.84 %
+Current SOC:        15.646 %
 Distance remaining: 6.768 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -6463,7 +6465,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 18 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        20.615 %
+Current SOC:        15.421 %
 Distance remaining: 6.464 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -6475,7 +6477,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 18 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        20.49 %
+Current SOC:        15.296 %
 Distance remaining: 6.245 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -6487,7 +6489,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 18 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        20.425 %
+Current SOC:        15.231 %
 Distance remaining: 6.133 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -6499,7 +6501,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 18 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        20.342 %
+Current SOC:        15.148 %
 Distance remaining: 5.989 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -6511,7 +6513,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 18 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        20.241 %
+Current SOC:        15.047 %
 Distance remaining: 5.813 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -6523,7 +6525,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 18 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        20.096 %
+Current SOC:        14.902 %
 Distance remaining: 5.658 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -6535,7 +6537,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 18 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        20.01 %
+Current SOC:        14.816 %
 Distance remaining: 5.509 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -6549,14 +6551,14 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       20.01 %
+End SOC:       14.816 %
 Change in SOC: 3.789 %
 
 
 
 Lap 19 - Section 0 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        19.801 %
+Current SOC:        14.607 %
 Distance remaining: 5.146 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -6568,7 +6570,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 19 - Section 1 - Angle 4.150673892
 Travelling at driving speed of 90 km/h
-Current SOC:        19.226 %
+Current SOC:        14.032 %
 Distance remaining: 4.783 km
 Section time:       14.519 sec
 Section length:     0.363 km
@@ -6580,7 +6582,7 @@ Rolling Resistance: 1.797 kWh
 
 Lap 19 - Section 2 - Angle -3.892455951
 Travelling at driving speed of 90 km/h
-Current SOC:        19.064 %
+Current SOC:        13.87 %
 Distance remaining: 4.5 km
 Section time:       11.316 sec
 Section length:     0.283 km
@@ -6592,7 +6594,7 @@ Rolling Resistance: 1.401 kWh
 
 Lap 19 - Section 3 - Angle 0.5330551386
 Travelling at driving speed of 90 km/h
-Current SOC:        18.872 %
+Current SOC:        13.678 %
 Distance remaining: 4.228 km
 Section time:       10.889 sec
 Section length:     0.272 km
@@ -6604,7 +6606,7 @@ Rolling Resistance: 1.348 kWh
 
 Lap 19 - Section 4 - Angle -1.208114101
 Travelling at driving speed of 90 km/h
-Current SOC:        18.817 %
+Current SOC:        13.623 %
 Distance remaining: 4.131 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -6616,7 +6618,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 19 - Section 5 - Angle 0.2589182038
 Travelling at driving speed of 90 km/h
-Current SOC:        18.745 %
+Current SOC:        13.551 %
 Distance remaining: 4.019 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -6628,7 +6630,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 19 - Section 6 - Angle -0.6273579226
 Travelling at driving speed of 90 km/h
-Current SOC:        18.665 %
+Current SOC:        13.471 %
 Distance remaining: 3.881 km
 Section time:       5.551 sec
 Section length:     0.139 km
@@ -6640,7 +6642,7 @@ Rolling Resistance: 0.687 kWh
 
 Lap 19 - Section 7 - Angle 0.5784185719
 Travelling at driving speed of 90 km/h
-Current SOC:        18.486 %
+Current SOC:        13.292 %
 Distance remaining: 3.63 km
 Section time:       10.035 sec
 Section length:     0.251 km
@@ -6652,7 +6654,7 @@ Rolling Resistance: 1.242 kWh
 
 Lap 19 - Section 8 - Angle 1.482574284
 Travelling at driving speed of 90 km/h
-Current SOC:        18.321 %
+Current SOC:        13.127 %
 Distance remaining: 3.454 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -6664,7 +6666,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 19 - Section 9 - Angle 2.415154899
 Travelling at driving speed of 90 km/h
-Current SOC:        18.209 %
+Current SOC:        13.015 %
 Distance remaining: 3.358 km
 Section time:       3.843 sec
 Section length:     0.096 km
@@ -6676,7 +6678,7 @@ Rolling Resistance: 0.476 kWh
 
 Lap 19 - Section 10 - Angle -0.1510362972
 Travelling at driving speed of 90 km/h
-Current SOC:        18.099 %
+Current SOC:        12.905 %
 Distance remaining: 3.165 km
 Section time:       7.687 sec
 Section length:     0.192 km
@@ -6688,7 +6690,7 @@ Rolling Resistance: 0.951 kWh
 
 Lap 19 - Section 11 - Angle -3.328800084
 Travelling at driving speed of 90 km/h
-Current SOC:        18.004 %
+Current SOC:        12.81 %
 Distance remaining: 3.0 km
 Section time:       6.619 sec
 Section length:     0.165 km
@@ -6700,7 +6702,7 @@ Rolling Resistance: 0.819 kWh
 
 Lap 19 - Section 12 - Angle 0.2861723199
 Travelling at driving speed of 90 km/h
-Current SOC:        17.939 %
+Current SOC:        12.745 %
 Distance remaining: 2.898 km
 Section time:       4.057 sec
 Section length:     0.101 km
@@ -6712,7 +6714,7 @@ Rolling Resistance: 0.502 kWh
 
 Lap 19 - Section 13 - Angle 1.902362386
 Travelling at driving speed of 90 km/h
-Current SOC:        17.828 %
+Current SOC:        12.634 %
 Distance remaining: 2.792 km
 Section time:       4.27 sec
 Section length:     0.107 km
@@ -6724,7 +6726,7 @@ Rolling Resistance: 0.529 kWh
 
 Lap 19 - Section 14 - Angle -2.89743123
 Travelling at driving speed of 90 km/h
-Current SOC:        17.736 %
+Current SOC:        12.542 %
 Distance remaining: 2.632 km
 Section time:       6.405 sec
 Section length:     0.16 km
@@ -6736,7 +6738,7 @@ Rolling Resistance: 0.793 kWh
 
 Lap 19 - Section 15 - Angle 0.8850745943
 Travelling at driving speed of 90 km/h
-Current SOC:        17.554 %
+Current SOC:        12.36 %
 Distance remaining: 2.402 km
 Section time:       9.181 sec
 Section length:     0.23 km
@@ -6748,7 +6750,7 @@ Rolling Resistance: 1.136 kWh
 
 Lap 19 - Section 16 - Angle -0.4011071656
 Travelling at driving speed of 90 km/h
-Current SOC:        17.18 %
+Current SOC:        11.986 %
 Distance remaining: 1.751 km
 Section time:       26.049 sec
 Section length:     0.651 km
@@ -6760,7 +6762,7 @@ Rolling Resistance: 3.224 kWh
 
 Lap 19 - Section 17 - Angle 0.8364512322
 Travelling at driving speed of 90 km/h
-Current SOC:        17.018 %
+Current SOC:        11.824 %
 Distance remaining: 1.543 km
 Section time:       8.327 sec
 Section length:     0.208 km
@@ -6772,7 +6774,7 @@ Rolling Resistance: 1.031 kWh
 
 Lap 19 - Section 18 - Angle -0.3398284709
 Travelling at driving speed of 90 km/h
-Current SOC:        16.969 %
+Current SOC:        11.775 %
 Distance remaining: 1.457 km
 Section time:       3.416 sec
 Section length:     0.085 km
@@ -6784,7 +6786,7 @@ Rolling Resistance: 0.423 kWh
 
 Lap 19 - Section 19 - Angle -1.087333306
 Travelling at driving speed of 90 km/h
-Current SOC:        16.893 %
+Current SOC:        11.698 %
 Distance remaining: 1.324 km
 Section time:       5.338 sec
 Section length:     0.133 km
@@ -6796,7 +6798,7 @@ Rolling Resistance: 0.661 kWh
 
 Lap 19 - Section 20 - Angle 0.9061443261
 Travelling at driving speed of 90 km/h
-Current SOC:        16.842 %
+Current SOC:        11.648 %
 Distance remaining: 1.26 km
 Section time:       2.562 sec
 Section length:     0.064 km
@@ -6808,7 +6810,7 @@ Rolling Resistance: 0.317 kWh
 
 Lap 19 - Section 21 - Angle 0.6677107369
 Travelling at driving speed of 90 km/h
-Current SOC:        16.617 %
+Current SOC:        11.423 %
 Distance remaining: 0.955 km
 Section time:       12.17 sec
 Section length:     0.304 km
@@ -6820,7 +6822,7 @@ Rolling Resistance: 1.506 kWh
 
 Lap 19 - Section 22 - Angle -0.9282415862
 Travelling at driving speed of 90 km/h
-Current SOC:        16.492 %
+Current SOC:        11.297 %
 Distance remaining: 0.737 km
 Section time:       8.754 sec
 Section length:     0.219 km
@@ -6832,7 +6834,7 @@ Rolling Resistance: 1.084 kWh
 
 Lap 19 - Section 23 - Angle -1.294379586
 Travelling at driving speed of 90 km/h
-Current SOC:        16.427 %
+Current SOC:        11.233 %
 Distance remaining: 0.625 km
 Section time:       4.484 sec
 Section length:     0.112 km
@@ -6844,7 +6846,7 @@ Rolling Resistance: 0.555 kWh
 
 Lap 19 - Section 24 - Angle -0.2013813668
 Travelling at driving speed of 90 km/h
-Current SOC:        16.344 %
+Current SOC:        11.15 %
 Distance remaining: 0.48 km
 Section time:       5.765 sec
 Section length:     0.144 km
@@ -6856,7 +6858,7 @@ Rolling Resistance: 0.714 kWh
 
 Lap 19 - Section 25 - Angle -1.647218539
 Travelling at driving speed of 90 km/h
-Current SOC:        16.243 %
+Current SOC:        11.049 %
 Distance remaining: 0.304 km
 Section time:       7.046 sec
 Section length:     0.176 km
@@ -6868,7 +6870,7 @@ Rolling Resistance: 0.872 kWh
 
 Lap 19 - Section 26 - Angle 1.49960763
 Travelling at driving speed of 90 km/h
-Current SOC:        16.098 %
+Current SOC:        10.904 %
 Distance remaining: 0.149 km
 Section time:       6.192 sec
 Section length:     0.155 km
@@ -6880,7 +6882,7 @@ Rolling Resistance: 0.766 kWh
 
 Lap 19 - Section 27 - Angle 0.0
 Travelling at driving speed of 90 km/h
-Current SOC:        16.012 %
+Current SOC:        10.818 %
 Distance remaining: 0.0 km
 Section time:       5.978 sec
 Section length:     0.149 km
@@ -6894,13 +6896,13 @@ Rolling Resistance: 0.74 kWh
 Lap Time:      3.672 min
 Power Gains:   0.049 kWh
 Power Losses:  0.249 kWh
-End SOC:       16.012 %
+End SOC:       10.818 %
 Change in SOC: 3.789 %
 
 
 
-End capacity: 0.801 kwh
-Total time: 4.097 hrs
+End capacity: 0.541 kwh
+Total time: 3.773 hrs
 
 Peak    Velocity: 90 km/h
 Min     Velocity: 90 km/h

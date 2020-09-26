@@ -1,6 +1,6 @@
 # from config import ureg
 
-# carl - stays bounded within a certain battery capacity
+# carl - stays bounded within a certain battery capacity, better for longer distances
 def carl (solar, max_speed, angle, length, count):
     # below desired end capacity, probably want to recharge
     if solar.current_capacity < solar.end_capacity:
@@ -20,17 +20,24 @@ def carl (solar, max_speed, angle, length, count):
 
     return result, velocity, 0
 
-# carlos - drive fast no coast
-def carlos (solar, max_speed, angle, length, section):
+# carlos - drive fast no coast, better for shorter distances
+def carlos (solar, max_speed, angle, dist_left, section):
     # pit time
-    max_speed = 90
+    # max_speed = 90
     time = 0
     result = f"Travelling at driving speed of {max_speed} km/h"
 
-    if section == 0 and solar.current_capacity <= 1:
+    if section == 0 and solar.current_capacity <= 0.5: # push to 10%
         result += " - pitted and recharged"
-        time = solar.calc_recharge_time(2) # charge to 100%
-        solar.current_capacity = 2
+
+        charge_lvl = (5.2/5) * dist_left * solar.capacity
+
+        if (charge_lvl > solar.current_capacity):
+            time = solar.calc_recharge_time(charge_lvl) # charge to 100
+            solar.current_capacity = charge_lvl
+        
     result += "\n"
     
     return result, max_speed, time
+
+# carson - pits if it needs to
