@@ -39,8 +39,8 @@ class Car:
         self.cross_area         = inputs["cross_area"]     * (ureg.meter ** 2)             # m^2, from thiago
         self.recharge_rate      = recharge_rate            * ureg.kilowatt                 # kW           
 
-        self.current_capacity   = (self.start_soc * self.capacity) / 100 * ureg.kilowatt_hour # KWh
-        self.end_capacity       = (self.end_soc   * self.capacity) / 100 * ureg.kilowatt_hour # KWh
+        self.current_capacity   = (self.start_soc * self.capacity) / 100 # KWh
+        self.end_capacity       = (self.end_soc   * self.capacity) / 100 # KWh
     
 
     # gives the best speed we can run
@@ -104,8 +104,9 @@ class Car:
             #         return item
         
             
-        for velocity in range(1, self.max_speed): # velocity in km/h
-            time = distance / (velocity*ureg.kilometer/ureg.hours)
+        for velocity in range(1, int(self.max_speed.magnitude)): # velocity in km/h
+            velocity *= ureg.kilometer / ureg.hours
+            time = distance / velocity
             gained_energy = self.recharge_rate * time # KWh 
             energy = self.motor_energy(velocity, distance, angle)
             # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
@@ -114,7 +115,7 @@ class Car:
 
             if (energy >= gained_energy): # find best coasting speed
                 # print("found velocity")
-                return velocity - 5
+                return velocity - (5*ureg.kilometer/ureg.hours)
         # print("returning max speed")
         return self.max_speed
 
@@ -154,9 +155,11 @@ class Car:
         """
         time = distance / curr_velocity
 
-        gained_energy = self.recharge_rate * time # KWh 
+        # gained_energy = self.recharge_rate * time # KWh 
         
         energy = self.motor_energy(curr_velocity, distance, angle)
+        # print(energy) #units??
+        # print(self.current_capacity)
         #self.current_capacity += gained_energy - energy
         self.current_capacity -= energy
 
@@ -182,9 +185,11 @@ class Car:
         #                 (self.mass * acceleration))
         time = distance / velocity # hours
 
-        energy = time * (self.power_consumption(velocity) + 
-                         self.hill_climb(velocity, angle) + 
-                         self.air_drag(velocity))
+        power = (self.power_consumption(velocity) + 
+                 self.hill_climb(velocity, angle) + 
+                 self.air_drag(velocity)).to(ureg.kilowatts)
+
+        energy = time * power
 
         return energy # kWh
 
@@ -202,12 +207,13 @@ class Car:
         
         """
         # using m/s for velocity
-        power = self.mass * gravity * (velocity*(5/18)) * math.sin(angle * (math.pi)/180) # watts
+        velocity = velocity.to(ureg.meters / ureg.seconds)
+        power = self.mass * gravity * velocity * math.sin(angle * (math.pi)/180) # watts
         
         if power < 0:
             return 0
 
-        return power / 1000 # kW
+        return power # W
     
     # air drag = P = 0.5*rho*Cd*A*V^3
     def air_drag(self, velocity):
@@ -222,9 +228,11 @@ class Car:
         
         """
         #using m/s for velocity
+        velocity = velocity.to(ureg.meters / ureg.seconds)
         air_density = 1.225 * ureg.kilogram / (ureg.meters ** 3)# kg/m^3
-        power = 0.5 * air_density * self.drag_c * self.cross_area * (velocity*(5/18))**3 # watts
-        return power / 1000 # kW
+        power = 0.5 * air_density * self.drag_c * self.cross_area * \
+                velocity**3 # watts
+        return power # W
 
         
 
@@ -253,5 +261,6 @@ class Car:
 
     # ​self, K,d0,dw,p,p0,N,V
     def power_consumption(self, V):
-        return (self.tire_contribution() * V * 5/18) # kW
+        V = V.to(ureg.meters / ureg.seconds)
+        return (self.tire_contribution() * V) # W
         

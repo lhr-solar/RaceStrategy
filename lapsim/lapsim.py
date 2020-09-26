@@ -68,8 +68,8 @@ def run(solar, max_speed):
     dist_left      = distance
     velocity_sum   = 0
     velocity_count = 0
-    min_velocity   = 1000 * ureg.kilometer
-    max_velocity   = -1   * ureg.kilometer
+    min_velocity   = 1000 * ureg.kilometer / ureg.hours
+    max_velocity   = -1   * ureg.kilometer / ureg.hours
 
     with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
@@ -168,8 +168,8 @@ def run(solar, max_speed):
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
-best_time = 10000000
-best_speed = 0
+best_time   = 10000000 * ureg.hours
+best_speed  = 0 * ureg.kilometer / ureg.hours
 best_buffer = 0
 
 car = construct()
@@ -182,8 +182,8 @@ for speed in range(20, 91):
     sys.stdout = new_stdout # set system stdout to this buffer
     time = run(car, speed)
     if time < best_time:
-        best_time = time
-        best_speed = speed
+        best_time   = time
+        best_speed  = speed
         best_buffer = new_stdout # save buffer if it was the best time
         copyfile('temp.csv', 'sim.csv')
     car.current_capacity = (car.capacity * car.start_soc) / 100

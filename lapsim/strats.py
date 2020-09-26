@@ -1,3 +1,5 @@
+# from config import ureg
+
 # carl - stays bounded within a certain battery capacity
 def carl (solar, max_speed, angle, length, count):
     # below desired end capacity, probably want to recharge
