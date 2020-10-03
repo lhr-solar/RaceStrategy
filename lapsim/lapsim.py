@@ -54,7 +54,7 @@ def construct():
 
     solar = Car(user_inputs)
     #solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage'])) # 0.xx for simulating data, 1 for weather scraping
-    solar.recharge_rate = 0.8
+    solar.recharge_rate = 0.4
     return solar
 
 def run(solar, max_speed):
@@ -85,9 +85,10 @@ def run(solar, max_speed):
                 section_buffer.write("\n")
                 section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
                 
-                result = strats.carl(solar, max_speed, angle, length, count)
-                # result = strats.carlos(solar, max_speed, angle, dist_left / distance, count)
-                
+                # result = strats.carl(solar, max_speed, angle, length, count)
+                result = strats.carlos(solar, max_speed, angle, dist_left / distance, count)
+                # result = strats.carson(solar, max_speed, angle, length, count)
+
                 # update velocity
                 section_buffer.write(result[0]) # writing out buffer string
                 velocity = result[1]            # getting new velocity

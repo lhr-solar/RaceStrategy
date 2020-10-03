@@ -37,6 +37,7 @@ class Car:
         self.recharge_rate      = recharge_rate                # kW           
 
         self.current_capacity   = (self.start_soc * self.capacity) / 100 # KWh
+        self.start_capacity     = (self.start_soc * self.capacity) / 100 # KWh
         self.end_capacity       = (self.end_soc   * self.capacity) / 100 # KWh
     
 
@@ -111,7 +112,7 @@ class Car:
 
             if (energy >= gained_energy): # find best coasting speed
                 # print("found velocity")
-                return velocity - 5 if (velocity - 5 > 0) else velocity
+                return velocity - 10 if (velocity - 10 > 0) else velocity
         # print("returning max speed")
         return self.max_speed
 

@@ -1,13 +1,13 @@
 max_speed: 90
 start_soc: 50         
-end_soc: 48          
+end_soc: 10          
 capacity: 5        
 mass: 256             
 rolling_resistance: 0.020 
 drag_coefficient: 0.256 
 cross_area: 1.2
 lap_length: 5
-laps: 2000
+laps: 40
 show_laps: true
-show_section: true
+show_section: false
 cloud_coverage: 0

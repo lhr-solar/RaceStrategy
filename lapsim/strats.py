@@ -5,9 +5,9 @@ def carl (solar, max_speed, angle, length, count):
     # below desired end capacity, probably want to recharge
     if solar.current_capacity < solar.end_capacity:
         velocity = solar.coast_speed(length, angle)
-        if (angle <= -0.5): # going downhill
-            velocity += 5
-        elif (angle >= 0.5): # going uphill
+        # if (angle <= -0.5): # going downhill
+        #     velocity += 0
+        if (angle >= 0.5): # going uphill
             velocity -= 2.5
         result = f"Travelling at coasting speed of {velocity} km/h\n"
     else:
@@ -41,3 +41,42 @@ def carlos (solar, max_speed, angle, dist_left, section):
     return result, max_speed, time
 
 # carson - pits if it needs to
+def carson (solar, max_speed, angle, length, section):
+    # pit time
+    # max_speed = 90
+    time = 0
+    result = f"Travelling at driving speed of {max_speed} km/h"
+
+    if section == 0 and solar.current_capacity <= \
+        (solar.start_capacity + solar.end_capacity) / 2: # push to 10%
+        
+        result += " - pitted and recharged"
+
+        charge_lvl = solar.start_capacity
+
+        if (charge_lvl > solar.current_capacity):
+            time = solar.calc_recharge_time(charge_lvl) # charge to 100
+            solar.current_capacity = charge_lvl
+
+    else:
+        # below desired end capacity, probably want to recharge
+        if solar.current_capacity < solar.end_capacity:
+            velocity = solar.coast_speed(length, angle)
+            # if (angle <= -0.5): # going downhill
+            #     velocity += 0
+            if (angle >= 0.5): # going uphill
+                velocity -= 2.5
+            result = f"Travelling at coasting speed of {velocity} km/h\n"
+        else:
+            velocity = max_speed
+            if (angle >= 0.5): # going uphill
+                velocity -= 2.5
+            elif (angle <= -0.5 and max_speed < 80): # going downhill
+                velocity += 7
+            result = f"Travelling at driving speed of {velocity} km/h\n"
+
+        return result, velocity, 0
+        
+    result += "\n"
+    
+    return result, max_speed, time
