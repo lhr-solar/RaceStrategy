@@ -1,7 +1,7 @@
 # from config import ureg
 
 # carl - stays bounded within a certain battery capacity, better for longer distances
-def carl (solar, max_speed, angle, length, count):
+def carl (solar, max_speed, angle, length, dist_left, count):
     # below desired end capacity, probably want to recharge
     if solar.current_capacity < solar.end_capacity:
         velocity = solar.coast_speed(length, angle)
@@ -21,7 +21,7 @@ def carl (solar, max_speed, angle, length, count):
     return result, velocity, 0
 
 # carlos - drive fast no coast, better for shorter distances
-def carlos (solar, max_speed, angle, dist_left, section):
+def carlos (solar, max_speed, angle, length, dist_left, section):
     # pit time
     # max_speed = 90
     time = 0
@@ -41,7 +41,7 @@ def carlos (solar, max_speed, angle, dist_left, section):
     return result, max_speed, time
 
 # carson - pits if it needs to
-def carson (solar, max_speed, angle, length, section):
+def carson (solar, max_speed, angle, length, dist_left, section):
     # pit time
     # max_speed = 90
     time = 0

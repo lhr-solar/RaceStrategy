@@ -9,6 +9,7 @@ import sys
 import csv
 import inputs
 import strats
+import os
 
 from shutil          import copyfile
 from io              import StringIO
@@ -57,7 +58,7 @@ def construct():
     solar.recharge_rate = 0.4
     return solar
 
-def run(solar, max_speed):
+def run(solar, max_speed, strat):
     race_time      = 0
     dist_left      = distance
     velocity_sum   = 0
@@ -68,7 +69,11 @@ def run(solar, max_speed):
     with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
-        writer.writerow(['Time', 'Velocity', 'SOC', 'Air Drag', 'Hill Climb', 'Rolling Resistance', 'Angle'])
+        column_names = [strat+'-Time', strat+'-Velocity', strat+'-SOC', 
+                        strat+'=Air Drag', strat+'-Hill Climb', 
+                        strat+'-Rolling Resistance', strat+'-Angle']
+
+        writer.writerow(column_names)
         
         for lap in range(laps):
             lap_buffer = StringIO()
@@ -85,9 +90,7 @@ def run(solar, max_speed):
                 section_buffer.write("\n")
                 section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
                 
-                # result = strats.carl(solar, max_speed, angle, length, count)
-                result = strats.carlos(solar, max_speed, angle, dist_left / distance, count)
-                # result = strats.carson(solar, max_speed, angle, length, count)
+                result = getattr(strats, strat)(solar, max_speed, angle, length, dist_left / distance, count)
 
                 # update velocity
                 section_buffer.write(result[0]) # writing out buffer string
@@ -164,29 +167,43 @@ def run(solar, max_speed):
     # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
-best_time   = 10000000
-best_speed  = 0
-best_buffer = 0
+strat_list = user_inputs['strategy'].split(",") # account for commas
+if ("all" in strat_list[0].lower()):
+    directory_path = os.path.dirname(os.path.abspath(__file__)) 
+    new_path = os.path.join(directory_path, "stratlist.txt")
+    
+    strat_list.clear()
+    with open(new_path) as f: # read from input.txt
+        lines = f.readlines()
+        for line in lines:
+            strat_list.append(line.strip())
+    f.close()
+    
+for strat in strat_list:
+    best_time   = 10000000
+    best_speed  = 0
+    best_buffer = 0
 
-car = construct()
-test = ""
-old_stdout = sys.stdout # saves terminal stdout
-top_speed  = 91
+    car = construct()
+    test = ""
+    old_stdout = sys.stdout # saves terminal stdout
+    top_speed  = 91
 
-for speed in range(20, top_speed):
-    new_stdout = StringIO() # create new buffer to catch print outs
-    sys.stdout = new_stdout # set system stdout to this buffer
-    time = run(car, speed)
-    if time < best_time:
-        best_time   = time
-        best_speed  = speed
-        best_buffer = new_stdout # save buffer if it was the best time
-        copyfile('temp.csv', 'sim.csv')
-    car.current_capacity = (car.capacity * car.start_soc) / 100
+    print(f"\nTESTING STRAT: {strat}")
+    for speed in range(20, top_speed):
+        new_stdout = StringIO() # create new buffer to catch print outs
+        sys.stdout = new_stdout # set system stdout to this buffer
+        time = run(car, speed, strat)
+        if time < best_time:
+            best_time   = time
+            best_speed  = speed
+            best_buffer = new_stdout # save buffer if it was the best time
+            copyfile('temp.csv', strat + '.csv')
+        car.current_capacity = (car.capacity * car.start_soc) / 100
 
-sys.stdout = old_stdout # reset stdout to terminal to print final output
-print(f"{best_buffer.getvalue()}")
-# print(f"Best time was {best_time} with a top speed of {best_speed}")
-best_buffer.close()
-# car = construct()
-# run(car, 90)
+    sys.stdout = old_stdout # reset stdout to terminal to print final output
+    print(f"{best_buffer.getvalue()}")
+    # print(f"Best time was {best_time} with a top speed of {best_speed}")
+    best_buffer.close()
+    # car = construct()
+    # run(car, 90)

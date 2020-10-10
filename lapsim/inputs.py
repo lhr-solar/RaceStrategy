@@ -10,7 +10,9 @@ def get_inputs():
         for line in lines:
             var = line.strip().split(":")
             in_name = var[0]
-            if "show" in in_name:
+            if 'strategy' in in_name:
+                inputs[in_name] = var[1].strip().lower()
+            elif "show" in in_name:
                 inputs[in_name] = "true" in var[1].lower() 
             else:
                 inputs[in_name] = float(var[1])
