@@ -11,17 +11,19 @@ data could not be scraped easily. Map of solar data can be found here: https://m
     recharge_rate = main()
 """
 
+from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import requests
 
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
-def cloud_coverage(cloud_data):
+def cloud_coverage(cloud_data, counter):
     """Returns cloud coverage in the sky times 0.8 so that this can be easily imported into the performance ratio function.
     """
-    request = requests.get("https://weather.com/weather/today/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
     soup = BeautifulSoup(request.content, 'html.parser')
-    cloud_condition = soup.find('div', class_='_-_-node_modules-@wxu-components-src-organism-CurrentConditions-CurrentConditions--CurrentConditions--2_Nmm').get_text()
+    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
+    cloud_condition = labels.find("span", class_="DetailsSummary--extendedData--aaFeV").get_text()
 
     # These are approximate values as finding an actual percent to scrape didn't yeild much luck
     if cloud_data == 1:
@@ -45,7 +47,7 @@ def cloud_coverage(cloud_data):
     cloud_percent = cloud_percent * 0.8
     return cloud_percent
 
-def PR_calculation(cloud_data):
+def PR_calculation(cloud_data, counter):
     """Returns the solar panel's performance ratio based on cloud coverage and other assumed places of error.
     """
     '''
@@ -64,7 +66,7 @@ def PR_calculation(cloud_data):
     # All these values are percentages
     # TODO: find specifics, if available, about specific effects from above
     prdata = {
-        "cloud_coverage": cloud_coverage(cloud_data),
+        "cloud_coverage": cloud_coverage(cloud_data, counter),
         #"cloud_coverage": 0.05, #this is theoretical maximum
         "inverter_loss": 0.04,
         "dc_loss": 0.01,
@@ -80,7 +82,7 @@ def PR_calculation(cloud_data):
 
     return PR
 
-def main(cloud_data):
+def main(cloud_data, counter):
     """Calculates the solar panel's output using multiple different components.
 
     Returns:
@@ -109,12 +111,13 @@ def main(cloud_data):
 
     # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
     # used to calculate how close to actual input the solar panels are (higher is better) 
-    PR = PR_calculation(cloud_data)
+    PR = PR_calculation(cloud_data, counter)
     #PR = 1.00 # turn this on for perfect conditions
     print(f"Performance Ratio: {round(PR*100, 2)} %\n")
 
     energy = A * r * H * PR
 
+    print("WEATHER UPDATE:")
     print(f"Roughly {round(energy, 4)} kWh/day")
     hourly_energy = round(energy / 5.2, 4)
     print(f"In 5.2 hours of peak sunlight, roughly {hourly_energy} kWh")

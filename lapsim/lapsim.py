@@ -54,8 +54,6 @@ def construct():
     # energy = 4.5 = 1/3600*[230*9.8*0.02 + 0.0386*1.225*0.25*2*v^2 ]*50
 
     solar = Car(user_inputs)
-    #solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage'])) # 0.xx for simulating data, 1 for weather scraping
-    solar.recharge_rate = 0.4
     return solar
 
 def run(solar, max_speed, strat):
@@ -74,6 +72,9 @@ def run(solar, max_speed, strat):
                         strat+'-Rolling Resistance', strat+'-Angle']
 
         writer.writerow(column_names)
+
+        weather_hour = 0        #hours passed since the beginning
+        solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour) # 0.xx for simulating data, 1 for weather scraping
         
         for lap in range(laps):
             lap_buffer = StringIO()
@@ -103,6 +104,11 @@ def run(solar, max_speed, strat):
                 section_time += result[2] # updating section time (if pitted)
                 lap_time     += section_time
                 race_time    += section_time
+
+                if(race_time > (weather_hour + 1)): # plus 1 to check if an hour passes or not
+                    weather_hour += 1
+                    solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour)
+
                 
                 # update capacity and distance left
                 solar.update_capacity(velocity, length, angle)
@@ -187,10 +193,10 @@ for strat in strat_list:
     car = construct()
     test = ""
     old_stdout = sys.stdout # saves terminal stdout
-    top_speed  = 91
+    top_speed  = 60 if laps >= 20 else 91 #TODO: add config for this in input.txt
 
     print(f"\nTESTING STRAT: {strat}")
-    for speed in range(20, top_speed):
+    for speed in range(35, top_speed):
         new_stdout = StringIO() # create new buffer to catch print outs
         sys.stdout = new_stdout # set system stdout to this buffer
         time = run(car, speed, strat)
