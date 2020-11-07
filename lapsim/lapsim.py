@@ -74,7 +74,7 @@ def run(solar, max_speed, strat):
         writer.writerow(column_names)
 
         weather_hour = 0        #hours passed since the beginning
-        solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour) # 0.xx for simulating data, 1 for weather scraping
+        solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour, str(user_inputs['starting_time'])) # 0.xx for simulating data, 1 for weather scraping
         
         for lap in range(laps):
             lap_buffer = StringIO()
@@ -107,7 +107,7 @@ def run(solar, max_speed, strat):
 
                 if(race_time > (weather_hour + 1)): # plus 1 to check if an hour passes or not
                     weather_hour += 1
-                    solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour)
+                    solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour, str(user_inputs['starting_time']))
 
                 
                 # update capacity and distance left

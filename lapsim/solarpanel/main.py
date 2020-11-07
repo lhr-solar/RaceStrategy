@@ -16,11 +16,14 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def time_mult(counter):
-    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
-    soup = BeautifulSoup(request.content, 'html.parser')
-    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
-    time = labels.find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
+def time_mult(counter, starting_time):
+    if(starting_time == "normal"):
+        request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+        soup = BeautifulSoup(request.content, 'html.parser')
+        labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
+        time = labels.find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
+    else:
+        time = starting_time
 
     if(time == "11 am" or time == "12 pm" or time == "1 pm" or time == "2 pm" or time == "3 pm"):
         time_mult = 1
@@ -32,6 +35,8 @@ def time_mult(counter):
         time_mult = 0.25
     else:
         time_mult = 0
+
+    print(f"Time: {time}, time multiplier: {time_mult}")
 
     return time_mult
 
@@ -103,7 +108,7 @@ def PR_calculation(cloud_data, counter):
 
     return PR
 
-def main(cloud_data, counter):
+def main(cloud_data, counter, starting_time):
     """Calculates the solar panel's output using multiple different components.
 
     Returns:
@@ -136,9 +141,7 @@ def main(cloud_data, counter):
     #PR = 1.00 # turn this on for perfect conditions
     print(f"Performance Ratio: {round(PR*100, 2)} %\n")
 
-    t_mult = time_mult(counter)
-
-    print(f'TIME MULT: {t_mult}')
+    t_mult = time_mult(counter, starting_time)
 
     energy = A * r * H * PR * t_mult
 

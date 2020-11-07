@@ -13,7 +13,9 @@ def get_inputs():
             if 'strategy' in in_name:
                 inputs[in_name] = var[1].strip().lower()
             elif "show" in in_name:
-                inputs[in_name] = "true" in var[1].lower() 
+                inputs[in_name] = "true" in var[1].lower()
+            elif "starting_time" in in_name:
+                inputs[in_name] = var[1].strip()
             else:
                 inputs[in_name] = float(var[1])
     f.close()

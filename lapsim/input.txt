@@ -11,4 +11,5 @@ laps: 20
 show_laps: false
 show_section: false
 cloud_coverage: 1
+starting_time: normal
 strategy: all 
