@@ -15,6 +15,26 @@ from datetime import datetime, timedelta
 from bs4 import BeautifulSoup
 import requests
 
+
+def time_mult(counter):
+    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+    soup = BeautifulSoup(request.content, 'html.parser')
+    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
+    time = labels.find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
+
+    if(time == "11 am" or time == "12 pm" or time == "1 pm" or time == "2 pm" or time == "3 pm"):
+        time_mult = 1
+    elif(time == "10 am" or time == "4 pm"):
+        time_mult = 0.75
+    elif(time == "9 am" or time == "5 pm"):
+        time_mult = 0.5
+    elif(time == "8 am" or time == "6 pm"):
+        time_mult = 0.25
+    else:
+        time_mult = 0
+
+    return time_mult
+
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
 def cloud_coverage(cloud_data, counter):
@@ -45,6 +65,7 @@ def cloud_coverage(cloud_data, counter):
     
     print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
     cloud_percent = cloud_percent * 0.8
+    print(f"cloud percent: {cloud_percent}")
     return cloud_percent
 
 def PR_calculation(cloud_data, counter):
@@ -115,9 +136,13 @@ def main(cloud_data, counter):
     #PR = 1.00 # turn this on for perfect conditions
     print(f"Performance Ratio: {round(PR*100, 2)} %\n")
 
-    energy = A * r * H * PR
+    t_mult = time_mult(counter)
 
-    print("WEATHER UPDATE:")
+    print(f'TIME MULT: {t_mult}')
+
+    energy = A * r * H * PR * t_mult
+
+    print("\nWEATHER UPDATE:")
     print(f"Roughly {round(energy, 4)} kWh/day")
     hourly_energy = round(energy / 5.2, 4)
     print(f"In 5.2 hours of peak sunlight, roughly {hourly_energy} kWh")
