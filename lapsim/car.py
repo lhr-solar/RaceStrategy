@@ -1,6 +1,8 @@
 import math # sin
 import numpy as np
 
+import sympy as sy
+
 gravity = 9.81 # m/s^2
 
 class Car:
@@ -55,16 +57,42 @@ class Car:
         # acceleration   = 0
         # air_density    = 1.225 # kg/m^3
 
-        for velocity in range(self.max_speed, 0, -1): # velocity in km/h
-            time = distance / velocity
-            gained_energy = self.recharge_rate * time # KWh 
-            energy = self.motor_energy(velocity, distance, angle)
-            # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
-            #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
-            #         (self.mass * acceleration))
+        # TODO: clean up code, have better variable names
+        # POWER CONSUMPTION COEFFICIENT
+        a = self.tire_contribution() * (5/18) * distance # times V
+        # HILL CLIMB COEFFICIENT
+        b = self.mass * gravity * math.sin(angle * (math.pi)/180) * (5/18) * distance # times V
+        if(b < 0):
+             b = 0
+        # AIR DRAG COEFFICIENT
+        c = ((5/18) ** 3) * 0.5 * 1.225 * self.drag_c * self.cross_area * distance # times V^3
+        # GAINED ENERGY COEFFICIENT
+        d = self.recharge_rate * distance
+        # END CAPACITY - CURRENT CAPACITY
+        e = self.end_capacity - self.current_capacity
+        roots = [c, 0, (a+b + 1000*e), -1000*d]
+        sol = np.roots(roots)
+        for itm in sol:
+            if itm.imag == 0:
+                sol = itm.real
+                break
+        if(sol > self.max_speed):
+            sol = self.max_speed
+        print(sol)
+        return sol
 
-            if (self.current_capacity - energy + gained_energy) >= self.end_capacity:
-                return velocity
+
+        # for velocity in range(self.max_speed, 0, -1): # velocity in km/h
+        #     time = distance / velocity
+        #     gained_energy = self.recharge_rate * time # KWh 
+        #     energy = self.motor_energy(velocity, distance, angle)
+        #     # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
+        #     #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
+        #     #         (self.mass * acceleration))
+
+        #     if (self.current_capacity - energy + gained_energy) >= self.end_capacity:
+        #         print(f"calculated velocity: {velocity}")
+        #         return velocity
     
 
     def coast_speed(self, distance, angle):
@@ -261,4 +289,9 @@ class Car:
     def power_consumption(self, V):
         V *= (5/18) # k/h to m/s
         return (self.tire_contribution() * V) # W
-        
+
+import inputs
+user_inputs = inputs.get_inputs()
+
+car = Car(user_inputs)
+car.best_speed(150000, 4)
