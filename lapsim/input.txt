@@ -7,9 +7,9 @@ rolling_resistance: 0.020
 drag_coefficient: 0.256 
 cross_area: 1.2
 lap_length: 5
-laps: 1
-show_laps: true
-show_section: true
+laps: 500
+show_laps: false
+show_section: false
 cloud_coverage: 1
 starting_time: normal
 strategy: all 

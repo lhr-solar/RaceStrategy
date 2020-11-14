@@ -57,42 +57,43 @@ class Car:
         # acceleration   = 0
         # air_density    = 1.225 # kg/m^3
 
-        # TODO: clean up code, have better variable names
-        # POWER CONSUMPTION COEFFICIENT
-        a = self.tire_contribution() * (5/18) * distance # times V
-        # HILL CLIMB COEFFICIENT
-        b = self.mass * gravity * math.sin(angle * (math.pi)/180) * (5/18) * distance # times V
-        if(b < 0):
-             b = 0
-        # AIR DRAG COEFFICIENT
-        c = ((5/18) ** 3) * 0.5 * 1.225 * self.drag_c * self.cross_area * distance # times V^3
-        # GAINED ENERGY COEFFICIENT
-        d = self.recharge_rate * distance
-        # END CAPACITY - CURRENT CAPACITY
-        e = self.end_capacity - self.current_capacity
-        roots = [c, 0, (a+b + 1000*e), -1000*d]
-        sol = np.roots(roots)
-        for itm in sol:
-            if itm.imag == 0:
-                sol = itm.real
-                break
-        if(sol > self.max_speed):
-            sol = self.max_speed
-        print(sol)
-        return sol
+        # # TODO: clean up code, have better variable names
+        # # POWER CONSUMPTION COEFFICIENT
+        # a = self.tire_contribution() * (5/18) * distance # times V
+        # # HILL CLIMB COEFFICIENT
+        # b = self.mass * gravity * math.sin(angle * (math.pi)/180) * (5/18) * distance # times V
+        # if(b < 0):
+        #      b = 0
+        # # AIR DRAG COEFFICIENT
+        # c = ((5/18) ** 3) * 0.5 * 1.225 * self.drag_c * self.cross_area * distance # times V^3
+        # # GAINED ENERGY COEFFICIENT
+        # d = self.recharge_rate * distance
+        # # END CAPACITY - CURRENT CAPACITY
+        # e = self.end_capacity - self.current_capacity
+        # roots = [c, 0, (a+b + 1000*e), -1000*d]
+        # sol = np.roots(roots)
+        # for itm in sol:
+        #     if itm.imag == 0:
+        #         sol = itm.real
+        #         break
+        # if(sol > self.max_speed):
+        #     sol = self.max_speed
+        # print(sol)
+        # return sol
 
+        # OLD FORMULA FOR SOLVING FOR VELOCITY
+        #
+        for velocity in range(self.max_speed, 0, -1): # velocity in km/h
+            time = distance / velocity
+            gained_energy = self.recharge_rate * time # KWh 
+            energy = self.motor_energy(velocity, distance, angle)
+            # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
+            #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
+            #         (self.mass * acceleration))
 
-        # for velocity in range(self.max_speed, 0, -1): # velocity in km/h
-        #     time = distance / velocity
-        #     gained_energy = self.recharge_rate * time # KWh 
-        #     energy = self.motor_energy(velocity, distance, angle)
-        #     # energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +
-        #     #         (0.0386 * air_density * self.drag_c * self.cross_area * velocity ** 2) + # 0.0386 for km/h
-        #     #         (self.mass * acceleration))
-
-        #     if (self.current_capacity - energy + gained_energy) >= self.end_capacity:
-        #         print(f"calculated velocity: {velocity}")
-        #         return velocity
+            if (self.current_capacity - energy + gained_energy) >= self.end_capacity:
+                print(f"calculated velocity: {velocity}")
+                return velocity
     
 
     def coast_speed(self, distance, angle):
@@ -112,22 +113,46 @@ class Car:
         
         if (abs(angle) > 0.5): # big road grade change
             return self.coast_speed(distance, 0)
-            # flat_energy = self.motor_energy(flat_v, distance, 0)
-            # # test_energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +\
-            # #         (self.mass * gravity * -20.365 * math.sin(angle))/1000 + \
-            # #         (0.0386 * air_density * self.drag_c * self.cross_area * -20.365**3)/1000)
-            # coeffs = [(0.0386 * air_density * self.drag_c * self.cross_area)/1000, 0, (self.mass * gravity * math.sin(angle*(math.pi)/180))/1000, \
-            #         (self.mass * gravity * self.rolling_resistance - (flat_energy*3600)/distance)]
-            # sol = np.roots(coeffs)
-            # print(sol)
-            # for item in sol:
-            #     if item.imag == 0:
-            #         item = item.real
-            #     if type(item) == "complex" or item < 0:
-            #         continue
-            #     else:
-            #         print(item)
-            #         return item
+        
+        # flat_energy = self.motor_energy(flat_v, distance, 0)
+        # # test_energy = (1/3600) * distance * ((self.mass * gravity * self.rolling_resistance) +\
+        # #         (self.mass * gravity * -20.365 * math.sin(angle))/1000 + \
+        # #         (0.0386 * air_density * self.drag_c * self.cross_area * -20.365**3)/1000)
+        # coeffs = [(0.0386 * air_density * self.drag_c * self.cross_area)/1000, 0, (self.mass * gravity * math.sin(angle*(math.pi)/180))/1000, \
+        #         (self.mass * gravity * self.rolling_resistance - (flat_energy*3600)/distance)]
+        # sol = np.roots(coeffs)
+        # print(sol)
+        # for item in sol:
+        #     if item.imag == 0:
+        #         item = item.real
+        #     if type(item) == "complex" or item < 0:
+        #         continue
+        #     else:
+        #         print(item)
+        #         # return item
+
+        # # TODO: clean up code, have better variable names
+        # # POWER CONSUMPTION COEFFICIENT
+        # a = self.tire_contribution() * (5/18) * distance # times V
+        # # HILL CLIMB COEFFICIENT
+        # b = self.mass * gravity * math.sin(angle * (math.pi)/180) * (5/18) * distance # times V
+        # if(b < 0):
+        #      b = 0
+        # # AIR DRAG COEFFICIENT
+        # c = ((5/18) ** 3) * 0.5 * 1.225 * self.drag_c * self.cross_area * distance # times V^3
+        # # GAINED ENERGY COEFFICIENT
+        # d = self.recharge_rate * distance
+
+        # roots = [c, 0, (a+b), -1000*d]
+        # sol = np.roots(roots)
+        # for itm in sol:
+        #     if itm.imag == 0:
+        #         sol = itm.real
+        #         break
+        # if(sol > self.max_speed):
+        #     sol = self.max_speed
+        # print(sol)
+        # return sol
         
             
         for velocity in range(1, int(self.max_speed)): # velocity in km/h
@@ -302,4 +327,4 @@ import inputs
 user_inputs = inputs.get_inputs()
 
 car = Car(user_inputs)
-car.best_speed(150000, 4)
+car.coast_speed(70, 3)
