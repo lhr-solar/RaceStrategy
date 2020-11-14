@@ -16,64 +16,81 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def time_mult(counter, starting_time):
-    if(starting_time == "normal"):
-        request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
-        soup = BeautifulSoup(request.content, 'html.parser')
-        labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
-        time = labels.find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
-    else:
-        time = starting_time
+def time_mult(start, end, starting_time):
+    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+    soup = BeautifulSoup(request.content, 'html.parser')
+    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
 
-    if(time == "11 am" or time == "12 pm" or time == "1 pm" or time == "2 pm" or time == "3 pm"):
-        time_mult = 1
-    elif(time == "10 am" or time == "4 pm"):
-        time_mult = 0.75
-    elif(time == "9 am" or time == "5 pm"):
-        time_mult = 0.5
-    elif(time == "8 am" or time == "6 pm"):
-        time_mult = 0.25
-    else:
-        time_mult = 0
+    all_times = []
 
-    print(f"Time: {time}, time multiplier: {time_mult}")
+    for i in range(start, end):
+        if(starting_time == "normal"):
+            time = labels[i % 12].find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
+        else:
+            time = starting_time
 
-    return time_mult
+        if(time == "11 am" or time == "12 pm" or time == "1 pm" or time == "2 pm" or time == "3 pm"):
+            time_mult = 1
+        elif(time == "10 am" or time == "4 pm"):
+            time_mult = 0.75
+        elif(time == "9 am" or time == "5 pm"):
+            time_mult = 0.5
+        elif(time == "8 am" or time == "6 pm"):
+            time_mult = 0.25
+        else:
+            time_mult = 0
+
+        # print(f"Time: {time}, time multiplier: {time_mult}")
+
+        all_times.append(time_mult)
+    
+    return all_times
+
+
 
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
-def cloud_coverage(cloud_data, counter):
+def cloud_coverage(cloud_data, start, end):
     """Returns cloud coverage in the sky times 0.8 so that this can be easily imported into the performance ratio function.
     """
     request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
     soup = BeautifulSoup(request.content, 'html.parser')
-    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")[counter]
-    cloud_condition = labels.find("span", class_="DetailsSummary--extendedData--aaFeV").get_text()
+    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
 
-    # These are approximate values as finding an actual percent to scrape didn't yeild much luck
-    if cloud_data == 1:
-        if cloud_condition == "Clear" or cloud_condition == "Sunny":
-            cloud_percent = 0.00
-        elif cloud_condition == "Mostly Clear" or cloud_condition == "Mostly Sunny":
-            cloud_percent = 0.125
-        elif cloud_condition == "Partly Cloudy" or cloud_condition == "Partly Sunny":
-            cloud_percent = 0.375
-        elif cloud_condition == "Mostly Cloudy":
-            cloud_percent = 0.625
-        elif cloud_condition == "Cloudy":
-            cloud_percent = 0.875
+    total_cloud = []
+
+    for i in range(start, end):
+        cloud_condition = labels[i % 12].find("span", class_="DetailsSummary--extendedData--aaFeV").get_text()
+
+        # These are approximate values as finding an actual percent to scrape didn't yeild much luck
+        if cloud_data == 1:
+            if cloud_condition == "Clear" or cloud_condition == "Sunny":
+                cloud_percent = 0.00
+            elif cloud_condition == "Mostly Clear" or cloud_condition == "Mostly Sunny":
+                cloud_percent = 0.125
+            elif cloud_condition == "Partly Cloudy" or cloud_condition == "Partly Sunny":
+                cloud_percent = 0.375
+            elif cloud_condition == "Mostly Cloudy":
+                cloud_percent = 0.625
+            elif cloud_condition == "Cloudy":
+                cloud_percent = 0.875
+            else:
+                # print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
+                cloud_percent = 0.375 #if rainy, hard to calculate clouds
         else:
-            print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
-            cloud_percent = 0.375 #if rainy, hard to calculate clouds
-    else:
-        cloud_percent = cloud_data
-    
-    print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
-    cloud_percent = cloud_percent * 0.8
-    print(f"cloud percent: {cloud_percent}")
-    return cloud_percent
+            cloud_percent = cloud_data
 
-def PR_calculation(cloud_data, counter):
+        # print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
+        cloud_percent = cloud_percent * 0.8
+        # print(f"cloud percent: {cloud_percent}")
+
+        total_cloud.append(cloud_percent)
+
+    return total_cloud
+        
+    
+
+def PR_calculation(cloud_data, start, end):
     """Returns the solar panel's performance ratio based on cloud coverage and other assumed places of error.
     """
     '''
@@ -89,26 +106,34 @@ def PR_calculation(cloud_data, counter):
 
     https://photovoltaic-software.com/principle-ressources/how-calculate-solar-energy-power-pv-systems
     '''
+
+    total_PR = []
+
     # All these values are percentages
     # TODO: find specifics, if available, about specific effects from above
-    prdata = {
-        "cloud_coverage": cloud_coverage(cloud_data, counter),
-        #"cloud_coverage": 0.05, #this is theoretical maximum
-        "inverter_loss": 0.04,
-        "dc_loss": 0.01,
-        "ac_loss": 0.01,
-        "weak_radiation": 0.03,
-        "dust_loss": 0.02,
-        "etc_loss": 0.01
-    }
+    cloud_coverage_data = cloud_coverage(cloud_data, start, end)
 
-    PR = 1 #perfect conditions
-    for itm in prdata:
-        PR = PR * (1-prdata[itm])
+    for i in range(start, end):
+        prdata = {
+            "cloud_coverage": cloud_coverage_data[i],
+            #"cloud_coverage": 0.05, #this is theoretical maximum
+            "inverter_loss": 0.04,
+            "dc_loss": 0.01,
+            "ac_loss": 0.01,
+            "weak_radiation": 0.03,
+            "dust_loss": 0.02,
+            "etc_loss": 0.01
+        }
 
-    return PR
+        PR = 1 #perfect conditions
+        for itm in prdata:
+            PR = PR * (1-prdata[itm])
 
-def main(cloud_data, counter, starting_time):
+        total_PR.append(PR)
+
+    return total_PR
+
+def main(cloud_data, starting_time, start, end):
     """Calculates the solar panel's output using multiple different components.
 
     Returns:
@@ -135,22 +160,27 @@ def main(cloud_data, counter, starting_time):
     r = sp_power_percent
     H = 5.2 #constant
 
+    total_energy = []
+
     # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
     # used to calculate how close to actual input the solar panels are (higher is better) 
-    PR = PR_calculation(cloud_data, counter)
+    PR = PR_calculation(cloud_data, start, end)
     #PR = 1.00 # turn this on for perfect conditions
-    print(f"Performance Ratio: {round(PR*100, 2)} %\n")
+    # print(f"Performance Ratio: {round(PR*100, 2)} %\n")
 
-    t_mult = time_mult(counter, starting_time)
+    t_mult = time_mult(start, end, starting_time)
 
-    energy = A * r * H * PR * t_mult
+    for i in range(start, end):
+        energy = A * r * H * PR[i] * t_mult[i]
 
-    print("\nWEATHER UPDATE:")
-    print(f"Roughly {round(energy, 4)} kWh/day")
-    hourly_energy = round(energy / 5.2, 4)
-    print(f"In 5.2 hours of peak sunlight, roughly {hourly_energy} kWh")
+        # print("\nWEATHER UPDATE:")
+        # print(f"Roughly {round(energy, 4)} kWh/day")
+        hourly_energy = round(energy / 5.2, 4)
+        # print(f"In 5.2 hours of peak sunlight, roughly {hourly_energy} kWh")
 
-    return hourly_energy
+        total_energy.append(hourly_energy)
+    
+    return total_energy
 
 
 if __name__ == "__main__":
