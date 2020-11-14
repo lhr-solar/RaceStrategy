@@ -16,6 +16,8 @@ from io              import StringIO
 from solarpanel.main import main as solar_power
 from car             import Car
 
+# TODO: make this a configurable parameter
+sim_step_time = 0.01 # hr
 
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
@@ -60,11 +62,11 @@ def construct():
     solar = Car(user_inputs)
     return solar
 
+
 def run(solar, max_speed, strat):
     race_time      = 0
     dist_left      = distance
-    velocity_sum   = 0
-    velocity_count = 0
+    velocity_avg   = 0
     min_velocity   = 1000
     max_velocity   = -1  
 
@@ -77,111 +79,55 @@ def run(solar, max_speed, strat):
 
         writer.writerow(column_names)
 
-        weather_hour = 0        #hours passed since the beginning
-        # solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour, str(user_inputs['starting_time'])) # 0.xx for simulating data, 1 for weather scraping
-        solar.recharge_rate = solar_panel_power[weather_hour]
+        solar.recharge_rate = solar_panel_power[0]
         if solar.recharge_rate == 0:
             solar.recharge_rate = 0.1
         
-        for lap in range(laps):
-            lap_buffer = StringIO()
-            # lap_buffer.write(f"--- LAP {lap} ---\n")
-            count         = 0
-            lap_time      = 0
-            lap_start_soc = solar.current_capacity
-            starting_soc  = 0
+        lap           = 0
+        straight_num  = 0
+        straight_dist = track[straight_num][0]
+        angle         = track[straight_num][1]
+        while(dist_left > 0):
+            if(straight_dist <= 0):
+                straight_num  = (straight_num + 1) % len(track)
+                if straight_num == 0:
+                    lap += 1
+                straight_dist = track[straight_num][0] + straight_dist
+                angle         = track[straight_num][1]
+
+            result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num)
             
-            for straight in track:
-                section_buffer = StringIO()
-                length = straight[0]
-                angle  = straight[1]
-                section_buffer.write("\n")
-                section_buffer.write(f"Lap {lap} - Section {count} - Angle {angle}\n")
-                
-                result = getattr(strats, strat)(solar, max_speed, angle, length, dist_left / distance, count)
+            velocity = result[1]
+            velocity_avg += velocity * sim_step_time
+            min_velocity = min(min_velocity, velocity)
+            max_velocity = max(max_velocity, velocity)
 
-                # update velocity
-                section_buffer.write(result[0]) # writing out buffer string
-                velocity = result[1]            # getting new velocity
-                velocity_sum += velocity
-                velocity_count += 1
-                
-                # update times
-                section_time  = length / velocity
-                section_time += result[2] # updating section time (if pitted)
-                lap_time     += section_time
-                race_time    += section_time
+            dist_left -= velocity * sim_step_time
 
-                if(race_time > (weather_hour + 1)): # plus 1 to check if an hour passes or not
-                    weather_hour += 1
-                    # print(f"CURRENT WEATHER HOUR: {weather_hour}, CURRENT RACE TIME: {race_time}")
-                    solar.recharge_rate = solar_panel_power[weather_hour]
-                    if solar.recharge_rate == 0:
-                        solar.recharge_rate = 0.1
-                    # solar.recharge_rate = solar_power(float(user_inputs['cloud_coverage']), weather_hour, str(user_inputs['starting_time']))
+            solar.recharge_rate = solar_panel_power[int(race_time)]
+            if solar.recharge_rate == 0:
+                solar.recharge_rate = 0.1
+            solar.update_capacity(velocity, sim_step_time, angle)
 
-                
-                # update capacity and distance left
-                solar.update_capacity(velocity, length, angle)
-                dist_left -= length
-                
-                min_velocity = velocity if min_velocity > velocity else min_velocity
-                max_velocity = velocity if max_velocity < velocity else max_velocity
+            current_soc        = (solar.current_capacity * 100) / solar.capacity
+            air_drag           = sim_step_time * solar.air_drag(velocity)
+            hill_climb         = sim_step_time * solar.hill_climb(velocity, angle)
+            rolling_resistance = sim_step_time * solar.power_consumption(velocity)
 
-                current_soc        = (solar.current_capacity * 100) / solar.capacity
-                air_drag           = section_time * solar.air_drag(velocity)
-                hill_climb         = section_time * solar.hill_climb(velocity, angle)
-                rolling_resistance = section_time * solar.power_consumption(velocity)
+            race_time += sim_step_time
 
-                writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
+            writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
 
-                section_buffer.write(f"Current SOC:        {round(current_soc, 3)} %\n")
-                section_buffer.write(f"Distance remaining: {round(dist_left, 3)} km\n")
-                section_buffer.write(f"Section time:       {round(section_time * 60 * 60, 3)} sec\n")
-                section_buffer.write(f"Section length:     {round(length, 3)} km\n")
-                
-                section_buffer.write(f"--- Power Consumptions ---\n")
-                section_buffer.write(f"Air Drag:           {round(air_drag, 3)} kWh\n")
-                section_buffer.write(f"Hill Climb:         {round(hill_climb, 3)} kWh\n")
-                section_buffer.write(f"Rolling Resistance: {round(rolling_resistance, 3)} kWh\n")
-                if(section_print):
-                    print(section_buffer.getvalue())
-                section_buffer.close()
-
-                if count == 0:
-                    starting_soc = current_soc
-
-                count += 1
-            
-            lap_end_soc = solar.current_capacity
-            lap_recharge = solar.recharge_rate * lap_time
-            lap_loss = lap_start_soc + lap_recharge - lap_end_soc
-            delta_soc = starting_soc - ((solar.current_capacity) * 100 / solar.capacity)
-
-            lap_buffer.write(f"\n--- Lap {lap} Results ---\n")
-            lap_buffer.write(f"Lap Time:      {round((lap_time * 60), 3)} min\n")
-            lap_buffer.write(f"Power Gains:   {round(lap_recharge, 3)} kWh\n")
-            lap_buffer.write(f"Power Losses:  {round(lap_loss, 3)} kWh\n")
-            lap_buffer.write(f"End SOC:       {round((solar.current_capacity * 100) / solar.capacity, 3)} %\n")
-            lap_buffer.write(f"Change in SOC: {round(delta_soc, 3)} %\n")
-            lap_buffer.write("\n")
-            # race_time += lap_time
-
-            if (lap_print):
-                print(lap_buffer.getvalue())  
-            lap_buffer.close()
+    velocity_avg /= race_time
 
     print(f"\nEnd capacity: {round(solar.current_capacity,3)} kwh")
     print(f"Total time: {round(race_time, 3)} hrs\n")
     print(f"Peak    Velocity: {round(max_velocity, 3)} km/h")
     print(f"Min     Velocity: {round(min_velocity, 3)} km/h")
-    print(f"Average velocity: {round((velocity_sum / velocity_count), 3)} km/h\n")
+    print(f"Average velocity: {round(velocity_avg, 3)} km/h\n")
     print(f"Recharge rate:    {solar.recharge_rate} kW/h")
+
     return race_time
-    # print(f"Fastest Speed:  {high_velocity} km/h, Laps: {laps}")
-    # print(f"Coasting Speed: {coast_velocity} km/h")
-    # print(f"Total Distance: {distance} km")
-    # print(f"Recharge time: {solar.calc_recharge_time():0.3f} hours")
 
 
 strat_list = user_inputs['strategy'].split(",") # account for commas
@@ -210,7 +156,10 @@ for strat in strat_list:
     for speed in range(35, top_speed):
         new_stdout = StringIO() # create new buffer to catch print outs
         sys.stdout = new_stdout # set system stdout to this buffer
-        time = run(car, speed, strat)
+        try:
+            time = run(car, speed, strat)
+        except:
+            print(f"{new_stdout.getvalue()}")
         if time < best_time:
             best_time   = time
             best_speed  = speed
