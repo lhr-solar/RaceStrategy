@@ -183,9 +183,12 @@ class Car:
         #                 (self.mass * acceleration))
         time = distance / velocity # hours
 
+        # TODO: calculate based on speed/acceleration
+        efficiency = 0.95
+
         power = (self.power_consumption(velocity) + 
                  self.hill_climb(velocity, angle) + 
-                 self.air_drag(velocity)) / 1000 # kW
+                 self.air_drag(velocity)) / (efficiency * 1000) # kW
 
         energy = time * power
 
@@ -229,7 +232,12 @@ class Car:
         """
 
         velocity *= (5/18) # k/h to m/s
-        air_density = 1.225 # kg/m^3
+
+        # This is for sea level at standard temperature/pressure
+        # TODO: update for COTA
+        # air_density = 1.225 # kg/m^3
+        air_density = 1.1839
+        # TODO: combine d and cross_area into cda
         power = 0.5 * air_density * self.drag_c * self.cross_area * velocity**3 # watts
         return power # W
         
