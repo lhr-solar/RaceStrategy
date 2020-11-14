@@ -16,11 +16,7 @@ from bs4 import BeautifulSoup
 import requests
 
 
-def time_mult(start, end, starting_time):
-    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
-    soup = BeautifulSoup(request.content, 'html.parser')
-    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
-
+def time_mult(start, end, starting_time, labels):
     all_times = []
 
     for i in range(start, end):
@@ -40,8 +36,6 @@ def time_mult(start, end, starting_time):
         else:
             time_mult = 0
 
-        # print(f"Time: {time}, time multiplier: {time_mult}")
-
         all_times.append(time_mult)
     
     return all_times
@@ -50,12 +44,9 @@ def time_mult(start, end, starting_time):
 
 # Small web scraping for cloud coverage
 # Analying clouds: https://www.weather.gov/bgm/forecast_terms
-def cloud_coverage(cloud_data, start, end):
+def cloud_coverage(cloud_data, start, end, labels):
     """Returns cloud coverage in the sky times 0.8 so that this can be easily imported into the performance ratio function.
     """
-    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
-    soup = BeautifulSoup(request.content, 'html.parser')
-    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
 
     total_cloud = []
 
@@ -76,13 +67,11 @@ def cloud_coverage(cloud_data, start, end):
                 cloud_percent = 0.875
             else:
                 # print("WARNING: Some sort of rain, inaccurate cloud coverage estimation.")
-                cloud_percent = 0.375 #if rainy, hard to calculate clouds
+                cloud_percent = 0.375
         else:
             cloud_percent = cloud_data
 
-        # print(f"Approximate Cloud Coverage: {cloud_percent*100} %")
         cloud_percent = cloud_percent * 0.8
-        # print(f"cloud percent: {cloud_percent}")
 
         total_cloud.append(cloud_percent)
 
@@ -90,7 +79,7 @@ def cloud_coverage(cloud_data, start, end):
         
     
 
-def PR_calculation(cloud_data, start, end):
+def PR_calculation(cloud_data, start, end, labels):
     """Returns the solar panel's performance ratio based on cloud coverage and other assumed places of error.
     """
     '''
@@ -111,12 +100,11 @@ def PR_calculation(cloud_data, start, end):
 
     # All these values are percentages
     # TODO: find specifics, if available, about specific effects from above
-    cloud_coverage_data = cloud_coverage(cloud_data, start, end)
+    cloud_coverage_data = cloud_coverage(cloud_data, start, end, labels)
 
     for i in range(start, end):
         prdata = {
             "cloud_coverage": cloud_coverage_data[i],
-            #"cloud_coverage": 0.05, #this is theoretical maximum
             "inverter_loss": 0.04,
             "dc_loss": 0.01,
             "ac_loss": 0.01,
@@ -127,7 +115,7 @@ def PR_calculation(cloud_data, start, end):
 
         PR = 1 #perfect conditions
         for itm in prdata:
-            PR = PR * (1-prdata[itm])
+            PR *= (1-prdata[itm])
 
         total_PR.append(PR)
 
@@ -151,27 +139,21 @@ def main(cloud_data, starting_time, start, end):
     https://solarmonsters.com/help-advice/solar-panels-advice/how-many-kwh-does-a-solar-panel-produce/#tab-con-9
     '''
 
-    sp_surface_area = 4       # (m^2)
-    # % = energy/area 
-    # energy ~ 1kW, 1/4 = 0.25 = 25% 
-    sp_power_percent = 0.25
+    request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
+    soup = BeautifulSoup(request.content, 'html.parser')
+    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
 
-    A = sp_surface_area
-    r = sp_power_percent
-    H = 5.2 #constant
+    A = 4       # (m^2)
+    r = 0.25    # energy ~ 1kW, 1/4 = 0.25 = 25%
+    H = 5.2     #constant
+    PR = PR_calculation(cloud_data, start, end, labels)
+
+    time_multiplier = time_mult(start, end, starting_time, labels)
 
     total_energy = []
 
-    # this one might also take trial and error to solve for, PR doesn't necessarily have a set value and is
-    # used to calculate how close to actual input the solar panels are (higher is better) 
-    PR = PR_calculation(cloud_data, start, end)
-    #PR = 1.00 # turn this on for perfect conditions
-    # print(f"Performance Ratio: {round(PR*100, 2)} %\n")
-
-    t_mult = time_mult(start, end, starting_time)
-
     for i in range(start, end):
-        energy = A * r * H * PR[i] * t_mult[i]
+        energy = A * r * H * PR[i] * time_multiplier[i]
 
         # print("\nWEATHER UPDATE:")
         # print(f"Roughly {round(energy, 4)} kWh/day")
