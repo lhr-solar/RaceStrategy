@@ -209,7 +209,5 @@ for strat in strat_list:
 
     sys.stdout = old_stdout # reset stdout to terminal to print final output
     print(f"{best_buffer.getvalue()}")
-    # print(f"Best time was {best_time} with a top speed of {best_speed}")
+    print(f"Best time was {best_time} with a top speed of {best_speed}")
     best_buffer.close()
-    # car = construct()
-    # run(car, 90)
