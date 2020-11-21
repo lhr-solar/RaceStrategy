@@ -17,7 +17,7 @@ from solarpanel.main import main as solar_power
 from car             import Car
 
 # TODO: make this a configurable parameter
-sim_step_time = 0.01 # hr
+sim_step_time = 0.005 # hr
 
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
@@ -88,7 +88,7 @@ def run(solar, max_speed, strat):
         straight_num  = 0
         straight_dist = track[straight_num][0]
         angle         = track[straight_num][1]
-        old_velocity = 0
+        allow_accl    = accl * sim_step_time # The amount our velocity can differ each step
         while(dist_left > 0):
             if(straight_dist <= 0):
                 straight_num  = (straight_num + 1) % len(track)
@@ -99,6 +99,10 @@ def run(solar, max_speed, strat):
             result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num)
             
             velocity = result[1]
+            velocity = min(velocity, old_velocity + allow_accl)
+            velocity = max(velocity, old_velocity - allow_accl)
+            old_velocity = velocity
+
             velocity_avg += velocity * sim_step_time
             min_velocity = min(min_velocity, velocity)
             max_velocity = max(max_velocity, velocity)
@@ -114,15 +118,10 @@ def run(solar, max_speed, strat):
             air_drag           = sim_step_time * solar.air_drag(velocity)
             hill_climb         = sim_step_time * solar.hill_climb(velocity, angle)
             rolling_resistance = sim_step_time * solar.power_consumption(velocity)
-            acc_time_step = (abs(velocity-old_velocity)/accl)/50
-            inc_velocity = old_velocity
-            for i in range(50):
-                race_time += acc_time_step
-                inc_velocity += acc_time_step*accl
-                writer.writerow([race_time, inc_velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
-            race_time += sim_step_time - acc_time_step*50
+            
+            race_time += sim_step_time
             writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
-            old_velocity = velocity
+
     velocity_avg /= race_time
 
     print(f"\nEnd capacity: {round(solar.current_capacity,3)} kwh")

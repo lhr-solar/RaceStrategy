@@ -8,7 +8,7 @@ rolling_resistance: 0.020
 drag_coefficient: 0.256 
 cross_area: 1.2
 lap_length: 5
-laps: 20
+laps: 100
 show_laps: false
 show_section: false
 cloud_coverage: 1
