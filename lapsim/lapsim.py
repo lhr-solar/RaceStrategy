@@ -22,6 +22,7 @@ sim_step_time = 0.01 # hr
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
 lap_length    = 0
+accl          = 300 #kph^2
 laps          = int(user_inputs['laps'])
 lap_print     = user_inputs['show_laps']
 section_print = user_inputs['show_section']
@@ -69,7 +70,7 @@ def run(solar, max_speed, strat):
     velocity_avg   = 0
     min_velocity   = 1000
     max_velocity   = -1  
-
+    old_velocity   = 0
     with open('temp.csv', 'w', newline='') as csvfile:
         writer = csv.writer(csvfile, delimiter=',',
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
@@ -87,6 +88,7 @@ def run(solar, max_speed, strat):
         straight_num  = 0
         straight_dist = track[straight_num][0]
         angle         = track[straight_num][1]
+        old_velocity = 0
         while(dist_left > 0):
             if(straight_dist <= 0):
                 straight_num  = (straight_num + 1) % len(track)
@@ -94,7 +96,6 @@ def run(solar, max_speed, strat):
                     lap += 1
                 straight_dist = track[straight_num][0] + straight_dist
                 angle         = track[straight_num][1]
-
             result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num)
             
             velocity = result[1]
@@ -113,11 +114,15 @@ def run(solar, max_speed, strat):
             air_drag           = sim_step_time * solar.air_drag(velocity)
             hill_climb         = sim_step_time * solar.hill_climb(velocity, angle)
             rolling_resistance = sim_step_time * solar.power_consumption(velocity)
-
-            race_time += sim_step_time
-
+            acc_time_step = (abs(velocity-old_velocity)/accl)/50
+            inc_velocity = old_velocity
+            for i in range(50):
+                race_time += acc_time_step
+                inc_velocity += acc_time_step*accl
+                writer.writerow([race_time, inc_velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
+            race_time += sim_step_time - acc_time_step*50
             writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
-
+            old_velocity = velocity
     velocity_avg /= race_time
 
     print(f"\nEnd capacity: {round(solar.current_capacity,3)} kwh")
@@ -156,10 +161,10 @@ for strat in strat_list:
     for speed in range(35, top_speed):
         new_stdout = StringIO() # create new buffer to catch print outs
         sys.stdout = new_stdout # set system stdout to this buffer
-        try:
-            time = run(car, speed, strat)
-        except:
-            print(f"{new_stdout.getvalue()}")
+        # try:
+        time = run(car, speed, strat)
+        # except:
+        #     print(f"{new_stdout.getvalue()}")
         if time < best_time:
             best_time   = time
             best_speed  = speed

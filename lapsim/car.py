@@ -1,8 +1,6 @@
 import math # sin
 import numpy as np
 
-import sympy as sy
-
 gravity = 9.81 # m/s^2
 
 class Car:
