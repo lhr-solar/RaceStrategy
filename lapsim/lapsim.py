@@ -29,7 +29,7 @@ section_print = user_inputs['show_section']
 
 solar_panel_power = []
 
-solar_panel_power = solar_power(float(user_inputs['cloud_coverage']), str(user_inputs['starting_time']), 0, laps*2) # 0.xx for simulating data, 1 for weather scraping
+solar_panel_power = solar_power(float(user_inputs['cloud_coverage']), str(user_inputs['starting_time']), 0, 12) # 0.xx for simulating data, 1 for weather scraping
 
 track = []
 
@@ -76,7 +76,8 @@ def run(solar, max_speed, strat):
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
         column_names = [strat+'-Time', strat+'-Velocity', strat+'-SOC', 
                         strat+'=Air Drag', strat+'-Hill Climb', 
-                        strat+'-Rolling Resistance', strat+'-Angle', strat+'-Distance Remaining']
+                        strat+'-Rolling Resistance', strat+'-Angle', 
+                        strat+'-Distance Remaining', strat+'-Straight Number']
 
         writer.writerow(column_names)
 
@@ -96,7 +97,7 @@ def run(solar, max_speed, strat):
                     lap += 1
                 straight_dist = track[straight_num][0] + straight_dist
                 angle         = track[straight_num][1]
-            result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num, old_velocity)
+            result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num, old_velocity, allow_accl)
             
             velocity = result[1]
             old_velocity = result[2]
@@ -112,7 +113,7 @@ def run(solar, max_speed, strat):
             dist_left -= velocity * sim_step_time
             straight_dist -= velocity * sim_step_time
 
-            solar.recharge_rate = solar_panel_power[int(race_time)]
+            solar.recharge_rate = solar_panel_power[int(race_time) % 12]
             if solar.recharge_rate == 0:
                 solar.recharge_rate = 0.1
             solar.update_capacity(velocity, sim_step_time, angle)
@@ -123,7 +124,7 @@ def run(solar, max_speed, strat):
             rolling_resistance = sim_step_time * solar.power_consumption(velocity)
             
             race_time += sim_step_time
-            writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle, dist_left])
+            writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle, dist_left, straight_num])
 
     velocity_avg /= race_time
 
