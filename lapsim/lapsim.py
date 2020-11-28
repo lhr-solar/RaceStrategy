@@ -17,7 +17,7 @@ from solarpanel.main import main as solar_power
 from car             import Car
 
 # TODO: make this a configurable parameter
-sim_step_time = 0.005 # hr
+sim_step_time = 0.0025 # hr
 
 user_inputs = inputs.get_inputs()
 # lap_length = user_inputs["lap_length"] # km
@@ -76,7 +76,7 @@ def run(solar, max_speed, strat):
                             quotechar='|', quoting=csv.QUOTE_MINIMAL)
         column_names = [strat+'-Time', strat+'-Velocity', strat+'-SOC', 
                         strat+'=Air Drag', strat+'-Hill Climb', 
-                        strat+'-Rolling Resistance', strat+'-Angle']
+                        strat+'-Rolling Resistance', strat+'-Angle', strat+'-Distance Remaining']
 
         writer.writerow(column_names)
 
@@ -96,9 +96,11 @@ def run(solar, max_speed, strat):
                     lap += 1
                 straight_dist = track[straight_num][0] + straight_dist
                 angle         = track[straight_num][1]
-            result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num)
+            result = getattr(strats, strat)(solar, max_speed, angle, sim_step_time, dist_left, straight_num, old_velocity)
             
             velocity = result[1]
+            old_velocity = result[2]
+
             velocity = min(velocity, old_velocity + allow_accl)
             velocity = max(velocity, old_velocity - allow_accl)
             old_velocity = velocity
@@ -108,6 +110,7 @@ def run(solar, max_speed, strat):
             max_velocity = max(max_velocity, velocity)
 
             dist_left -= velocity * sim_step_time
+            straight_dist -= velocity * sim_step_time
 
             solar.recharge_rate = solar_panel_power[int(race_time)]
             if solar.recharge_rate == 0:
@@ -120,7 +123,7 @@ def run(solar, max_speed, strat):
             rolling_resistance = sim_step_time * solar.power_consumption(velocity)
             
             race_time += sim_step_time
-            writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle])
+            writer.writerow([race_time, velocity, current_soc, air_drag, hill_climb, rolling_resistance, angle, dist_left])
 
     velocity_avg /= race_time
 

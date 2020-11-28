@@ -1,7 +1,7 @@
 # from config import ureg
 
 # carl - stays bounded within a certain battery capacity, better for longer distances
-def carl (solar, max_speed, angle, time, dist_left, count):
+def carl (solar, max_speed, angle, time, dist_left, count, old_velocity):
     # below desired end capacity, probably want to recharge
     if solar.current_capacity < solar.end_capacity:
         velocity = solar.coast_speed(angle)
@@ -16,30 +16,33 @@ def carl (solar, max_speed, angle, time, dist_left, count):
             velocity += 7
         result = f"Travelling at driving speed of {velocity} km/h\n"
 
-    return result, velocity
+    return result, velocity, old_velocity
 
 # carlos - drive fast no coast, better for shorter distances
-def carlos (solar, max_speed, angle, time, dist_left, section):
+def carlos (solar, max_speed, angle, time, dist_left, section, old_velocity):
     result = f"Travelling at driving speed of {max_speed} km/h"
 
-    if section == 0 and solar.current_capacity <= 0.5: # push to 10%
+    print(f"charge_lvl: {solar.start_capacity} and solar.start_capacity: {solar.current_capacity}")
+    if section == 0 and solar.current_capacity <= \
+        (solar.start_capacity + solar.end_capacity) / 2: # push to 10%
+        print("made it here")
+        
         result += " - pitted and recharged"
 
-        # TODO: tweak constant
-        charge_lvl = (5.2/5) * dist_left * solar.capacity
-        charge_lvl = min(charge_lvl, solar.capacity * 0.8)
+        charge_lvl = solar.start_capacity
 
-        # Pit until we reach the charge that we want
         if (charge_lvl > solar.current_capacity):
-            result += "\n"
-            return result, 0
+            print("call this")
+        result += "\n"
+        return result, 0, 0
         
     result += "\n"
+    print("this is still called")
     
-    return result, max_speed
+    return result, max_speed, old_velocity
 
 # carson - pits if it needs to
-def carson (solar, max_speed, angle, time, dist_left, section):
+def carson (solar, max_speed, angle, time, dist_left, section, old_velocity):
     result = f"Travelling at driving speed of {max_speed} km/h"
 
     if section == 0 and solar.current_capacity <= \
@@ -51,7 +54,7 @@ def carson (solar, max_speed, angle, time, dist_left, section):
 
         if (charge_lvl > solar.current_capacity):
             result += "\n"
-            return result, 0
+            return result, 0, 0
 
     else:
         # below desired end capacity, probably want to recharge
@@ -68,8 +71,8 @@ def carson (solar, max_speed, angle, time, dist_left, section):
                 velocity += 7
             result = f"Travelling at driving speed of {velocity} km/h\n"
 
-        return result, velocity
+        return result, velocity, old_velocity
         
     result += "\n"
     
-    return result, max_speed
+    return result, max_speed, old_velocity
