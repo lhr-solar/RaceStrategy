@@ -100,7 +100,7 @@ class Graph:
     def __init__(self, x = None, data = None):
         self.x_axis = x
         self.y_axis = data
-        self.car = ParseData("sim.csv")
+        self.car = ParseData("../../lapsim/sim.csv")
         self.titles = self.car.titles
         '''
         for item in self.y_axis:
