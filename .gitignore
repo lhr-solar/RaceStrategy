@@ -4,3 +4,4 @@ carl*.txt
 carlos*.txt
 carson*.txt
 *.csv
+docs/_build/*

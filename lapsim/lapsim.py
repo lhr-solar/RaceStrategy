@@ -33,7 +33,7 @@ solar_panel_power = solar_power(float(user_inputs['cloud_coverage']), str(user_i
 
 track = []
 
-with open("track.txt") as f:
+with open("../lapsim/track.txt") as f:  # path is so that this doesn't break autodoc when make calls this from docs directory
     lines = f.readlines()
     for line in lines:
         var         = line.strip().split(",")

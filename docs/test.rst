@@ -2,5 +2,5 @@
 Main Script
 ===========
 
-.. automodule:: lapsim.main
+.. automodule:: lapsim
     :members:
