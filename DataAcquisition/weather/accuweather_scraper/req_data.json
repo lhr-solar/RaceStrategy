@@ -1,0 +1,39 @@
+{
+  "tags": [
+    {
+      "html_tag": "span",
+      "attr_tags": {
+          "class": {
+            "name": "_-_-components-src-organism-TodayDetailsCard-TodayDetailsCard--feelsLikeTempValue--2icPt",
+            "wind": "_-_-components-src-atom-WeatherData-Wind-Wind--windWrapper--3Ly7c undefined"
+          },
+          "data-testid": {
+            "now": "TemperatureValue",
+            "humidity": "PercentageValue",
+            "pressure": "PressureValue",
+            "UV_index": "UVIndexValue",
+            "visibility": "VisibilityValue"
+          }
+      }
+    },
+    {
+      "html_tag": "div",
+      "attr_tags": {
+        "class": {
+            "chance": "_-_-components-src-organism-CurrentConditions-CurrentConditions--precipValue--2aJSf"
+        },
+        "data-testid": {
+          "status": "wxPhrase"
+        }
+      }
+    },
+    {
+      "html_tag": "p",
+      "attr_tags": {
+        "p": {
+            "chance": "_-_-components-src-organism-TodayDetailsCard-TodayDetailsCard--feelsLikeTempValue--2icPt"
+        }
+      }
+    }
+  ]
+}
