@@ -3,7 +3,7 @@ This software is designed to take inputs from both the car and other sources to 
 
 ## Setup
 1. Clone this repo
-2. Run `pip3 install requirements.txt` to install all necessary python packages
+2. Run `pip3 install -r requirements.txt` to install all necessary python packages
 
 ## Usage
 - To run the lap simulator, navigate to the `lapsim` directory and run `$ python3 lapsim.py`
