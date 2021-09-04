@@ -5,4 +5,5 @@ carlos*.txt
 carson*.txt
 *.csv
 docs/_build/*
+venv/
 *__pycache__*

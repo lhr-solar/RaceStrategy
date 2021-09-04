@@ -21,7 +21,7 @@ def time_mult(start, end, starting_time, labels):
 
     for i in range(start, end):
         if(starting_time == "normal"):
-            time = labels[i % 12].find("h2", class_="DetailsSummary--daypartName--1Mebr").get_text()
+            time = labels[i % 12].find("h2", class_="DetailsSummary--daypartName--2FBp2").get_text()
         else:
             time = starting_time
 
@@ -51,7 +51,7 @@ def cloud_coverage(cloud_data, start, end, labels):
     total_cloud = []
 
     for i in range(start, end):
-        cloud_condition = labels[i % 12].find("span", class_="DetailsSummary--extendedData--aaFeV").get_text()
+        cloud_condition = labels[i % 12].find("span", class_="DetailsSummary--extendedData--365A_").get_text()
 
         # These are approximate values as finding an actual percent to scrape didn't yeild much luck
         if cloud_data == 1:
@@ -141,7 +141,7 @@ def main(cloud_data, starting_time, start, end):
 
     request = requests.get("https://weather.com/weather/hourbyhour/l/7472a7bbd3a7454aadf596f0ba7dc8b08987b1f7581fae69d8817dffffc487c2")
     soup = BeautifulSoup(request.content, 'html.parser')
-    labels = soup.find_all("summary", class_="Disclosure--Summary--AvowU DaypartDetails--Summary--2nJx1 Disclosure--hideBorderOnSummaryOpen--LEvZQ")
+    labels = soup.find_all("summary", class_="Disclosure--Summary--UuybP DaypartDetails--Summary--3IBUr Disclosure--hideBorderOnSummaryOpen--ZdSDc")
 
     A = 4       # (m^2)
     r = 0.25    # energy ~ 1kW, 1/4 = 0.25 = 25%
